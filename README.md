@@ -1,5 +1,5 @@
 
-<img width="350" height ="350" src ="https://github.com/carinnovello/probando/blob/main/DAS_logo.png">
+ <div align="center"> <img width="350" height ="350" src ="https://github.com/carinnovello/probando/blob/main/DAS_logo.png"> </div>
 
 
 ## Temática del sitio:
