@@ -1,0 +1,48 @@
+*​{ 
+    margin: ​0​px​; 
+    padding: ​0​px​; 
+    box-sizing: ​border-box​; 
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+    color: rgb(58, 57, 57);
+    background-color: white;
+}
+
+.top-header-mobile {
+    height: 160px;
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo-space {
+   width: auto;
+   height: 120px;
+   background-color: white;
+}
+img {
+    width: 120px;
+    height: 120px;
+}
+
+.nav-menu {
+    background-color: RGB (101,190,199);
+    color:rgb(58, 57, 57);
+    text-align: center;    
+}
+
+a {
+  color: rgb(58, 57, 57);
+  text-decoration: none;  
+}
+.lista-menu {
+    color:rgb(58, 57, 57);
+    display: flex;
+    border: 100px;
+    background-color: rgb(101, 190, 199);
+    padding: 12px 0;
+    justify-content: space-around;
+  
+}
