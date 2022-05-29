@@ -9,7 +9,7 @@ app.listen(3030,()=>{
 })
 
 app.get('/home',(req,resp)=>{
-    resp.send('hola lo estas logrando')
+
     resp.sendFile(path.join(__dirname,'/views/index.html'))
 })
 app.get('/login',(req,resp)=>{
