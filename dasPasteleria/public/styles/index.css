@@ -11,7 +11,7 @@ body{
 }
 
 .top-header-mobile {
-    height: 150px;
+    height: auto;
     background-color: white;
     display: flex;
     justify-content: space-between;
@@ -19,13 +19,14 @@ body{
 
 .logo-space {
    width: auto;
-   height: 120px;
+   height: auto;
    background-color: white;
 }
 img {
-    width: 120px;
+    width: 100%;
     height: 120px;
 }
+
 
 .nav-menu {
     background-color: RGB (101,190,199);
@@ -49,12 +50,13 @@ a {
 
 .main-body {
     height: 150px;
+    width: auto;
     background-color: white;
 }
 
 .container-img {
     margin: 0;
-    height: 150px;
+    height: auto;
 }
 
 ul, li {
@@ -65,7 +67,7 @@ ul, li {
 
 ul.slider {
     position: relative;
-    width: 344px;
+    width: 100%;
 }
 
 ul.slider li {
@@ -77,7 +79,7 @@ ul.slider li {
     transition: opacity .5s;
 }
 ul.slider li img {
-    width: 344px;
+    width: inherit;
     object-fit: cover; 
 }
 
@@ -115,3 +117,262 @@ h4 {
     margin: 12px;
     color:rgb(58, 57, 57);
 }
+
+h5 {
+    text-align: center;
+    margin: auto;
+    color:rgb(58, 57, 57);
+}
+
+section {
+    display: block;
+}
+
+main {
+    box-sizing: ​border-box​; 
+    margin: auto;
+    display: block;
+}
+
+section {
+    display: block;
+}
+
+main section div.productos {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+main section div.productos article {
+    width: 50%;
+    height: 50%;
+}
+
+main section article {
+    background-color: #fff;
+    margin: 10px 0px;
+    box-sizing: border-box;
+}
+
+main section article i {
+    display: block;
+    color:rgb(101, 190, 199);
+    font-size: 16px;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    right: -8px;
+    top: 5px;
+    text-align: center;
+}
+main section article img {
+    width: auto;
+    height: 120px;
+    object-fit: cover;
+}
+
+article div.pie-articulo {
+    width: 50%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: baseline;
+    border-top: 1px solid rgb(101, 190, 199);
+    position: relative;
+    padding: 5px;
+    margin: auto;
+}
+
+.descripcion {
+    margin: auto;
+    text-align: center;
+}
+
+.precio {
+    text-align: center;
+    margin: auto;
+    color:rgb(58, 57, 57);
+}
+
+h5 {
+    color: #fff;
+    text-align: center;
+}
+.agregar-carrito {
+    background-color: rgb(101, 190, 199);
+    margin: auto;
+    padding: 10px;
+    width: 100%;
+    height: 100%;
+}
+
+.mas-productos {
+    background-color: rgb(101, 190, 199);
+    margin: auto;
+    padding: 10px;
+    width: 50%;
+    height: 100%;
+}
+
+.container-icons {
+    margin: auto;
+    width: auto;
+    height: 150px;
+    background-color: rgb(101, 190, 199);
+    align-content: center;
+}
+
+div.container-icons {
+    margin: 0px 20px 0px 20px;
+}
+
+ul.icons {
+    position: relative;
+    width: 100%;
+    top: 25px;
+}
+
+ul.icons li {
+    position: absolute;
+    left: 0;
+    top:0;
+    opacity: 0;
+    width: inherit;
+    background-color: rgb(101, 190, 199);
+    transition: opacity .5s;
+       
+}
+
+ul.icons li i{
+    font-size: 30px;
+}
+
+ul.icons li:first-child {
+    opacity: 1;
+}
+
+ul.icons li:target {
+    opacity: 1;
+}
+.main-banner {
+    height: 150px;
+    width: auto;
+    background-color: rgb(101, 190, 199);
+    color:#fff;
+    text-align: center;
+}
+
+.banner-dots {
+    position: relative;
+    top: 150px;
+    text-align: center;
+    margin: 8px;
+}
+
+.banner-dots li {
+    display: inline-block;
+    text-align: center;
+}
+
+.banner-dots li a {
+    display: block;
+    text-decoration: none;
+    width: 8px;
+    height: 8px;
+    padding: 5px;
+    color: rgba(167, 164, 164, 0.87);
+}
+
+footer section.seguinos {
+    height: 150px;
+    width: auto;
+    background-color: white;
+    color: rgba(167, 164, 164, 0.87);
+    text-align: center;
+    margin: 30px 0 0 0;
+}
+
+.seguinos-iconos {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    border-bottom: 2px solid rgb(101, 190, 199);
+}
+
+.iconos {
+    font-size: 40px;
+}
+
+div .iconos i {
+    margin: 10px;
+    color: rgb(58, 57, 57);
+}
+
+.flecha-arriba {
+    position: relative;
+    left:150px;
+    color: rgb(101, 190, 199);
+    font-size: 40px;
+     
+}
+
+/* footer */
+
+.pie-pagina-flex {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.pie-logo-textos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    
+}
+
+.pie-pagina-flex h4{
+    text-align: left;
+    margin-left: 15px;
+}
+
+
+.pie-logo {
+    width: 40%;
+    height: 60%;
+}
+
+.pie-textos {
+    width: 50%;
+    height: 60%;
+}
+
+.pie-textos h4 {
+    text-align: center;
+}
+
+.pie-texto-compacto {
+    text-align: left;
+    font-size: 13px;
+}
+
+.whats-mail-ubicacion {
+    display: inline-flex;
+    flex-wrap: wrap;
+}
+
+.whats-mail-ubicacion p {
+    margin: 0;
+}
+
+
+
+
+
+
+
+
