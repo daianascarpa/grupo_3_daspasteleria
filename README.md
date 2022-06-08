@@ -38,5 +38,5 @@ El público consumidor al cual estará dirigido el producto, será una audiencia
 SOMOS ARTISTAS EN LA PASTELERIA :art:
 
 
-<h2> :point_right: Link tablero de trello: https://trello.com/b/bqqt6RZK/grupo-3-pasteleria :point_left:</h2>
+<h2> :point_right: Link tablero de trello: https://trello.com/b/bqqt6RZK/grupo-3-pasteleria </h2>
 
