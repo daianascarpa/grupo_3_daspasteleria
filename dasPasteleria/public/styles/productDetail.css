@@ -1,0 +1,347 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.imagen,.botones{
+   padding: 0px 450px;
+    background-position:center top;
+    width: 40%;
+    height: 40%;
+    text-align: right;
+    padding: 0px 0px 100px 200px;
+
+}
+.header,img{
+    display: flex;
+    justify-content: center;
+    width:80%;
+    
+}
+#boton-arriba{
+    border-top:1px solid rgb(101,190,199);
+}
+.botones{
+   
+   
+    background-color: orange;
+    color: white;
+    text-decoration-color: white;
+  
+}
+
+/* aca ponemos el body  */
+.tarjetas-all{
+    /* display: flex;
+    justify-content: center; */
+    display: flex;
+   justify-content: space-between;
+   flex-wrap: wrap;
+
+}
+.corazon-body{
+    display: flex;
+    margin-left: 250px;
+    color: rgb(101,190,199);
+    border-top: 1px solid rgb(101,190,199);
+}
+.card,img{
+    margin-left: auto;
+}
+.card-body{
+    text-align: center;
+}
+#boton{
+    padding: 10px;
+    margin: 8px;
+}
+.centrar{
+    text-align: center;
+}
+.letras{
+    display: flex;
+    padding: 10px;
+    text-decoration: underline;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.letras p{
+    width: 45%;
+    
+}
+.seleccionar{
+    display: flex;
+    text-align: left;
+    flex-direction: column;
+    margin-left: initial;
+    padding: inherit;
+    width: 60%;
+}
+
+  
+.botones-header{
+    text-align: center;
+    margin-top: auto;
+    border: 2px;
+    padding: 10px;
+}
+.form-select{
+    color: #878780;
+   
+    margin: 10px;
+    padding: 5px;
+    width: 20%;
+    background-position: right;
+    text-align: right;
+   
+}
+.col-md{
+    width: 20%;
+    display: flex;
+    justify-content: flex-end;
+}
+.derecha{
+    background-position-x: right top;
+    width: 20%;
+}
+
+/* final body */
+main {
+    box-sizing: ​border-box​; 
+    margin: auto;
+    display: block;
+}
+
+.main-banner {
+    height: 150px;
+    width: auto;
+    background-color: rgb(101, 190, 199);
+    color:#fff;
+    text-align: center;
+}
+.banner-dots {
+    position: relative;
+    top: 150px;
+    text-align: center;
+    margin: 8px;
+}
+
+.banner-dots li {
+    display: inline-block;
+    text-align: center;
+}
+
+.banner-dots li a {
+    display: block;
+    text-decoration: none;
+    width: 8px;
+    height: 8px;
+    padding: 5px;
+    color: rgba(167, 164, 164, 0.87);
+}
+
+.container-icons {
+    margin: auto;
+    width: auto;
+    height: 150px;
+    background-color: rgb(101, 190, 199);
+    align-content: center;
+}
+
+div.container-icons {
+    margin: 0px 20px 0px 20px;
+}
+
+ul.icons {
+    position: relative;
+    width: 100%;
+    top: 25px;
+}
+
+ul.icons li {
+    position: absolute;
+    left: 0;
+    top:0;
+    opacity: 0;
+    width: inherit;
+    background-color: rgb(101, 190, 199);
+    transition: opacity .5s;
+       
+}
+
+ul.icons li i{
+    font-size: 30px;
+}
+
+ul.icons li:first-child {
+    opacity: 1;
+}
+
+ul.icons li:target {
+    opacity: 1;
+}
+
+section.seguinos {
+    height: 150px;
+    width: auto;
+    background-color: white;
+    color: rgba(167, 164, 164, 0.87);
+    text-align: center;
+    margin: 30px 0 0 0;
+}
+
+.seguinos-iconos {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    border-bottom: 2px solid rgb(101, 190, 199);
+}
+
+.iconos {
+    font-size: 40px;
+}
+
+div .iconos i {
+    margin: 10px;
+    color: rgb(58, 57, 57);
+}
+
+.flecha-arriba {
+    position: relative;
+    left:150px;
+    color: rgb(101, 190, 199);
+    font-size: 40px;
+     
+}
+
+#textoF{
+    text-align: center;
+    color: aliceblue;
+}
+.telefono{
+    color: aliceblue;
+    background-position-x: left;
+    margin: 20%;
+}
+.camion{
+    margin: 35%;
+}
+.tarjeta{
+    margin: 35%;
+}
+.candado{
+    margin: 45%;
+}
+#envios{
+    text-align: center;
+    color: aliceblue;
+}
+#medios{
+    text-align: right;
+    color: aliceblue;
+}
+#efectivo{
+    text-align: center;
+}
+
+
+#seguir-footer{
+    text-align: center;
+}
+
+#ultimo-footer{
+    text-align: center;
+}
+#ordenarPor{
+    text-align: right;
+}
+.corazon{
+    text-align: right;
+    color: orange;
+    border-color: orange;
+}
+
+/* tarjetas del body  */
+
+
+
+
+/* footer  */
+#footer{
+    display: flex;
+  
+   flex-direction: row;
+   align-items: center;
+}
+
+
+.seguinos-iconos {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    /* border-bottom: 2px solid rgb(101, 190, 199); */
+    align-self: flex-end;
+}
+.iconos {
+    font-size: 40px;
+}
+div .iconos i {
+    margin: 10px;
+    color: rgb(58, 57, 57);
+}
+
+.medio{
+    display: flex;
+    align-items: center;
+}
+
+.pie-texto-compacto {
+    text-align: left;
+    font-size: 13px;
+}
+.whats-mail-ubicacion {
+    display: inline-flex;
+    flex-wrap: wrap;
+}
+.whats-mail-ubicacion p {
+    margin: 0;
+}
+
+.final{
+    text-align: center;
+}
+
+.div-display{
+    display: flex;
+    background-color: orange;
+    padding: 50px;
+    border: white;
+    justify-content: space-between;
+}
+#compraSegura{
+    
+  color: aliceblue;
+}
+
+/* esto es el footer */
+.container{
+    display: flex;
+   
+    flex-direction: row;
+}
+
+#row{
+   
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding-right: initial;
+    font-size: small;
+}
+
+
+#texto-final{
+    font-size: small;
+    text-align: center;
+}
+
