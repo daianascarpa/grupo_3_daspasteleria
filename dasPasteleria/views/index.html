@@ -7,31 +7,36 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/fd6da145d0.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <link rel="stylesheet" href="styles/header.css">
     <link rel="stylesheet" href="styles/index.css">
+    <link rel="stylesheet" href="styles/footer.css">
     <title>DAS Pasteleria</title>
 </head>
 <body>
     <!-- arranca el header  -->
     <header>
-    <div class="top-header-mobile">
-        <div class="form" action="#" method="GET">
+    <div class="h-top-header-mobile">
+        <div class="menu" action="#" method="GET">
             <div class="burger-menu">
                 <i class="fa fa-bars burger"></i>
             </div>
+            <p>INICIO</p>
         </div>
         <div class="logo-space"> 
             <img src="img/DAS_logo.png" alt="Logo DAS">
         </div>
-        <div class="form" action="#" method="GET">
-            <div class="input">Buscar</div>
-            <div class="submit"><i class="fa fa-search"></i></div>
+        <div class="box">
+            <div class="container-1">
+                <span class="icon"><i class="fa fa-search"></i></span>
+                <input type="search" id="search" placeholder="Buscar">
+            </div>
         </div>
     </div>   
     <div class="nav-menu">
         <nav class="lista-menu">
-        <a href="#">INICIO</a>
-        <a href="#">PRODUCTOS</a>
-        <a href="#">CARRITO</a>
+        <a href="/home">INICIO</a>
+        <a href="/detalle-de-producto">PRODUCTOS</a>
+        <a href="/carrito-de-compras">CARRITO</a>
         </nav>
     </div>
     </header>
