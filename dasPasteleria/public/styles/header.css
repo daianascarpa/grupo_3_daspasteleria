@@ -1,0 +1,90 @@
+.h-top-header-mobile {
+    height: auto;
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+}
+
+.menu {
+    width: 25%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.menu p {
+    margin: 5px 0px auto 20px;
+    width: 80%;
+    text-align: left;
+}
+
+.burger-menu {
+    width: 20%;
+}
+
+.burger-menu i {
+    background-color: rgb(101, 190, 199) ;
+    padding: 30%;
+    color: white ;
+    border-radius: 10%;
+    font-size: 20px;
+}
+
+.logo-space {
+   width: auto;
+   height: auto;
+   background-color: white;
+}
+img {
+    width: 100%;
+    height: 120px;
+}
+
+.box {
+    width: 25%;
+}
+
+.container-1 {
+    width: 100%;
+    vertical-align: middle;
+    white-space: nowrap;
+    position: relative;
+  }
+
+  .container-1 input#search{
+    width: 100%;
+    height: 25px;
+    background: whitesmoke;
+    border: solid 1px rgb(167, 164, 164);
+    font-size: 10pt;
+    float: left;
+    color: rgb(58, 57, 57);
+    padding-left: 30px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+  }
+
+  .container-1 .icon{
+    position: absolute;
+    margin: 3px 8px 3px 8px;
+    color: rgba(167, 164, 164, 0.87);
+  }
+
+.nav-menu {
+    text-align: center;    
+}
+
+a {
+  color: white;
+  font-weight:bold;
+  text-decoration: none;  
+}
+.lista-menu {
+    display: flex;
+    border: 100px;
+    background-color: rgb(101, 190, 199);
+    padding: 12px 0;
+    justify-content: space-around;
+  
+}
+

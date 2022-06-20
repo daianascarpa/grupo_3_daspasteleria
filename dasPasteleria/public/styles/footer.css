@@ -1,0 +1,109 @@
+footer section.seguinos {
+    height: 150px;
+    width: auto;
+    background-color: white;
+    color: rgba(167, 164, 164, 0.87);
+    text-align: center;
+    margin: 30px 0 0 0;
+}
+
+.seguinos-iconos {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    border-bottom: 2px solid rgb(101, 190, 199);
+}
+
+.iconos {
+    font-size: 40px;
+}
+
+div .iconos i {
+    margin: 10px;
+    color: rgb(58, 57, 57);
+}
+
+div .flecha-arriba {
+    width: 10%;
+}
+
+.flecha-arriba {
+    position: relative;
+    left:90%;
+    color: rgb(101, 190, 199);
+    font-size: 40px;
+     
+}
+
+.pie-pagina-flex {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.pie-logo-textos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    
+}
+
+.pie-pagina-flex h4{
+    text-align: left;
+    margin-left: 20px;
+}
+
+
+.pie-logo {
+    width: 35%;
+    height: 60%;
+}
+
+.pie-textos {
+    width: 50%;
+    height: 60%;
+}
+
+.pie-textos h4 {
+    text-align: center;
+}
+
+.pie-texto-compacto {
+    text-align: left;
+    font-size: 13px;
+}
+
+.whats-mail-ubicacion {
+    display: inline-flex;
+    flex-wrap: wrap;
+}
+
+.whats-mail-ubicacion p {
+    margin: 0;
+}
+
+.copyright {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    border-top:rgba(167, 164, 164, 0.589) solid 1px
+}
+.copyright i {
+    font-size: 10px;
+    padding: 5px;
+    margin: 5px 0 5px 0;
+    
+}
+
+.copyright p {
+    font-size: 10px;
+    padding: 5px;
+    margin: 5px 0 5px 0;
+    
+}
+
+
+
+
+
+
