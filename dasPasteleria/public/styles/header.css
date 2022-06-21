@@ -5,23 +5,23 @@
     justify-content: space-between;
 }
 
-.menu {
+.h-menu {
     width: 25%;
     display: flex;
     justify-content: space-between;
 }
 
-.menu p {
+.h-menu p {
     margin: 5px 0px auto 20px;
     width: 80%;
     text-align: left;
 }
 
-.burger-menu {
+.h-burger-menu {
     width: 20%;
 }
 
-.burger-menu i {
+.h-burger-menu i {
     background-color: rgb(101, 190, 199) ;
     padding: 30%;
     color: white ;
@@ -29,7 +29,7 @@
     font-size: 20px;
 }
 
-.logo-space {
+.h-logo-space {
    width: auto;
    height: auto;
    background-color: white;
@@ -39,18 +39,18 @@ img {
     height: 120px;
 }
 
-.box {
+.h-box {
     width: 25%;
 }
 
-.container-1 {
+.h-container-1 {
     width: 100%;
     vertical-align: middle;
     white-space: nowrap;
     position: relative;
   }
 
-  .container-1 input#search{
+  .h-container-1 input#search{
     width: 100%;
     height: 25px;
     background: whitesmoke;
@@ -64,13 +64,13 @@ img {
     border-radius: 5px;
   }
 
-  .container-1 .icon{
+  .h-container-1 .h-icon{
     position: absolute;
     margin: 3px 8px 3px 8px;
     color: rgba(167, 164, 164, 0.87);
   }
 
-.nav-menu {
+.h-nav-menu {
     text-align: center;    
 }
 
@@ -79,7 +79,8 @@ a {
   font-weight:bold;
   text-decoration: none;  
 }
-.lista-menu {
+
+.h-lista-menu {
     display: flex;
     border: 100px;
     background-color: rgb(101, 190, 199);
