@@ -1,7 +1,7 @@
 *{
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    h-box-sizing: border-h-box;
 }
 .imagen,.botones{
    padding: 0px 450px;
@@ -107,7 +107,7 @@
 
 /* final body */
 main {
-    box-sizing: ​border-box​; 
+    h-box-sizing: ​border-h-box​; 
     margin: auto;
     display: block;
 }
@@ -181,7 +181,7 @@ ul.icons li:target {
     opacity: 1;
 }
 
-section.seguinos {
+section.f-seguinos {
     height: 150px;
     width: auto;
     background-color: white;
@@ -190,23 +190,23 @@ section.seguinos {
     margin: 30px 0 0 0;
 }
 
-.seguinos-iconos {
+.f-seguinos-iconos {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     border-bottom: 2px solid rgb(101, 190, 199);
 }
 
-.iconos {
+.f-iconos {
     font-size: 40px;
 }
 
-div .iconos i {
+div .f-iconos i {
     margin: 10px;
     color: rgb(58, 57, 57);
 }
 
-.flecha-arriba {
+.f-flecha-arriba {
     position: relative;
     left:150px;
     color: rgb(101, 190, 199);
@@ -275,17 +275,17 @@ div .iconos i {
 }
 
 
-.seguinos-iconos {
+.f-seguinos-iconos {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     /* border-bottom: 2px solid rgb(101, 190, 199); */
     align-self: flex-end;
 }
-.iconos {
+.f-iconos {
     font-size: 40px;
 }
-div .iconos i {
+div .f-iconos i {
     margin: 10px;
     color: rgb(58, 57, 57);
 }
@@ -295,15 +295,15 @@ div .iconos i {
     align-items: center;
 }
 
-.pie-texto-compacto {
+.f-pie-texto-compacto {
     text-align: left;
     font-size: 13px;
 }
-.whats-mail-ubicacion {
+.f-whats-mail-ubicacion {
     display: inline-flex;
     flex-wrap: wrap;
 }
-.whats-mail-ubicacion p {
+.f-whats-mail-ubicacion p {
     margin: 0;
 }
 

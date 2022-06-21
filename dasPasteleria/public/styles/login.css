@@ -7,7 +7,7 @@ body{
 
 /* encabezado */
 
-.top-header-mobile {
+.h-top-header-mobile {
     height: auto;
     background-color: white;
     display: flex;
@@ -19,13 +19,13 @@ body{
 }
 
 
-.logo-space {
+.h-logo-space {
     width: auto;
     height: auto;
     background-color: white;
 }
 
-.nav-menu {
+.h-nav-menu {
     text-align: center;    
 }
 
@@ -35,7 +35,7 @@ a {
     text-decoration: none;  
 }
 
-.lista-menu {
+.h-lista-menu {
     display: flex;
     border: 100px;
     background-color: rgb(101, 190, 199);
@@ -43,16 +43,16 @@ a {
     justify-content: space-around;
 }
 
-.iconos {
+.f-iconos {
     font-size: 40px;
 }
 
-div .iconos i {
+div .f-iconos i {
     margin: 10px;
     color: rgb(58, 57, 57);
 }
 
-.flecha-arriba {
+.f-flecha-arriba {
     position: relative;
     left:150px;
     color: rgb(101, 190, 199);
@@ -69,7 +69,7 @@ div .iconos i {
     position: relative;
     z-index: 1;
     border-top: 5px solid rgb(101, 190, 199);
-    box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+    h-box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
 } 
 
 h2 {
@@ -93,7 +93,7 @@ h2 {
 
 .form_wrapper .row > div{
     padding: 0 15px;
-    box-sizing: border-box;
+    h-box-sizing: border-h-box;
 }
 
 .input_field{
@@ -120,7 +120,7 @@ h2 {
     padding: 8px 10px 9px 35px;
     height: 35px;
     border: 1px solid #ccc;
-    box-sizing: border-box;
+    h-box-sizing: border-h-box;
     outline: none;
 }
 
@@ -129,7 +129,7 @@ h2 {
 }
 
 .form_wrapper input[type="text"]:focus, .form_wrapper input[type="email"]:focus, .form_wrapper input[type="password"]:focus {
-    box-shadow: 0 0 2px 1px rgba(101, 190, 199, 0.5);
+    h-box-shadow: 0 0 2px 1px rgba(101, 190, 199, 0.5);
     border: 1px solid rgb(101, 190, 199);
     background: #fafafa;
 }
@@ -153,74 +153,74 @@ h2 {
 
 /* pie de pagina */
 
-.pie-pagina-flex {
+.f-pie-pagina-flex {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
 }
 
-.pie-logo-textos {
+.f-pie-logo-textos {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     
 }
 
-.pie-pagina-flex h4{
+.f-pie-pagina-flex h4{
     text-align: left;
     margin-left: 20px;
 }
 
 
-.pie-logo {
+.f-pie-logo {
     width: 35%;
     height: 60%;
 }
 
-.pie-textos {
+.f-pie-textos {
     width: 50%;
     height: 60%;
 }
 
-.pie-textos h4 {
+.f-pie-textos h4 {
     text-align: center;
 }
 
-.pie-texto-compacto {
+.f-pie-texto-compacto {
     text-align: left;
     font-size: 13px;
 }
 
-.whats-mail-ubicacion {
+.f-whats-mail-ubicacion {
     display: inline-flex;
     flex-wrap: wrap;
 }
 
-.whats-mail-ubicacion p {
+.f-whats-mail-ubicacion p {
     margin: 0;
 }
 
-.copyright {
+.f-copyright {
     display: flex;
     justify-content: center;
     margin-top: 10px;
     border-top:rgba(167, 164, 164, 0.589) solid 1px
 }
-.copyright i {
+.f-copyright i {
     font-size: 10px;
     padding: 5px;
     margin: 5px 0 5px 0;
     
 }
 
-.copyright p {
+.f-copyright p {
     font-size: 10px;
     padding: 5px;
     margin: 5px 0 5px 0;
     
 }
 
-footer section.seguinos {
+footer section.f-seguinos {
     height: 150px;
     width: auto;
     background-color: white;
@@ -229,7 +229,7 @@ footer section.seguinos {
     margin: 30px 0 0 0;
 }
 
-.seguinos-iconos {
+.f-seguinos-iconos {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
