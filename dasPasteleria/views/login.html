@@ -6,33 +6,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/fd6da145d0.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
-    <!-- <link rel="stylesheet" href="styles/index.css"> -->
-    <link rel="stylesheet" href="styles/register.css">
-    <title>Das pasteleria Register</title>
+    <link rel="stylesheet" href="styles/header.css">
+    <link rel="stylesheet" href="styles/login.css">
+    <link rel="stylesheet" href="styles/footer.css">
+    <title>Das - Inicio de Sesión</title>
 </head>
 <body>
     <header>
-        <div class="h-top-header-mobile">
-            <div class="form" action="#" method="GET">
-                <div class="h-burger-menu">
-                    <i class="fa fa-bars burger"></i>
+        <header>
+            <div class="h-top-header-mobile">
+                <div class="h-menu" action="#" method="GET">
+                    <div class="h-burger-menu">
+                        <i class="fa fa-bars burger"></i>
+                    </div>
+                    <p>INICIO DE SESIÓN</p>
                 </div>
+                <div class="h-logo-space"> 
+                    <img src="img/DAS_logo.png" alt="Logo DAS">
+                </div>
+                <div class="h-box">
+                    <div class="h-container-1">
+                        <span class="h-icon"><i class="fa fa-search"></i></span>
+                        <input type="search" id="search" placeholder="Buscar">
+                    </div>
+                </div>
+            </div>   
+            <div class="h-nav-menu">
+                <nav class="h-lista-menu">
+                <a href="/home">INICIO</a>
+                <a href="/detalle-de-producto">PRODUCTOS</a>
+                <a href="/carrito-de-compras">CARRITO</a>
+                </nav>
             </div>
-            <div class="h-logo-space"> 
-                <img src="img/DAS_logo.png" alt="Logo DAS" style="width: 100%;"> <!--solucion "no solucion" de ultimo momento -->
-            </div>
-            <div class="form" action="#" method="GET">
-                <div class="input">Buscar</div>
-                <div class="submit"><i class="fa fa-search"></i></div>
-            </div>
-        </div>   
-        <div class="h-nav-menu">
-            <nav class="h-lista-menu">
-            <a href="#">INICIO</a>
-            <a href="#">PRODUCTOS</a>
-            <a href="#">CARRITO</a>
-            </nav>
-        </div>
     </header>
     <main>
         <div class="form_wrapper">
@@ -56,11 +61,10 @@
                 
             </div>
         </div>
-    </div>
     </main>
     <footer>
         <section class="f-seguinos">
-            <div class="f-seguinos-iconos">
+            <div class="f-seguinos-iconos"> 
                 <h4>f-seguinos en</h4>
                 <div class="f-iconos">
                     <i class="fa-brands fa-instagram"></i>
@@ -76,28 +80,28 @@
                 <h4>DAS Pastelería</h4>
                 <div class="f-pie-logo-textos">
                     <div class="f-pie-logo">
-                        <img src="img/DAS_logo.png" alt="Logo DAS" style="width: 100%;"> <!--solucion "no solucion" de ultimo momento -->
+                        <img src="img/DAS_logo.png" alt="Logo DAS">
                     </div>
                     <div class="f-pie-textos">
                         <h4>Contactanos</h4>
-                        <div class="f-pie-texto-compacto">
-                            <div class="f-whats-mail-ubicacion">
-                                <i class="fa-brands fa-whatsapp"></i>
-                                <p>1122334455</p>
-                            </div>
-                            <div class="f-whats-mail-ubicacion">
-                                <i class="fa-regular fa-envelope"></i>
-                                <p>daspasteleria@gmail.com</p>
-                            </div>
-                            <div class="f-whats-mail-ubicacion">
-                                <i class="fa-solid fa-location-dot"></i>
-                                <p>Belgrano, CABA</p>
-                            </div>
-                        </div>
+                    <div class="f-pie-texto-compacto">
+                    <div class="f-whats-mail-ubicacion">
+                        <i class="fa-brands fa-whatsapp"></i>
+                        <p>1122334455</p>
+                    </div>
+                    <div class="f-whats-mail-ubicacion">
+                        <i class="fa-regular fa-envelope"></i>
+                        <p>daspasteleria@gmail.com</p>
+                    </div>
+                    <div class="f-whats-mail-ubicacion">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <p>Belgrano, CABA</p>
+                    </div>
+                    </div>
                     </div>
                 </div>
-                <div>
-                    <i class="fa-regular fa-f-copyright"></i>
+                <div class="f-copyright">
+                    <i class="fa-regular fa-copyright"></i>
                     <p>2022 DAS Pastelería - Todos los derechos reservados.</p>
                 </div>
             </div>
