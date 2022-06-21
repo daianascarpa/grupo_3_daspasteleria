@@ -8,10 +8,10 @@ body{
 }
     
 body h1,
-.cruz,
-.encabezado-2,
-.precio-unitario,
-.envio{
+.c-cruz,
+.c-encabezado-2,
+.c-precio-unitario,
+.c-envio{
   display: none
 }
     
@@ -19,7 +19,7 @@ form{
   background-color: white;
 }
     
-.encabezado{
+.c-encabezado{
         background-color:#ebebeb; 
         width: 100%; 
         height: 20%;
@@ -29,12 +29,12 @@ form{
 }
     
     
-.flecha {
+.c-flecha {
      color: rgb(110, 107, 107);
      display: block;
     }
     
-.encabezado h3{
+.c-encabezado h3{
        display: flex;
        align-items:center;
        font-weight: normal; 
@@ -47,16 +47,16 @@ form{
     
   
     
-.cuerpo {
+.c-cuerpo {
   margin:2%
 }
       
     
-.cuerpo img{
+.c-cuerpo img{
    width:25%;
 }
     
-.producto {
+.c-producto {
        display:flex;
        border-bottom: solid 2px  rgb(101,190,199);
        padding: 2%;
@@ -64,7 +64,7 @@ form{
        justify-content: space-between;
 }
           
-.descripcion{
+.c-descripcion{
       width:70vw;
       display: flex;
       flex-direction: row;
@@ -72,23 +72,23 @@ form{
       padding:1%
 }
     
-.descripcion p{
+.c-descripcion p{
   font-weight: bold
 }
-.descripcion i{
+.c-descripcion i{
           font-weight: 100;
           color:rgb(165, 163, 163)
 }
   
       
-.izq{
+.c-izq{
      display: flex;
      justify-content: space-between;
      flex-direction: column;
 }
     
     
-.derec{
+.c-derec{
       display: flex;
       justify-content: space-between;
       align-items: end;
@@ -96,7 +96,7 @@ form{
 }
     
     
-.cantidad {
+.c-cantidad {
         display: flex;
         justify-content: space-between;
         width: 80px;
@@ -111,23 +111,23 @@ p:active {
 }
       
    
-.cantidad p{ 
+.c-cantidad p{ 
           width: 80%;
           text-align: center;
           font-size: 100% ;
 }
 
-.resta {
+.c-resta {
         background-color: rgb(101,190,199);
         color: white;
 }
       
-.suma {
+.c-suma {
         background-color:  rgb(101,190,199);
         color: white;
 }
     
-.subtotal{ 
+.c-subtotal{ 
         padding-top:5%;
         box-sizing: border-box;
         display:flex;
@@ -135,19 +135,19 @@ p:active {
     
     
     
-.envio p{font-size: 15px;}
+.c-envio p{font-size: 15px;}
     
-.medios{
+.c-medios{
         border-top: solid 2px  rgb(101,190,199);
         padding: 5% 0 2% 0;}
     
     
-.postal input{
+.c-postal input{
          text-align: center; 
          padding: 2% 0.5%; 
         }
 
-.postal label button{
+.c-postal label button{
          color:white;
          background-color: rgb(101,190,199);
          border: solid 1px #ddd;
@@ -155,7 +155,7 @@ p:active {
   }
     
     
-.local{
+.c-local{
         display: flex;
         border:solid 0.1px #ddd;
         width: 100%;
@@ -167,17 +167,17 @@ p:active {
       
     
     
-.local p::after{
+.c-local p::after{
         Content:" GRATIS";
        color:rgb(101,190,199)
 }
-.total{
+.c-total{
        padding: 4% 0%; 
        box-sizing: border-box;
        display:flex
 }
     
-.compra {
+.c-compra {
          background-color: rgb(101,190,199);
          color: white; 
          border:none; 
@@ -187,15 +187,15 @@ p:active {
          font-weight: bold;
          font-family: roboto;}
     
-.boton{
+.c-boton{
          display: flex;
          justify-content: center;}  
     
-.boton :active{ 
+.c-boton :active{ 
         background-color: #ddd;
         color: black;}
     
-.link{ 
+.c-link{ 
         display: flex;
         justify-content: center;}
     
@@ -204,26 +204,26 @@ p:active {
     
     @media (min-width: 768px){
     
-    .envio,
-    .precio-unitario,
+    .c-envio,
+    .c-precio-unitario,
     body h1{display:block}  
     
-    .encabezado {
+    .c-encabezado {
       padding-top: 0%;
     }
     
-    .cruz{
+    .c-cruz{
         display:block; border: solid 2px;
         color: rgb(110, 107, 107);
         padding: 0.5% 1%;
         border-radius: 15%;}
 
-    .flecha,
-    .link{
+    .c-flecha,
+    .c-link{
        display: none;
       }
 
-  .encabezado-2{
+  .c-encabezado-2{
       display: flex;
       justify-content: space-between;
       padding: 2% 4%;
@@ -232,7 +232,7 @@ p:active {
       font-weight: bold;
     }
     
-  .encabezado h3{
+  .c-encabezado h3{
          justify-content: space-between;
          text-transform: uppercase;
          border-top: none;
@@ -240,12 +240,12 @@ p:active {
     
 
     
-  .derec {
+  .c-derec {
         flex-direction: row-reverse;
          width: 20%;
          align-items: flex-start;}
     
-  .total{
+  .c-total{
         background-color:rgb(101,190,199);
         color: white;
         padding: 2% 2%;
@@ -253,14 +253,14 @@ p:active {
         text-transform: uppercase
 }
 
-  .total,
-  .subtotal{ justify-content: space-between;
+  .c-total,
+  .c-subtotal{ justify-content: space-between;
 }
     
-  .boton{justify-content: end;
+  .c-boton{justify-content: end;
 }
 
-  .compra{width: 35%
+  .c-compra{width: 35%
 }
 
   body{background-color: beige;
