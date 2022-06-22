@@ -3,7 +3,7 @@ const app = express();
 const path = require('path');
 const indexRouter = require('./src/routes/indexRouter')
 const loginRouter = require('./src/routes/loginRouter')
-const productCardRouter = require('./src/routes/productCartRouter')
+const productCartRouter = require('./src/routes/productCartRouter')
 const productDetailRouter = require('./src/routes/productDetailRouter')
 const registerRouter = require('./src/routes/registerRouter')
 
@@ -14,7 +14,7 @@ app.use(express.static('public'));
 
 app.use('/', indexRouter)
 app.use('/', loginRouter)
-app.use('/', productCardRouter)
+app.use('/', productCartRouter)
 app.use('/', productDetailRouter)
 app.use('/', registerRouter)
 
