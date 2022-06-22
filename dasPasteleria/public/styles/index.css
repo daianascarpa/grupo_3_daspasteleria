@@ -1,7 +1,7 @@
 *​{ 
     margin: ​0​px​; 
     padding: ​0​px​; 
-    h-box-sizing: ​border-h-box​; 
+    box-sizing: ​border-box​; 
 }
 
 body{
@@ -91,7 +91,7 @@ section {
 }
 
 main {
-    h-box-sizing: ​border-h-box​; 
+    box-sizing: ​border-box​; 
     margin: auto;
     display: block;
 }
@@ -121,7 +121,7 @@ main section div.productos article {
 main section article {
     background-color: #fff;
     margin: 10px 0px;
-    h-box-sizing: border-h-box;
+    box-sizing: borderbox;
 }
 
 main section article i {
