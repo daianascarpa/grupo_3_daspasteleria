@@ -89,3 +89,8 @@ header > a {
   
 }
 
+.h-lista-menu a {
+    text-decoration: none;
+    font-weight: bold;
+    color: white;
+}
