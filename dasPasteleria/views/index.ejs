@@ -1,45 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/fd6da145d0.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
-    <link rel="stylesheet" href="styles/header.css">
+    <%- include ('./partials/head', {titulo}) %> 
     <link rel="stylesheet" href="styles/index.css">
-    <link rel="stylesheet" href="styles/footer.css">
-    <title>DAS Pasteleria</title>
-</head>
+
 <body>
     <!-- arranca el header  -->
-    <header>
-    <div class="h-top-header-mobile">
-        <div class="h-menu" action="#" method="GET">
-            <div class="h-burger-menu">
-                <i class="fa fa-bars burger"></i>
-            </div>
-            <p>INICIO</p>
-        </div>
-        <div class="h-logo-space"> 
-            <img src="img/DAS_logo.png" alt="Logo DAS">
-        </div>
-        <div class="h-box">
-            <div class="h-container-1">
-                <span class="h-icon"><i class="fa fa-search"></i></span>
-                <input type="search" id="search" placeholder="Buscar">
-            </div>
-        </div>
-    </div>   
-    <div class="h-nav-menu">
-        <nav class="h-lista-menu">
-        <a href="/home">INICIO</a>
-        <a href="/detalle-de-producto">PRODUCTOS</a>
-        <a href="/carrito-de-compras">CARRITO</a>
-        </nav>
-    </div>
-    </header>
+    <%- include ('./partials/header') %> 
     <div class="main-body">
         <div class="container-img">
             <ul class="slider">
@@ -164,52 +130,6 @@
             </div>
         </div>
     </main>
-    <footer>
-        <section class="f-seguinos">
-            <div class="f-seguinos-iconos"> 
-             <h4>f-seguinos en</h4>
-              <div class="f-iconos">
-                <i class="fa-brands fa-instagram"></i>
-                <i class="fa-brands fa-facebook-f"></i>
-              </div>
-              <div class="f-flecha-arriba">
-                <i class="fa-solid fa-chevron-up"></i>
-              </div>
-            </div>
-        </section>
-        <section class="f-pie-pagina">
-            <div class="f-pie-pagina-flex">
-                <h4>DAS Pastelería</h4>
-                <div class="f-pie-logo-textos">
-                  <div class="f-pie-logo">
-                   <img src="img/DAS_logo.png" alt="Logo DAS">
-                  </div>
-                  <div class="f-pie-textos">
-                   <h4>Contactanos</h4>
-                    <div class="f-pie-texto-compacto">
-                    <div class="f-whats-mail-ubicacion">
-                        <i class="fa-brands fa-whatsapp"></i>
-                        <p>1122334455</p>
-                    </div>
-                    <div class="f-whats-mail-ubicacion">
-                        <i class="fa-regular fa-envelope"></i>
-                        <p>daspasteleria@gmail.com</p>
-                    </div>
-                    <div class="f-whats-mail-ubicacion">
-                        <i class="fa-solid fa-location-dot"></i>
-                        <p>Belgrano, CABA</p>
-                    </div>
-                    </div>
-                   </div>
-                </div>
-                <div class="f-copyright">
-                    <i class="fa-regular fa-copyright"></i>
-                    <p>2022 DAS Pastelería - Todos los derechos reservados.</p>
-                </div>
-
-            </div>
-        </section>
-        
-    </footer>
+    <%- include ('./partials/footer') %> 
 </body>
 </html>

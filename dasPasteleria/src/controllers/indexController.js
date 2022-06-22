@@ -1,6 +1,6 @@
 const indexController = {
     index : function(req,res){
-        res.render('index')
+        res.render('index', {titulo:'DAS Pasteleria'})
     }
 }
 
