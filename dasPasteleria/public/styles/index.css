@@ -185,6 +185,10 @@ h5 {
     height: 100%;
 }
 
+.mas-productos a {
+    text-decoration: none;
+}
+
 .container-icons {
     margin: auto;
     width: auto;

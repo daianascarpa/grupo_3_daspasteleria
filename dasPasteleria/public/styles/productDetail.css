@@ -1,7 +1,7 @@
 *{
     margin: 0;
     padding: 0;
-    h-box-sizing: border-h-box;
+    box-sizing: border-box;
 }
 .imagen,.botones{
    padding: 0px 450px;
@@ -107,7 +107,7 @@
 
 /* final body */
 main {
-    h-box-sizing: ​border-h-box​; 
+    box-sizing: ​border-box​; 
     margin: auto;
     display: block;
 }
