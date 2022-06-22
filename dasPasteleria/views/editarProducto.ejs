@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    <%- include ('./partials/head', {titulo}) %> 
+    <link rel="stylesheet" href="styles/createProd.css">
+ 
+<body>
+    <%- include ('./partials/header') %> 
+    <main>
+        <div class="form_wrapper">
+            <div class="form_container">
+                <div class="title_container">
+                    <h2>Edicion de Producto</h2>
+                </div>
+                <div class="row clearfix">
+                    <div class="">
+                        <form>
+                            <div class="input_field"> 
+                                <input type='texto' name="idProducto" placeholder="Nombre del Producto" required>
+                            </div>
+                            <div class="input_field"> 
+                                <textarea name="descripcion" id= "descripcion"> Editar Descripcion detallada del producto</textarea>
+                            </div>
+                            <div class="input_field"> 
+                                <input type="file"  id="foto producto" name="foto producto" accept="image/png, image/jpeg">
+                            </div>
+                            <div class="row clearfix">
+                                <div>
+                                    <div class="input_field"> 
+
+                                       <label>Editar categoria seleccionada:</label>
+                                            <select name="categoria">
+                                             <option value="tortas">Tortas</option>
+                                             <option value="tartas">Tartas</option>
+                                             <option value="muffins">Muffins</option>
+                                             <option value="cookies&masas">Cookies y Masas</option>
+                                            </select>
+                                    </div>
+                                    
+                                    <div class="input_field"> 
+
+                                        <label>Editar Tamaño/Unidades:</label>
+                                             <select name="Tamaño">
+                                              <option value="mediana">Mediana</option>
+                                              <option value="grande">Grande</option>
+                                              <option value="docena">Docena</option>
+                                              <option value="mediadocena">Media Docena</option>
+                                             </select>
+                                     </div>
+                                     <div class="input_field"> 
+                                        <input type='number' name="number" placeholder="precio del Producto" required>
+                                    </div>
+
+                                </div>
+                            </div>
+                                <div>
+                                    <input class="button" type="submit" value="Crear">
+                                    <input class="button" type="reset" value="Cancelar">
+                                </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </main>
+    <%- include ('./partials/footer') %> 
+</body>
+</html>
