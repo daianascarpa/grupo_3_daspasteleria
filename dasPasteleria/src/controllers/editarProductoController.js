@@ -1,6 +1,6 @@
 const editarProducto = {
     editar : function(req,res){
-        res.render('editarProducto')
+        res.render('editarProducto', {titulo: "Editar producto"})
     }
 }
 
