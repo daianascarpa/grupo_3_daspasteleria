@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include ('./partials/head', {titulo}) %> 
+    <link rel="stylesheet" href="styles/register.css">
+</head>
+<body>
+
+    <%- include ('./partials/header') %>
+
+    <main>
+        <div class="form_wrapper">
+            <div class="form_container">
+                <div class="title_container">
+                    <h2>Registro</h2>
+                </div>
+                <div class="row clearfix">
+                    <div class="">
+                        <form>
+                            <div class="input_field"> <span><i aria-hidden="true" class="fa fa-envelope"></i></span>
+                                <input type="email" name="email" placeholder="Email" required>
+                            </div>
+                            <div class="input_field"> <span><i aria-hidden="true" class="fa fa-lock"></i></span>
+                                <input type="password" name="password" placeholder="Contraseña" required>
+                            </div>
+                            <div class="input_field"> <span><i aria-hidden="true" class="fa fa-lock"></i></span>
+                                <input type="password" name="password" placeholder="Confirmar contraseña" required>
+                            </div>
+                            <div class="row clearfix">
+                                <div>
+                                    <div class="input_field"> <span><i aria-hidden="true" class="fa fa-user"></i></span>
+                                        <input type="text" name="name" placeholder="Nombre">
+                                    </div>
+                                    <label class="r-c-box">
+                                        <input type="checkbox" > Acepto los términos y condiciones
+                                    </label required>
+                                </div>
+                            </div>
+                            <input class="button" type="submit" value="Registrarte">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <%- include ('./partials/footer') %> 
+
+</body>
+</html>

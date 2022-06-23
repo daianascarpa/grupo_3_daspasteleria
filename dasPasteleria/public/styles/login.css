@@ -5,7 +5,7 @@
 }
 
 body{
-    font-size: 'Roboto', sans-serif;
+    font-size: Roboto, sans-serif;
     color: rgb(58, 57, 57);
     background-color: #f2f2f2;
     font-size: 14px;
@@ -97,6 +97,12 @@ h2 {
     margin-bottom: 10px;
 }
 
+.l-c-box{
+    display: flex;
+    align-items: center;
+    padding-bottom: 10px;
+}
+
 form{
     width: 90%;
 }
@@ -106,9 +112,9 @@ form{
 }
 
 
-/* @media (min-width: 400px) {
+@media (min-width: 400px) {
     .form_wrapper{
         width: 400px;
         float: none;
     }
-} */
+}
