@@ -8,6 +8,7 @@ const productDetailRouter = require('./src/routes/productDetailRouter')
 const registerRouter = require('./src/routes/registerRouter')
 const createProdRouter = require('./src/routes/createProdRouter')
 const editProductRouter = require('./src/routes/editProductRouter');
+const productViewRouter = require('./src/routes/productViewRouter')
 
 
 app.set('view engine', 'ejs')
@@ -21,6 +22,7 @@ app.use('/', productCartRouter)
 app.use('/', productDetailRouter)
 app.use('/', registerRouter)
 app.use('/', createProdRouter)
+app.use('/', productViewRouter)
 
 
 

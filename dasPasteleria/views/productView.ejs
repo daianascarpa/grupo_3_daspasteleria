@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include ('./partials/head', {titulo}) %> 
+    <link rel="stylesheet" href="styles/productView.css">
+</head>
+<body>
+    <%- include ('./partials/header') %>
+    <main>
+        <form>
+            <section class="c-cuerpo">
+                <article class="c-producto">
+                    <img src="img/chocotorta2.jpg" alt="torta1">
+                    <div class="c-descripcion">
+                        <div class="c-izq">   
+                            <p>Chocotorta</p> 
+                            <p class="c-precio-unitario">$000</p>
+                            <div class="c-cantidad">
+                                <p class="c-resta">-</p>
+                                <p> 1 </p>
+                                <p class="c-suma">+</p>       
+                            </div> 
+                        </div>
+                        <div class="c-derec">
+                            <i class="fa-solid fa-trash-can"></i>   
+                            <!-- <p class="precio">$000</p> -->
+                        </div>
+                    </div>
+                </article>
+            </section>
+        </form>
+    <%- include ('./partials/footer') %>
+</body>
+</html>
