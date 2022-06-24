@@ -49,25 +49,26 @@ form {
 
 
 .c-cuerpo {
-    margin: 2%
+    margin: 8px
 }
 
 
 .c-cuerpo img {
-    width: 25%;
+    width: 90%;
+    height: auto;
 }
 
 .c-producto {
-    display: flex;
+    /* display: flex; */
     border-bottom: solid 2px rgb(101, 190, 199);
     padding: 2%;
     box-sizing: border-box;
     justify-content: space-between;
+    text-align: center;
 }
 
 .c-descripcion {
-    width: 70vw;
-    display: flex;
+    /* display: flex; */
     flex-direction: row;
     justify-content: space-between;
     padding: 1%
@@ -90,77 +91,98 @@ form {
 }
 
 
-.c-derec {
+
+.c-izq p {
+    text-align: center;
+}
+
+.c-description-wrap{
     display: flex;
-    justify-content: space-between;
-    align-items: end;
+    justify-content: center;
     flex-direction: column;
 }
 
 
-.c-cantidad {
+/* botones */
+
+/* .c-cantidad {
     display: flex;
     justify-content: space-between;
     width: 80px;
     border: solid 1px rgb(165, 163, 163);
     box-sizing: border-box;
-}
+} */
 
 
-p:active {
+/* p:active {
     background-color: #ddd;
     color: black;
-}
+} */
 
 
-.c-cantidad p {
+/* .c-cantidad p {
     width: 80%;
     text-align: center;
     font-size: 100%;
-}
+} */
 
-.c-resta {
+/* .c-resta {
     background-color: rgb(101, 190, 199);
     color: white;
-}
+} */
 
-.c-suma {
+/* .c-suma {
     background-color: rgb(101, 190, 199);
     color: white;
-}
+} */
 
-.c-subtotal {
+/* botones */
+
+
+
+
+
+
+/* .c-derec {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    flex-direction: column;
+} */
+
+
+/* .c-subtotal {
     padding-top: 5%;
     box-sizing: border-box;
     display: flex;
-}
+} */
 
 
 
-.c-envio p {
+/* .c-envio p {
     font-size: 15px;
-}
+} */
 
-.c-medios {
+/* .c-medios {
     border-top: solid 2px rgb(101, 190, 199);
     padding: 5% 0 2% 0;
-}
+} */
 
 
-.c-postal input {
+/* .c-postal input {
     text-align: center;
     padding: 2% 0.5%;
-}
+} */
 
-.c-postal label button {
+/* .c-postal label button {
     color: white;
     background-color: rgb(101, 190, 199);
     border: solid 1px #ddd;
     padding: 2%
-}
+} */
 
 
-.c-local {
+/* .c-local {
     display: flex;
     border: solid 0.1px #ddd;
     width: 100%;
@@ -168,22 +190,22 @@ p:active {
     padding: 8px;
     box-sizing: border-box;
     align-items: center;
-}
+} */
 
 
 
-.c-local p::after {
+/* .c-local p::after {
     Content: " GRATIS";
     color: rgb(101, 190, 199)
-}
+} */
 
-.c-total {
+/* .c-total {
     padding: 4% 0%;
     box-sizing: border-box;
     display: flex
-}
+} */
 
-.c-compra {
+/* .c-compra {
     background-color: rgb(101, 190, 199);
     color: white;
     border: none;
@@ -192,22 +214,22 @@ p:active {
     text-align: center;
     font-weight: bold;
     font-family: roboto;
-}
+} */
 
-.c-boton {
+/* .c-boton {
     display: flex;
     justify-content: center;
-}
+} */
 
-.c-boton :active {
+/* .c-boton :active {
     background-color: #ddd;
     color: black;
-}
+} */
 
-.c-link {
+/* .c-link {
     display: flex;
     justify-content: center;
-}
+} */
 
 a {
     font-size: 12px;
