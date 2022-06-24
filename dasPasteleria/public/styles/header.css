@@ -1,3 +1,9 @@
+*​{ 
+    margin: ​0​px​; 
+    padding: ​0​px​; 
+    box-sizing: ​border-box​; 
+}
+
 .h-top-header-mobile {
     height: auto;
     background-color: white;

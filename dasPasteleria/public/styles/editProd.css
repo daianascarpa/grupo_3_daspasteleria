@@ -5,7 +5,7 @@
 }
 
 body{
-    font-size: 'Roboto', sans-serif;
+    font-family: 'Roboto', sans-serif;
     color: rgb(58, 57, 57);
     background-color: #f2f2f2;
     font-size: 14px;
@@ -84,7 +84,7 @@ h2 {
     background: #fafafa;
 }
 
-.form_wrapper input[type="submit"]{
+.form_wrapper input[type="submit"] {
     background: rgb(101, 190, 199);
     height: 35px;
     line-height: 35px;
@@ -95,6 +95,21 @@ h2 {
     color: #fff;
     font-size: 1.1em;
     margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.form_wrapper input[type="reset"] {
+    background: rgb(101, 190, 199);
+    height: 35px;
+    line-height: 35px;
+    width: 100%;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    color: #fff;
+    font-size: 1.1em;
+    margin-bottom: 10px;
+    font-weight: bold;
 }
 
 .r-c-box{
@@ -110,6 +125,9 @@ form{
     background: rgb(11, 119, 131);
 }
 
+.form_wrapper input[type="reset"]:hover{
+    background: rgb(11, 119, 131);
+}
 
 @media (min-width: 400px) {
     .form_wrapper{

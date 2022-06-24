@@ -3,6 +3,13 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+body{
+    font-family: 'Roboto', sans-serif;
+    color: rgb(58, 57, 57);
+    background-color: white;
+}
+
 .imagen,.botones{
    padding: 0px 450px;
     background-position:center top;

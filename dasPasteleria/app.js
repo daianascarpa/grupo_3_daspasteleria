@@ -7,22 +7,21 @@ const productCartRouter = require('./src/routes/productCartRouter')
 const productDetailRouter = require('./src/routes/productDetailRouter')
 const registerRouter = require('./src/routes/registerRouter')
 const createProdRouter = require('./src/routes/createProdRouter')
-const modifyProdRouter = require('./src/routes/modifyProdRouter');
-const editarProductoRouter = require('./src/routes/editarProductoRouter');
+const editProductRouter = require('./src/routes/editProductRouter');
 
 
 app.set('view engine', 'ejs')
 
 app.use(express.static('public'));
 
-app.use('/',editarProductoRouter);
+app.use('/', editProductRouter);
 app.use('/', indexRouter)
 app.use('/', loginRouter)
 app.use('/', productCartRouter)
 app.use('/', productDetailRouter)
 app.use('/', registerRouter)
 app.use('/', createProdRouter)
-app.use('/', modifyProdRouter)
+
 
 
 
