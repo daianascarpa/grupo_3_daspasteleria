@@ -1,80 +1,13 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+*​{ 
+    margin: ​0​px​; 
+    padding: ​0​px​; 
+    box-sizing: ​border-box​; 
 }
 
 body{
     font-family: 'Roboto', sans-serif;
     color: rgb(58, 57, 57);
     background-color: white;
-}
-
-.imagen,.botones{
-   padding: 0px 450px;
-    background-position:center top;
-    width: 40%;
-    height: 40%;
-    text-align: right;
-    padding: 0px 0px 100px 200px;
-
-}
-.header,img{
-    display: flex;
-    justify-content: center;
-    width:80%;
-    
-}
-#boton-arriba{
-    border-top:1px solid rgb(101,190,199);
-}
-.botones{
-   
-   
-    background-color: orange;
-    color: white;
-    text-decoration-color: white;
-  
-}
-
-/* aca ponemos el body  */
-.tarjetas-all{
-    /* display: flex;
-    justify-content: center; */
-    display: flex;
-   justify-content: space-between;
-   flex-wrap: wrap;
-
-}
-.corazon-body{
-    display: flex;
-    margin-left: 250px;
-    color: rgb(101,190,199);
-    border-top: 1px solid rgb(101,190,199);
-}
-.card,img{
-    margin-left: auto;
-}
-.card-body{
-    text-align: center;
-}
-#boton{
-    padding: 10px;
-    margin: 8px;
-}
-.centrar{
-    text-align: center;
-}
-.letras{
-    display: flex;
-    padding: 10px;
-    text-decoration: underline;
-    justify-content: space-between;
-    flex-wrap: wrap;
-}
-.letras p{
-    width: 45%;
-    
 }
 .seleccionar{
     display: flex;
@@ -85,13 +18,7 @@ body{
     width: 60%;
 }
 
-  
-.botones-header{
-    text-align: center;
-    margin-top: auto;
-    border: 2px;
-    padding: 10px;
-}
+
 .form-select{
     color: #878780;
    
@@ -102,49 +29,185 @@ body{
     text-align: right;
    
 }
-.col-md{
-    width: 20%;
-    display: flex;
-    justify-content: flex-end;
-}
-.derecha{
-    background-position-x: right top;
-    width: 20%;
-}
-
-/* final body */
-main {
-    box-sizing: ​border-box​; 
-    margin: auto;
-    display: block;
-}
-
-.main-banner {
+.main-body {
     height: 150px;
     width: auto;
-    background-color: rgb(101, 190, 199);
-    color:#fff;
-    text-align: center;
+    background-color: white;
 }
-.banner-dots {
+
+.container-img {
+    margin: 0;
+    height: auto;
+}
+
+ul, li {
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+}
+
+ul.slider {
     position: relative;
-    top: 150px;
+    width: 100%;
+}
+
+ul.slider li {
+    position: absolute;
+    left: 0;
+    top:0;
+    opacity: 0;
+    width: inherit;
+    transition: opacity .5s;
+}
+ul.slider li img {
+    width: inherit;
+    object-fit: cover; 
+}
+
+ul.slider li:first-child {
+    opacity: 1;
+}
+
+ul.slider li:target {
+    opacity: 1;
+}
+
+.h-menu-dots {
+    position: relative;
+    top: 130px;
     text-align: center;
     margin: 8px;
 }
 
-.banner-dots li {
+.h-menu-dots li {
     display: inline-block;
     text-align: center;
 }
 
-.banner-dots li a {
+.h-menu-dots li a {
     display: block;
     text-decoration: none;
     width: 8px;
     height: 8px;
     padding: 5px;
     color: rgba(167, 164, 164, 0.87);
+}
+
+h4 {
+    text-align: center;
+    margin: 12px;
+    color:rgb(58, 57, 57);
+}
+
+h5 {
+    text-align: center;
+    margin: auto;
+    color:rgb(58, 57, 57);
+}
+
+section {
+    display: block;
+}
+
+main {
+    box-sizing: ​border-box​; 
+    margin: auto;
+    display: block;
+}
+
+section {
+    display: block;
+}
+
+.cont-img-card {
+    width: 95%;
+    height: 100%;
+    margin: auto;
+}
+main section div.productos {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+main section div.productos article {
+    width: 50%;
+    height: 50%;
+}
+
+main section article {
+    background-color: #fff;
+    margin: 10px 0px;
+    box-sizing: borderbox;
+}
+
+main section article i {
+    display: block;
+    color:rgb(101, 190, 199);
+    font-size: 16px;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    right: -8px;
+    top: 5px;
+    text-align: center;
+}
+main section article img {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+}
+
+article div.pie-articulo {
+    width: 90%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: baseline;
+    border-top: 1px solid rgb(101, 190, 199);
+    position: relative;
+    padding: 5px;
+    margin: auto;
+    box-sizing: border-box;
+}
+
+.descripcion {
+    margin: auto;
+    text-align: center;
+}
+
+.precio {
+    text-align: center;
+    margin: auto;
+    color:rgb(58, 57, 57);
+    padding-bottom: 10px;
+}
+
+h5 {
+    color: #fff;
+    text-align: center;
+}
+.agregar-carrito {
+    background-color: rgb(101, 190, 199);
+    margin: auto;
+    padding: 10px;
+    width: 90%;
+    height: 100%;
+}
+
+.mas-productos {
+    background-color: rgb(101, 190, 199);
+    margin: auto;
+    padding: 10px;
+    width: 50%;
+    height: 100%;
+}
+
+.mas-productos a {
+    text-decoration: none;
 }
 
 .container-icons {
@@ -187,168 +250,31 @@ ul.icons li:first-child {
 ul.icons li:target {
     opacity: 1;
 }
-
-section.f-seguinos {
+.main-banner {
     height: 150px;
     width: auto;
-    background-color: white;
-    color: rgba(167, 164, 164, 0.87);
+    background-color: rgb(101, 190, 199);
+    color:#fff;
     text-align: center;
-    margin: 30px 0 0 0;
 }
 
-.f-seguinos-iconos {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    border-bottom: 2px solid rgb(101, 190, 199);
-}
-
-.f-iconos {
-    font-size: 40px;
-}
-
-div .f-iconos i {
-    margin: 10px;
-    color: rgb(58, 57, 57);
-}
-
-.f-flecha-arriba {
+.banner-dots {
     position: relative;
-    left:150px;
-    color: rgb(101, 190, 199);
-    font-size: 40px;
-     
+    top: 150px;
+    text-align: center;
+    margin: 8px;
 }
 
-#textoF{
-    text-align: center;
-    color: aliceblue;
-}
-.telefono{
-    color: aliceblue;
-    background-position-x: left;
-    margin: 20%;
-}
-.camion{
-    margin: 35%;
-}
-.tarjeta{
-    margin: 35%;
-}
-.candado{
-    margin: 45%;
-}
-#envios{
-    text-align: center;
-    color: aliceblue;
-}
-#medios{
-    text-align: right;
-    color: aliceblue;
-}
-#efectivo{
+.banner-dots li {
+    display: inline-block;
     text-align: center;
 }
 
-
-#seguir-footer{
-    text-align: center;
+.banner-dots li a {
+    display: block;
+    text-decoration: none;
+    width: 8px;
+    height: 8px;
+    padding: 5px;
+    color: rgba(167, 164, 164, 0.87);
 }
-
-#ultimo-footer{
-    text-align: center;
-}
-#ordenarPor{
-    text-align: right;
-}
-.corazon{
-    text-align: right;
-    color: orange;
-    border-color: orange;
-}
-
-/* tarjetas del body  */
-
-
-
-
-/* footer  */
-#footer{
-    display: flex;
-  
-   flex-direction: row;
-   align-items: center;
-}
-
-
-.f-seguinos-iconos {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    /* border-bottom: 2px solid rgb(101, 190, 199); */
-    align-self: flex-end;
-}
-.f-iconos {
-    font-size: 40px;
-}
-div .f-iconos i {
-    margin: 10px;
-    color: rgb(58, 57, 57);
-}
-
-.medio{
-    display: flex;
-    align-items: center;
-}
-
-.f-pie-texto-compacto {
-    text-align: left;
-    font-size: 13px;
-}
-.f-whats-mail-ubicacion {
-    display: inline-flex;
-    flex-wrap: wrap;
-}
-.f-whats-mail-ubicacion p {
-    margin: 0;
-}
-
-.final{
-    text-align: center;
-}
-
-.div-display{
-    display: flex;
-    background-color: orange;
-    padding: 50px;
-    border: white;
-    justify-content: space-between;
-}
-#compraSegura{
-    
-  color: aliceblue;
-}
-
-/* esto es el footer */
-.container{
-    display: flex;
-   
-    flex-direction: row;
-}
-
-#row{
-   
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    padding-right: initial;
-    font-size: small;
-}
-
-
-#texto-final{
-    font-size: small;
-    text-align: center;
-}
-
