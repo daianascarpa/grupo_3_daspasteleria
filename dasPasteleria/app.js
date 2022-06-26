@@ -4,7 +4,7 @@ const path = require('path');
 const indexRouter = require('./src/routes/indexRouter')
 const loginRouter = require('./src/routes/loginRouter')
 const productCartRouter = require('./src/routes/productCartRouter')
-const productDetailRouter = require('./src/routes/productDetailRouter')
+const productRouter = require('./src/routes/productRouter')
 const registerRouter = require('./src/routes/registerRouter')
 const createProdRouter = require('./src/routes/createProdRouter')
 const editProductRouter = require('./src/routes/editProductRouter');
@@ -19,7 +19,7 @@ app.use('/', editProductRouter);
 app.use('/', indexRouter)
 app.use('/', loginRouter)
 app.use('/', productCartRouter)
-app.use('/', productDetailRouter)
+app.use('/', productRouter)
 app.use('/', registerRouter)
 app.use('/', createProdRouter)
 app.use('/', productViewRouter)
