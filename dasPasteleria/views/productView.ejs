@@ -14,24 +14,26 @@
                     <div class="c-descripcion">
                         <div class="c-izq">
                             <div class="c-description-wrap">
-                                <p>Chocotorta</p> 
+                                <h2 class="pv-p-name">Chocotorta</h2> 
                                 <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt assumenda</span>
-                                <p class="c-precio-unitario">$000</p>
-                                <div>
+                                <h3 class="pv-final-price">$9999</h3>
+                                <div class="pv-full-form">
                                     <span>
                                         Tamanio/cantidad
                                     </span>
                                     <form action="/">
                                         <div class="pv-selector-button">
-                                            <ul>
-                                                <li>
+                                            <ul class="pv-radio-select">
+                                                <li class="pv-input-container">
                                                     <label class="radio">
-                                                        <input type="radio" name="cantidad"><span>chico / 1/2 docena</span>
+                                                        <input type="radio" name="cantidad" class="input-radio">
+                                                        <span class="pv-radio-span">chico / 1/2 docena</span>
                                                     </label>
                                                 </li>
-                                                <li>
+                                                <li class="pv-input-container">
                                                     <label class="radio">
-                                                        <input type="radio" name="cantidad"><span>grande / 1 docena</span>
+                                                        <input type="radio" name="cantidad" class="input-radio" checked="checked">
+                                                        <span class="pv-radio-span">grande / 1 docena</span>
                                                     </label>
                                                 </li>
                                             </ul>
@@ -39,21 +41,22 @@
                                         <div class="pv-qty-wrap">
                                             <span>cantidad</span>
                                             <div class="pv-qty">
-                                                <span>
-                                                    <button name="qty">
-                                                        -
-                                                    </button>
-                                                </span>
-                                                <!-- <span></span> -->
-                                                <input type="number" value="1" name="qty">
-                                                <!-- <span></span> -->
-                                                <span>
-                                                    <button name="qty">
-                                                        +
-                                                    </button>
-                                                </span>
+                                                    <span>
+                                                        <button name="qty">
+                                                            -
+                                                        </button>
+                                                    </span>
+                                                    <!-- <span></span> -->
+                                                    <input type="number" value="1" name="qty">
+                                                    <!-- <span></span> -->
+                                                    <span>
+                                                        <button name="qty">
+                                                            +
+                                                        </button>
+                                                    </span>
                                             </div>
                                         </div>
+
                                     </form>
                                 </div>
                                 <!-- <div class="c-cantidad">
