@@ -148,10 +148,53 @@ li > label {
     font-size: 0.8em;
 }
 
-.pv-qty{
+
+.pv-qty-wrap{
     font-size: 1.5em;
     display: inline-flex;
 }
+
+
+
+/* .pv-input-group-btn .pv-nput-group-full-touchspin .pv-qty-wrap{
+    height: auto;
+} */
+
+.pv-input-group-btn{
+    display: flex;
+    border-radius: 30px;
+}
+
+.pv-btn-down{
+    display: block;
+    height: 2.5rem;
+    margin-top: 0.25rem;
+    padding: 0 15px;
+    color: #000;
+    font-size: 1.25rem;
+    line-height: 1;
+}
+
+.pv-nput-group-full-touchspin .pv-input-group-btn > .pv-btn-down{
+    border: 0;
+    box-shadow: none;
+    font-size: 2em;
+    padding: 0.625rem 1rem;
+    text-transform: uppercase;
+    background-color: white;
+    
+}
+
+
+.pv-nput-group-full-touchspin{
+    display: flex;
+    border-radius: 30px;
+    padding: 3px;
+    border: 1px solid #000;
+    position: relative;
+    height: 100%;
+}
+
 
 /* botones */
 
