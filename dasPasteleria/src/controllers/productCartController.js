@@ -1,7 +1,7 @@
-const productCartController = {
-    productCart : function(req,res){
-        res.render('productCart', {titulo: "Carrito de Compras"})
-    }
-}
+/*const productCartController = {
+  productCart: function(req,res){
+        res.render('productCart', {titulo:'Carrito-de-compras'})
+    }}
 
-module.exports = productCartController
+
+    module.exports = productCartController;*/

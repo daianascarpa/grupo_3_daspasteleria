@@ -1,31 +1,29 @@
 const express = require('express');
-const app = express();
 const path = require('path');
-const indexRouter = require('./src/routes/indexRouter')
-const loginRouter = require('./src/routes/loginRouter')
-const productCartRouter = require('./src/routes/productCartRouter')
-const productRouter = require('./src/routes/productRouter')
-const registerRouter = require('./src/routes/registerRouter')
-const createProdRouter = require('./src/routes/createProdRouter')
-const editProductRouter = require('./src/routes/editProductRouter');
-const productViewRouter = require('./src/routes/productViewRouter')
+const methodOverride = require('method-override')
 
 
-app.set('view engine', 'ejs')
+const app = express();
 
+
+app.use(express.urlencoded({extended:false}));
+app.use(express.json());
+app.use(methodOverride("_method"))
 app.use(express.static('public'));
 
-app.use('/', editProductRouter);
+
+const indexRouter = require('./src/routes/indexRouter')
+const userRouter = require('./src/routes/userRouter')
+const productRouter = require('./src/routes/productRouter')
+//const productCartRouter = require('./src/routes/productCartRouter')
+
+
 app.use('/', indexRouter)
-app.use('/', loginRouter)
-app.use('/', productCartRouter)
-app.use('/', productRouter)
-app.use('/', registerRouter)
-app.use('/', createProdRouter)
-app.use('/', productViewRouter)
+app.use('/Usuarios', userRouter)
+app.use('/Productos', productRouter)
+//app.use('/carrito-de-compras', productCartRouter)
 
-
-
+app.set('view engine', 'ejs')
 
 app.listen(3030,()=>{
     console.log("Levantando un servidor con Express");
