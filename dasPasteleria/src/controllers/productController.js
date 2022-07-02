@@ -14,7 +14,7 @@ const productController = {
     detail : function(req,res){
         let idProductView = req.params.id
         let productView = products.find( product => product.id == idProductView )
-        res.render('productView', {titulo: "Detalle del producto", productView})
+        res.render('productView', {titulo: "Detalle del producto " + productView.product_name, productView})
 },
 
 
