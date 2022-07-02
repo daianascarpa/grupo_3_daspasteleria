@@ -2,20 +2,25 @@ const fs = require('fs');
 const path = require('path');
 
 const productsFilePath =  path.join(__dirname, '../data/dasProductList.json');
-const product = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
 
 const productController = {
 
    product : function(req,res){
-        res.render('product', {titulo: 'Catálogo Productos'})
+        res.render('product', {titulo: 'Catálogo Productos', products})
     },
 
     detail : function(req,res){
-        res.render('productView',{titulo: 'Nombre del producto'})
+        let idProductView = req.params.id
+        let productView = products.find( product => product.id == idProductView )
+        res.render('productView', {titulo: "Detalle del producto", productView})
 },
+
+
+
    productCart: function(req,res){
-        res.render('productCart', {titulo:'Carrito-de-compras'})
+        res.render('productCart', {titulo:'Carrito-de-compras'}) // solamente se muestra vistas del carrito
           },
         }
     //create : function(req,res){

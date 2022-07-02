@@ -10,46 +10,49 @@
         <div class="container-img">
             <ul class="slider">
                 <li id="slide1"> 
-                 <img src="img/lemon_pie_arandanos1.jpg" class="slide-img">
+                <img src="img/lemon_pie_arandanos1.jpg" class="slide-img">
                 </li>
                 <li id="slide2"> 
-                 <img src="img/cheesecake_1.jpg" class="slide-img">
+                <img src="img/cheesecake_1.jpg" class="slide-img">
                 </li>
                 <li id="slide3"> 
-                 <img src="img/apple_crumble1.jpg" class="slide-img">
+                <img src="img/apple_crumble1.jpg" class="slide-img">
                 </li>
-           </ul>
-           <ul class="h-menu-dots">
-               <li>
-                   <a href="#slide1"> <i class="fa-solid fa-circle"></i></a>
-               </li>
-               <li>
+          </ul>
+          <ul class="h-menu-dots">
+              <li>
+                  <a href="#slide1"> <i class="fa-solid fa-circle"></i></a>
+              </li>
+              <li>
                 <a href="#slide2"> <i class="fa-solid fa-circle"></i></a>
-               </li>
-               <li>
+              </li>
+              <li>
                 <a href="#slide3"> <i class="fa-solid fa-circle"></i></a>
-               </li>
+              </li>
             </ul>
         </div>
     </div>
     <main>
         <section class="prod-destacados">
-         <h4>PRODUCTOS DESTACADOS</h4>
+        <h4>PRODUCTOS DESTACADOS</h4>
         <div class="productos">
+          <% for ( product of products) { %> 
           <article>
               <div class="cont-img-card">
-                <img src="img/cheesecake_1.jpg" alt="Cheesecake" class="prod-img">
+              <img src="/img/<%=product.image%> " alt="<%=product.product_name%>" class="prod-img">
               </div>
               <div class="pie-articulo"> 
                 <i class="fa-regular fa-heart"></i>
-                <h4 class="descripcion">Cheesecake</h4>
-                <p class="precio">$000</p>
+                <h4 class="descripcion"><a href= "Productos/<%=product.id%>"><%=product.product_name%> </a></h4>
+                <p class="precio">$<%=product.price_1%></p>
                 <div class="agregar-carrito">
                     <h5>Agregar al Carrito</h5>
                 </div>
               </div>
           </article>
-          <article>
+        <%}%>
+        <!--  ELIMINAR  -->
+        <article>
               <div class="cont-img-card">
                 <img src="img/chocotorta1.jpg" alt="Chcocotorta" class="prod-img">
               </div>
@@ -64,9 +67,9 @@
           </article>
           <article>
               <div class="cont-img-card">
-               <img src="img/lemon_pie_arandanos1.jpg" alt="Lemon Pie Arandanos" class="prod-img">
+              <img src="img/lemon_pie_arandanos1.jpg" alt="Lemon Pie Arandanos" class="prod-img">
               </div>
-               <div class="pie-articulo"> 
+              <div class="pie-articulo"> 
                 <i class="fa-regular fa-heart"></i>
                 <h4 class="descripcion">Lemon Pie</h4>
                 <p class="precio">$000</p>
@@ -90,6 +93,8 @@
           </article>
         </div>
         </section>
+      <!--  ELIMINAR  -->
+
         <div class="mas-productos">
             <a href="/detalle-de-producto"> <h5>Ver más Productos</h5> </a>
         </div>
@@ -112,20 +117,20 @@
                         <i class="fa-solid fa-lock"></i>
                         <p>Compra Segura</p>
                       </li>
-               </ul>
-               <ul class="banner-dots">
-                   <li>
-                       <a href="#icon1"> <i class="fa-solid fa-circle"></i></a>
-                   </li>
-                   <li>
+              </ul>
+              <ul class="banner-dots">
+                  <li>
+                      <a href="#icon1"> <i class="fa-solid fa-circle"></i></a>
+                  </li>
+                  <li>
                     <a href="#icon2"> <i class="fa-solid fa-circle"></i></a>
-                   </li>
-                   <li>
+                  </li>
+                  <li>
                     <a href="#icon3"> <i class="fa-solid fa-circle"></i></a>
-                   </li>
-                   <li>
+                  </li>
+                  <li>
                     <a href="#icon4"> <i class="fa-solid fa-circle"></i></a>
-                   </li>
+                  </li>
                 </ul>
             </div>
         </div>

@@ -1,4 +1,46 @@
-[{"id":1,"product_name":"Cookies Temáticas","description":"cubilia curae donec pharetra magna vestibulum aliquet ultrices erat tortor sollicitudin mi sit amet lobortis sapien sapien non mi integer ac neque duis bibendum morbi non quam nec dui luctus rutrum nulla tellus in sagittis dui vel nisl duis ac nibh fusce lacus purus aliquet at","category":"Cookies","price_1":95504.63,"price_2":66341.76,"size":"null","quantity":"Media Docena","image":"cheesecake_2.jpg"},
-{"id":2,"product_name":"Lemon Pie","description":"posuere felis sed lacus morbi sem mauris laoreet ut rhoncus aliquet pulvinar sed nisl nunc rhoncus dui vel sem sed sagittis nam","category":"Tartas","price_1":55798.29,"price_2":21242.41,"size":"Chico","quantity":"null","image":"lemon_pie_arandanos2.jpg"},
-{"id":3,"product_name":"Cookies Temáticas","description":"consequat varius integer ac leo pellentesque","category":"Cookies","price_1":91557.97,"price_2":80764.0,"size":"null","quantity":"Media Docena","image":"cheesecake_1.jpg"},
-{"id":4,"product_name":"Cookies Temáticas","description":"posuere nonummy integer non velit","category":"Cookies","price_1":61597.37,"price_2":72320.74,"size":"null","quantity":"Media Docena","image":"cheesecake_1.jpg"}]
+[
+    {
+        "id": 1,
+        "product_name": "Cookies Temáticas",
+        "description": "cubilia curae donec pharetra magna vestibulum aliquet ultrices erat tortor sollicitudin mi sit amet lobortis sapien sapien non mi integer ac neque duis bibendum morbi non quam nec dui luctus rutrum nulla tellus in sagittis dui vel nisl duis ac nibh fusce lacus purus aliquet at",
+        "category": "Cookies",
+        "price_1": 95504.63,
+        "price_2": 66341.76,
+        "size": "null",
+        "quantity": "Media Docena",
+        "image": "cheesecake_2.jpg"
+    },
+    {
+        "id": 2,
+        "product_name": "Lemon Pie",
+        "description": "posuere felis sed lacus morbi sem mauris laoreet ut rhoncus aliquet pulvinar sed nisl nunc rhoncus dui vel sem sed sagittis nam",
+        "category": "Tartas",
+        "price_1": 55798.29,
+        "price_2": 21242.41,
+        "size": "Chico",
+        "quantity": "null",
+        "image": "lemon_pie_arandanos2.jpg"
+    },
+    {
+        "id": 3,
+        "product_name": "Chocotorta",
+        "description": "consequat varius integer ac leo pellentesque",
+        "category": "Torta",
+        "price_1": 91557.97,
+        "price_2": 80764.0,
+        "size": "Grande",
+        "quantity": "null",
+        "image": "chocotorta1.jpg"
+    },
+    {
+        "id": 4,
+        "product_name": "Cookies Temáticas",
+        "description": "posuere nonummy integer non velit",
+        "category": "Cookies",
+        "price_1": 61597.37,
+        "price_2": 72320.74,
+        "size": "null",
+        "quantity": "Media Docena",
+        "image": "cheesecake_1.jpg"
+    }
+]

@@ -6,9 +6,13 @@ const productController = require('../controllers/productController')
 /*** GET ALL PRODUCTS ***/ 
 router.get('/', productController.product)// muestra la vista de catalogo de producto
 
-router.get('/carrito-de-compras', productController.productCart)
+/*** GET ONE PRODUCT ***/ 
+router.get('/:id', productController.detail) //mostrar el detalle de un solo producto
 
 
+
+
+router.get('/carrito-de-compras', productController.productCart) //solo la vistas
 
 /*
 /*** CREATE ONE PRODUCT ***/ 
@@ -19,8 +23,7 @@ router.get('/carrito-de-compras', productController.productCart)
 //router.get('/editar-producto/:id',productController.edit)  // para mostrar formulario de Edicion//
 //router.post('/',productController.edit) // para editar el producto
 
-/*** GET ONE PRODUCT ***/ 
-//router.get('/:id', productController.detail) //mostrar el detalle de un solo producto
+
 
 /*** DELETE ONE PRODUCT***/
 //router.delete('/:id', productController.delete) //elimar un producto
