@@ -2,7 +2,7 @@
 <html lang="en">
     
     <%- include ('./partials/head', {titulo}) %> 
-    <link rel="stylesheet" href="styles/createProd.css">
+    <link rel="stylesheet" href="/styles/createProd.css">
 
 <body>
     <%- include ('./partials/header') %> 
@@ -14,7 +14,7 @@
                 </div>
                 <div class="row clearfix">
                     <div class="">
-                        <form>
+                        <form action="/crear-producto" method="Post" enctype="multipart/form-data">
                             <div class="input_field"> 
                                 <input type='texto' name="idProducto" placeholder="Nombre del Producto" required>
                             </div>
