@@ -8,6 +8,10 @@ footer section.f-seguinos {
     border-bottom: 2px solid rgb(101, 190, 199);
 }
 
+footer section {
+    background-color: white;
+}
+
 .f-seguinos h4 {
     color: rgb(58, 57, 57);
 }

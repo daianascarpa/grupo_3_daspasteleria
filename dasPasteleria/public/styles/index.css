@@ -165,6 +165,11 @@ article div.pie-articulo {
     text-align: center;
 }
 
+.descripcion a {
+    text-decoration: none;
+    color: rgb(58, 57, 57);
+}
+
 .precio {
     text-align: center;
     margin: auto;
