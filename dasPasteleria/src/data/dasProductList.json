@@ -42,5 +42,16 @@
         "size": "null",
         "quantity": "Media Docena",
         "image": "cheesecake_1.jpg"
+    },
+    {
+        "id": 5,
+        "product_name": "Muffins",
+        "descripcion": "prueba",
+        "category": "muffins",
+        "price_1": "300",
+        "price_2": "300",
+        "size": "mediadocena",
+        "quantity": "mediadocena",
+        "image": "image-1656892213681.jpg"
     }
 ]
