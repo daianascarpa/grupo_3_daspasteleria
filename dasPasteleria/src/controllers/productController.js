@@ -31,7 +31,7 @@ const productController = {
         price_2: req.body.price, 
         size: req.body.porcion,
         quantity: req.body.porcion, 
-        image: req.file.filename
+        image:req.file.filename
       }
       products.push(productNew)
       fs.writeFileSync(productsFilePath, JSON.stringify(products), 'utf-8')
@@ -43,7 +43,10 @@ const productController = {
       let productToEdit = products.find( product => product.id == idproductEdit )
       res.render('editProduct', {titulo: "Edicion del Producto " +  productToEdit.product_name })
     },
-
+    productCart: function(req,res){
+      res.render('productCart', {titulo: "Carrito de compras"})
+      
+    }
 
 }
 

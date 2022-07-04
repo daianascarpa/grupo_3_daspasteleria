@@ -23,15 +23,18 @@ router.get('/', productController.product)
 router.get('/crear-producto', productController.create)  
 router.post('/crear-producto', upload.single('image'),  productController.store); 
 
-/*** GET ONE PRODUCT ***/ 
-router.get('/:id', productController.detail) //mostrar el detalle de un solo producto
+
+ 
 
 /*** EDIT ONE PRODUCT ***/ 
 router.get('/editar-producto/:id',productController.edit)  // para mostrar formulario de Edicion//
 
 
-//router.get('/carrito-de-compras', productController.productCart) 
+router.get('/carrito-de-compras', productController.productCart) 
 
+//mostrar el detalle de un solo producto
+
+router.get('/:id', productController.detail) //mostrar el detalle de un solo producto
 module.exports = router
 
 //router.put('/',productController.update) // para editar el producto
