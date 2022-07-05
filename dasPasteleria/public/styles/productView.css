@@ -19,6 +19,7 @@ body {
 
 form {
     background-color: white;
+    color: rgb(58, 57, 57);
 }
 
 /* .c-encabezado {
@@ -166,20 +167,20 @@ li > label {
     border-radius: 30px;
 }
 
-.pv-btn-down{
+.pv-btn-down {
     display: block;
     height: 2.5rem;
     margin-top: 0.25rem;
     padding: 0 15px;
-    color: #000;
     font-size: 1.25rem;
     line-height: 1;
+    border-radius: 30px;
+    color: rgb(58, 57, 57);
 }
 
-.pv-nput-group-full-touchspin .pv-input-group-btn > .pv-btn-down{
+.pv-nput-group-full-touchspin .pv-input-group-btn > .pv-btn-down {
     border: 0;
     box-shadow: none;
-    font-size: 2em;
     padding: 0.625rem 1rem;
     text-transform: uppercase;
     background-color: white;
@@ -196,6 +197,11 @@ li > label {
     height: 100%;
 }
 
+.pv-input-group-qty-number {
+    width: 65%;
+    border: 0;
+    text-align: center;
+}
 
 /* botones */
 

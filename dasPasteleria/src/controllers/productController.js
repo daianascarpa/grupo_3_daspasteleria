@@ -29,10 +29,15 @@ const productController = {
         category: req.body.category,
         price_1: req.body.price,
         price_2: req.body.price, 
-        size: req.body.porcion,
-        quantity: req.body.porcion, 
-        image:req.file.filename
+        size: size,
+        image:req.file.filename,
       }
+      let size = false
+      let category = req.body.category
+      if (category == "Tarta" || category == "Torta") {
+        size = true;
+      }
+
       products.push(productNew)
       fs.writeFileSync(productsFilePath, JSON.stringify(products), 'utf-8')
        res.redirect('/Productos') // logica para crear producto
@@ -42,12 +47,23 @@ const productController = {
       let idproductEdit = req.params.id
       let productToEdit = products.find( product => product.id == idproductEdit )
       res.render('editProduct', {titulo: "Edicion del Producto " +  productToEdit.product_name })
+
     },
     productCart: function(req,res){
       res.render('productCart', {titulo: "Carrito de compras"})
       
-    }
+    },
 
+    delete : (req, res) => {
+      let id = req.params.id;
+      console.log(id);
+      products = products.filter(function(product){
+        return product.id != id;
+      })
+      fs.writeFileSync(productsFilePath, JSON.stringify(products), 'utf-8')
+      res.redirect('/Productos')
+    },
+  
 }
 
 

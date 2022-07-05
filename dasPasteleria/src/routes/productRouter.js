@@ -34,12 +34,13 @@ router.get('/carrito-de-compras', productController.productCart)
 
 //mostrar el detalle de un solo producto
 
-router.get('/:id', productController.detail) //mostrar el detalle de un solo producto
-module.exports = router
-
 //router.put('/',productController.update) // para editar el producto
 /*** DELETE ONE PRODUCT***/
-//router.delete('/:id', productController.delete) //elimar un producto
+router.delete('/:id', productController.delete) //elimar un producto
+
+router.get('/:id', productController.detail) //mostrar el detalle de un solo producto
 
 /*** Carrito de producto***/
 //router.get('/carrito-de-compras', productController.productCart) //solo la vistas
+
+module.exports = router
