@@ -15,12 +15,12 @@
                 </div>
                 <div class="row clearfix">
                     <div class="">
-                        <form action="/Producto/editar-producto/:id?_method=PUT" method="POST">
+                        <form action="/Producto/editar-producto/<%=productToEdit.id%>?_method=PUT" method="POST">
                             <div class="input_field"> 
-                                <input type='texto' name="product_name" placeholder="Nombre del Producto" required>
+                                <input type='texto' name="product_name" placeholder="Nombre del Producto" required value="<%=productToEdit.product_name%>">
                             </div>
                             <div class="input_field"> 
-                                <textarea name="descripcion" id= "descripcion" placeholder="Editar descripción detallada del producto"></textarea>
+                                <textarea name="descripcion" id= "descripcion" placeholder="Editar descripción detallada del producto"> <%=productToEdit.description%></textarea>
                             </div>
                             <div class="input_field"> 
                                 <input type="file"  id="foto producto" name="image" accept="image/png, image/jpeg">
@@ -31,10 +31,10 @@
 
                                        <label>Editar categoria seleccionada:</label>
                                             <select name="category">
-                                             <option value="tortas">Tortas</option>
-                                             <option value="tartas">Tartas</option>
-                                             <option value="muffins">Muffins</option>
-                                             <option value="cookies&masas">Cookies y Masas</option>
+                                             <option value="tortas"<%=productToEdit.category=="Tortas"? "selected" : null%>>Tortas</option>
+                                             <option value="tartas"<%=productToEdit.category=="Tartas"? "selected" : null%>>Tartas</option>
+                                             <option value="muffins"<%=productToEdit.category=="Muffins"? "selected" : null%>>Muffins</option>
+                                             <option value="cookies&masas"<%=productToEdit.category=="cookies&masas"? "selected" : null%>>Cookies y Masas</option>
                                             </select>
                                     </div>
                                     
@@ -49,7 +49,7 @@
                                              </select>
                                      </div>
                                      <div class="input_field"> 
-                                        <input type='text' name="price" placeholder="Editar Precio del Producto" required>
+                                        <input type='text' name="price" placeholder="Editar Precio del Producto" required value="<%=productToEdit.price_1%>">
                                     </div>
 
                                 </div>

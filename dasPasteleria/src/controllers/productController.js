@@ -46,7 +46,7 @@ const productController = {
    edit : function(req,res){
       let idproductEdit = req.params.id
       let productToEdit = products.find( product => product.id == idproductEdit )
-      res.render('editProduct', {titulo: "Edicion del Producto " +  productToEdit.product_name })
+      res.render('editProduct', {titulo: "Edicion del Producto " +  productToEdit.product_name , productToEdit})
 
     },
     productCart: function(req,res){
