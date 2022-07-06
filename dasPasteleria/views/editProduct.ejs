@@ -17,19 +17,22 @@
                     <div class="">
                         <form action="/Productos/editar-producto/<%=productToEdit.id%>?_method=PUT" method="POST">
                             <div class="input_field"> 
-                                <input type='texto' name="product_name" placeholder="Nombre del Producto" required value="<%=productToEdit.product_name%>">
+                                <label> Producto a Editar:</label>
+                                <input type='text' name="product_name" placeholder="Nombre del Producto" required value="<%=productToEdit.product_name%>">
                             </div>
                             <div class="input_field"> 
+                                <label> Descripción a Editar:</label> <br>
                                 <textarea name="descripcion" id= "descripcion" placeholder="Editar descripción detallada del producto"> <%=productToEdit.description%></textarea>
                             </div>
                             <div class="input_field"> 
+                                <label> Foto a Editar:</label>
                                 <input type="file"  id="foto producto" name="image" accept="image/png, image/jpeg">
                             </div>
                             <div class="row clearfix">
                                 <div>
                                     <div class="input_field"> 
 
-                                       <label>Editar categoria seleccionada:</label>
+                                       <label>Categoría a Editar:</label>
                                             <select name="category">
                                              <option value="tortas"<%=productToEdit.category=="Tortas"? "selected" : null%>>Tortas</option>
                                              <option value="tartas"<%=productToEdit.category=="Tartas"? "selected" : null%>>Tartas</option>
@@ -40,7 +43,7 @@
                                     
                                     <div class="input_field"> 
 
-                                        <label>Editar Tamaño/Unidades:</label>
+                                        <label>Tamaño/Unidades a Editar:</label>
                                              <select name="Tamaño">
                                               <option value="mediana">Chica</option>
                                               <option value="grande">Grande</option>
@@ -49,6 +52,7 @@
                                              </select>
                                      </div>
                                      <div class="input_field"> 
+                                        <label> Precio a Editar:</label>
                                         <input type='text' name="price" placeholder="Editar Precio del Producto" required value="<%=productToEdit.price_1%>">
                                     </div>
 
@@ -60,7 +64,7 @@
                                 </div>
                         </form>
                         <form action="/Productos/<%=productToEdit.id%>?_method=DELETE" method="POST" >
-                            <button type="submit" class="button-delete">Eliminar</button>
+                            <button type="submit" class="button">Eliminar</button>
 
                         </form>
                         <!--<input class="button" type="reset" value="Eliminar">-->

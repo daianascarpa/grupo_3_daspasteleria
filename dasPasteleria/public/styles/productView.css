@@ -1,5 +1,5 @@
 * {
-    margin: 0;
+    /*margin: 0; borre este porque no me dejaba el border alrededor de la pagina no se porque*/
     padding: 0;
     box-sizing: border-box;
 }
@@ -56,8 +56,8 @@ form {
 
 
 .c-cuerpo img {
-    width: 90%;
-    height: auto;
+    width: 100%;
+    height: auto;    
 }
 
 .c-producto {
@@ -67,6 +67,12 @@ form {
     box-sizing: border-box;
     justify-content: space-between;
     text-align: center;
+}
+
+.c-imagen {
+    width: 70%;
+    height: 50%;
+    margin: auto;
 }
 
 .c-descripcion {
@@ -143,17 +149,20 @@ li > label {
 }
 
 .pv-radio-span{
-    border: 1px solid #000;
+    border: 1px solid rgb(58, 57, 57);
     border-radius: 30px;
     display: block;
     padding: 0.625rem 1.25rem;
     font-size: 0.8em;
+    margin: 10px;
 }
 
 
 .pv-qty-wrap{
     font-size: 1.5em;
     display: inline-flex;
+    padding-top: 30px;
+    padding-bottom: 30px;
 }
 
 
@@ -167,18 +176,30 @@ li > label {
     border-radius: 30px;
 }
 
-.pv-btn-down {
+.pv-btn-down, .pv-btn-up {
     display: block;
-    height: 2.5rem;
-    margin-top: 0.25rem;
-    padding: 0 15px;
+    height: 3rem;
+    width: 3rem;
+    /*margin-top: 0.25rem;*/
+    /*padding: 15px;*/
     font-size: 1.25rem;
     line-height: 1;
     border-radius: 30px;
     color: rgb(58, 57, 57);
+    border: none;
+    background-color: white ;
+    cursor: pointer;
 }
 
-.pv-nput-group-full-touchspin .pv-input-group-btn > .pv-btn-down {
+.pv-btn-up:hover {
+    background-color: rgb(101, 190, 199);
+
+}
+.pv-btn-down:hover {
+    background-color: rgb(101, 190, 199);
+}
+
+.pv-nput-group-full-touchspin .pv-input-group-btn  {
     border: 0;
     box-shadow: none;
     padding: 0.625rem 1rem;
@@ -190,9 +211,9 @@ li > label {
 
 .pv-nput-group-full-touchspin{
     display: flex;
-    border-radius: 30px;
+    border-radius: 50px;
     padding: 3px;
-    border: 1px solid #000;
+    border: 1px solid rgb(58, 57, 57);
     position: relative;
     height: 100%;
 }

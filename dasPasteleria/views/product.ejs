@@ -17,33 +17,6 @@
           </select>
         </article>
       </div>
-
-      <!-- <div class="main-body"> 
-        <div class="container-img">
-            <ul class="slider">
-                <li id="slide1"> 
-                 <img src="img/lemon_pie_arandanos1.jpg" class="slide-img">
-                </li>
-                <li id="slide2"> 
-                 <img src="img/cheesecake_1.jpg" class="slide-img">
-                </li>
-                <li id="slide3"> 
-                 <img src="img/apple_crumble1.jpg" class="slide-img">
-                </li>
-           </ul>
-           <ul class="h-menu-dots">
-               <li>
-                   <a href="#slide1"> <i class="fa-solid fa-circle"></i></a>
-               </li>
-               <li>
-                <a href="#slide2"> <i class="fa-solid fa-circle"></i></a>
-               </li>
-               <li>
-                <a href="#slide3"> <i class="fa-solid fa-circle"></i></a>
-               </li>
-            </ul>
-        </div>
-    </div> -->
       <main>
         <section class="prod-destacados">
 
@@ -55,92 +28,22 @@
                 </div>
                 <div class="pie-articulo">
                   <i class="fa-regular fa-heart"></i>
-                  <h4 class="descripcion">
-                    <%=product.product_name%>
-                  </h4>
-                  <p class="precio">$<%=product.price_1%>
-                  </p>
+                  <h4 class="descripcion"> <a href= "Productos/<%=product.id%>"><%=product.product_name%></a></h4>
+                  <p class="precio">$<%=product.price_1%></p>
                   <div class="agregar-carrito">
                     <h5>Agregar al Carrito</h5>
                   </div>
                 </div>
               </article>
               <%}%>
-                <!--  ELIMINAR  -->
-                <article>
-                  <div class="cont-img-card">
-                    <img src="img/chocotorta1.jpg" alt="Chcocotorta" class="prod-img">
-                  </div>
-                  <div class="pie-articulo">
-                    <i class="fa-regular fa-heart"></i>
-                    <h4 class="descripcion">Chocotorta</h4>
-                    <p class="precio">$000</p>
-                    <div class="agregar-carrito">
-                      <h5>Agregar al Carrito</h5>
-                    </div>
-                  </div>
-                </article>
-                <article>
-                  <div class="cont-img-card">
-                    <img src="img/lemon_pie_arandanos1.jpg" alt="Lemon Pie Arandanos" class="prod-img">
-                  </div>
-                  <div class="pie-articulo">
-                    <i class="fa-regular fa-heart"></i>
-                    <h4 class="descripcion">Lemon Pie</h4>
-                    <p class="precio">$000</p>
-                    <div class="agregar-carrito">
-                      <h5>Agregar al Carrito</h5>
-                    </div>
-                  </div>
-                </article>
-                <article>
-                  <div class="cont-img-card">
-                    <img src="img/apple_crumble1.jpg" alt="Apple Crumble" class="prod-img">
-                  </div>
-                  <div class="pie-articulo">
-                    <i class="fa-regular fa-heart"></i>
-                    <h4 class="descripcion">Apple Crumble</h4>
-                    <p class="precio">$000</p>
-                    <div class="agregar-carrito">
-                      <h5>Agregar al Carrito</h5>
-                    </div>
-                  </div>
-                </article>
-
-                <article>
-                  <div class="cont-img-card">
-                    <img src="img/cuadraditos_limon1.jpg" alt="cuadradoLimon" class="prod-img">
-                  </div>
-                  <div class="pie-articulo">
-                    <i class="fa-regular fa-heart"></i>
-                    <h4 class="descripcion">lemon square </h4>
-                    <p class="precio">$000</p>
-                    <div class="agregar-carrito">
-                      <h5>Agregar al Carrito</h5>
-                    </div>
-                  </div>
-                </article>
-                <article>
-                  <div class="cont-img-card">
-                    <img src="img/marquise1.jpg" alt="marquise" class="prod-img">
-                  </div>
-                  <div class="pie-articulo">
-                    <i class="fa-regular fa-heart"></i>
-                    <h4 class="descripcion">marquise</h4>
-                    <p class="precio">$000</p>
-                    <div class="agregar-carrito">
-                      <h5>Agregar al Carrito</h5>
-                    </div>
-                  </div>
-                </article>
           </div>
         </section>
-        <!--  ELIMINAR  -->
-        <div class="mas-productos">
+        <!--  Lo comento porque no se si iria este boton  -->
+       <!-- <div class="mas-productos">
           <a href="/Productos">
             <h5>Ver más Productos</h5>
           </a>
-        </div>
+        </div>-->
         <div class="main-banner">
           <div class="container-icons">
             <ul class="icons">

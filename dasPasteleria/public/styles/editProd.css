@@ -49,8 +49,11 @@ h2 {
 }
 
 .input_field{
+    display: flex;
+    align-items: center;
     position: relative;
     margin-bottom: 20px;
+    justify-content: space-between;
 }
 
 .input_field >span{
@@ -67,8 +70,18 @@ h2 {
 .input_field > span > i{
     padding-top: 10px;
 }
-.form_wrapper input[type="text"], .form_wrapper input[type="email"], .form_wrapper input[type="password"]{
-    width: 100%;
+
+.input_field textarea {
+    width: 55%;
+    height: 40px;
+}
+
+.input_field input[type="text"] , select{
+    width: 60%;
+    padding: 8px 10px 9px 35px;
+}
+
+.form_wrapper input[type="text"], .form_wrapper input[type="email"], .form_wrapper input[type="password"], textarea , select{
     padding: 8px 10px 9px 35px;
     border: 1px solid #ccc;
     outline: none;
@@ -84,7 +97,7 @@ h2 {
     background: #fafafa;
 }
 
-.form_wrapper input[type="submit"] {
+.form_wrapper input[type="submit"], .button {
     background: rgb(101, 190, 199);
     height: 35px;
     line-height: 35px;
@@ -118,14 +131,14 @@ h2 {
 }
 
 form{
-    width: 90%;
+    width: 100%;
 }
 
-.form_wrapper input[type="submit"]:hover{
+.form_wrapper input[type="submit"] :hover{
     background: rgb(11, 119, 131);
 }
 
-.form_wrapper input[type="reset"]:hover{
+.button :hover{
     background: rgb(11, 119, 131);
 }
 
