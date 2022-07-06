@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 
 const productsFilePath =  path.join(__dirname, '../data/dasProductList.json');
-const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
 
 const productController = {
@@ -21,7 +21,7 @@ const productController = {
     res.render('createProd', {titulo: "Formulario de Creación"})
     }, 
 
-    store: function (req, res){
+  store: function (req, res){
         let productNew = {
         id: (products.length +1),
         product_name: req.body.product_name,
@@ -32,6 +32,8 @@ const productController = {
         size: size,
         image:req.file.filename,
       }
+      // A ver a posterior con base de datos //
+      productNew.size = size
       let size = false
       let category = req.body.category
       if (category == "Tarta" || category == "Torta") {
@@ -43,18 +45,52 @@ const productController = {
        res.redirect('/Productos') // logica para crear producto
     },
 
-   edit : function(req,res){
+  edit : function(req,res){
       let idproductEdit = req.params.id
+      globalThis.productToEdit;
       let productToEdit = products.find( product => product.id == idproductEdit )
       res.render('editProduct', {titulo: "Edicion del Producto " +  productToEdit.product_name , productToEdit})
 
     },
-    productCart: function(req,res){
+
+    // Update - Method to update
+  update: (req, res) => {
+      /*let idproductEdit = req.params.id
+      let productToEdit = products.find( product => product.id == idproductEdit )
+        productToEdit = {
+        product_name: req.body.product_name,
+        descripcion: req.body.descripcion,
+        category: req.body.category,
+        price_1: req.body.price,
+        price_2: req.body.price, 
+        size: size,
+      },*/
+
+      let id = req.params.id;
+      console.log(id)
+      for (let i=0; i<products.length; i++) {
+       if (products[i].id == id) {
+          products[i].product_name = req.body.product_name;
+          products[i].description = req.body.description;
+          products[i].category = req.body.category;
+          products[i].price_1 = req.body.price;
+          products[i].price_2 = req.body.price;
+          products[i].size = req.body.porcion;
+          products[i].quantity = req.body.quantity;      
+                    
+        }
+      }
+      fs.writeFileSync(productsFilePath, JSON.stringify(products), 'utf-8')
+      res.redirect(`/Productos`)
+    },
+
+
+  productCart: function(req,res){
       res.render('productCart', {titulo: "Carrito de compras"})
       
     },
 
-    delete : (req, res) => {
+  delete : (req, res) => {
       let id = req.params.id;
       console.log(id);
       products = products.filter(function(product){

@@ -15,7 +15,7 @@
                 </div>
                 <div class="row clearfix">
                     <div class="">
-                        <form action="/Producto/editar-producto/<%=productToEdit.id%>?_method=PUT" method="POST">
+                        <form action="/Productos/editar-producto/<%=productToEdit.id%>?_method=PUT" method="POST">
                             <div class="input_field"> 
                                 <input type='texto' name="product_name" placeholder="Nombre del Producto" required value="<%=productToEdit.product_name%>">
                             </div>
@@ -56,13 +56,14 @@
                             </div>
                                 <div>
                                     <input class="button" type="submit" value="Cargar Nueva Edición">
-                                    <!--<form action="/Productos/?_method=DELETE" method="POST" >
-                                        <button type="submit" class="button-delete">Eliminar</button>>
-
-                                    </form>-->
-                                    <input class="button" type="reset" value="Eliminar">
+                                    
                                 </div>
                         </form>
+                        <form action="/Productos/<%=productToEdit.id%>?_method=DELETE" method="POST" >
+                            <button type="submit" class="button-delete">Eliminar</button>
+
+                        </form>
+                        <!--<input class="button" type="reset" value="Eliminar">-->
                     </div>
                 </div>
             </div>

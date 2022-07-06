@@ -18,7 +18,7 @@
                                 <h2 class="pv-p-name"><%= productView.product_name%> </h2> 
                                 <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt assumenda</span>
                                 
-                                <h3 class="pv-final-price">$9999</h3>  <!------ No estoy segura por que el precio deberia variar segun la cantidad elegida por cliente y eso vendria por un input ver linea 46-->
+                                <h3 class="pv-final-price"><%= productView.price_1%></h3>  <!------ No estoy segura por que el precio deberia variar segun la cantidad elegida por cliente y eso vendria por un input ver linea 46-->
                                 <div class="pv-full-form">
                                 <% if (productView.size == null) { %>
                                     <span>

@@ -23,24 +23,18 @@ router.get('/', productController.product)
 router.get('/crear-producto', productController.create)  
 router.post('/crear-producto', upload.single('image'),  productController.store); 
 
-
- 
-
 /*** EDIT ONE PRODUCT ***/ 
 router.get('/editar-producto/:id',productController.edit)  // para mostrar formulario de Edicion//
+// TO UPDATE PRODUCT //
+router.put('/editar-producto/:id', productController.update) 
 
-
+// GOT TO //
 router.get('/carrito-de-compras', productController.productCart) 
 
-//mostrar el detalle de un solo producto
-
-//router.put('/',productController.update) // para editar el producto
 /*** DELETE ONE PRODUCT***/
-router.delete('/:id', productController.delete) //elimar un producto
+router.delete('/:id', productController.delete) 
 
-router.get('/:id', productController.detail) //mostrar el detalle de un solo producto
-
-/*** Carrito de producto***/
-//router.get('/carrito-de-compras', productController.productCart) //solo la vistas
+// SHOW THE DETAIL OF ONE PRODUCT//
+router.get('/:id', productController.detail) 
 
 module.exports = router
