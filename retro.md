@@ -7,4 +7,4 @@
  <br>-Mejorar la comunicacion grupal, evitando errores, conceptos del sprint y ayudarnos entre todos.
 
 <h3>3.-Hacer menos/Dejar de hacer:</h3>
-  -Dejar para el ultimo momento los problemas que se nos pueden presentar (no pedir ayuda). <br> -No cumplir con las reuniones. <br>-No comunicarse con el equipo.
+ -Dejar para el ultimo momento los problemas que se nos pueden presentar (no pedir ayuda). <br> -No cumplir con las reuniones. <br>-No comunicarse con el equipo.
