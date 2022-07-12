@@ -7,17 +7,17 @@ let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
 const productController = {
 
-  product : function(req,res){
+  product: function(req,res){
         res.render('product', {titulo: 'Catálogo Productos', products})
   },
 
-  detail : function(req,res){
+  detail: function(req,res){
     let idProductView = req.params.id
     let productView = products.find( product => product.id == idProductView )
     res.render('productView', {titulo: "Detalle del Producto ", productView})
   },
 
-  create : function(req,res){
+  create: function(req,res){
     res.render('createProd', {titulo: "Formulario de Creación"})
     }, 
 
@@ -29,23 +29,23 @@ const productController = {
         category: req.body.category,
         price_1: req.body.price,
         price_2: req.body.price, 
-        size: size,
+        size: req.body.size,
         image:req.file.filename,
       }
       // A ver a posterior con base de datos //
-      productNew.size = size
-      let size = false
-      let category = req.body.category
-      if (category == "Tarta" || category == "Torta") {
-        size = true;
-      }
+      // productNew.size = size
+      // let size = false
+      // let category = req.body.category
+      // if (category == "Tarta" || category == "Torta") {
+      //   size = true;
+      // }
 
       products.push(productNew)
       fs.writeFileSync(productsFilePath, JSON.stringify(products), 'utf-8')
        res.redirect('/Productos') // logica para crear producto
     },
 
-  edit : function(req,res){
+    edit: function(req,res){
       let idproductEdit = req.params.id
       globalThis.productToEdit;
       let productToEdit = products.find( product => product.id == idproductEdit )
@@ -54,7 +54,7 @@ const productController = {
     },
 
     // Update - Method to update
-  update: (req, res) => {
+    update: (req, res) => {
       /*let idproductEdit = req.params.id
       let productToEdit = products.find( product => product.id == idproductEdit )
         productToEdit = {
@@ -90,7 +90,7 @@ const productController = {
       
     },
 
-  delete : (req, res) => {
+    delete: (req, res) => {
       let id = req.params.id;
       console.log(id);
       products = products.filter(function(product){
