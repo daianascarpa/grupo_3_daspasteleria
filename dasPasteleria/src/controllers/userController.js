@@ -1,20 +1,45 @@
 const fs = require('fs');
 const path = require('path');
 const bcryptjs = require('bcryptjs');
+const { body,check,validationResult } = require('express-validator')
 
-const registerData =  path.join(__dirname, '../data/dasProductList.json');
-let usuarioRegister = JSON.parse(fs.readFileSync(registerData, 'utf-8'));
+ const registerData =  path.join(__dirname, '../data/dasProductList.json');
+ let usuarioRegister = JSON.parse(fs.readFileSync(registerData, 'utf-8'));
+
+ const usuarioData = path.join(__dirname, '../data/dasUsersList.json');
+ 
 
 const userController = {
     login : function(req,res){
         res.render('login', {titulo: "Iniciá Sesión"})// muestra el formulario de login
     },
     sessionLogin: function(req,res){
-       // const valdiar = validacionFormularioLogin(req); 
-
+       
+        let error = validationResult(req);
+       
+            if (error.isEmpty()){
+                    let userJson = fs.readFileSync('dasUsersList.json',{encoding:'utf-8'});
+                    let usuarios;
+                        if(userJson == ""){
+                            usuarios = [];
+                        }else {
+                                usuarios = JSON.parse(userJson);
+                        }
+                            for (let i = 0; usuarios.length;i++){
+                                    if( usuarios[i].email == req.body.email ){
+                                        if(bcryptjs.compareSync(req.body.password,usuarios[i].password)){
+                                            let usuarioLoguearse = usuarios[i];
+                                            break;
+                                        }
+                                    }
+                            }
+            req.session.usuarioLoguearse = usuarioLoguearse;
+            res.redirect('/home'); // en caso que el usuario ingrese con exito redirecciona al home
+            }else {
+                res.redirect('/Usuarios/login')
+            }
 
         
-        res.redirect('/home'); // en caso que el usuario ingrese con exito redirecciona al home
     },
 
     // ver de agragar un metodo para enviar datos logeo
