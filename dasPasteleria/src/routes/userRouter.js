@@ -21,7 +21,7 @@ router.post('/login',validacionFormularioLogin,userController.sessionLogin) //ru
 
 router.get('/register', userController.register) // mostrar formulario de registro
 //router.post() la ruta del registro del usuario
-//router.post('/register',validationRegisterForm, userController.register)
+router.post('/register',validationRegisterForm, userController.sessionRegister)
 //router.post('/register',validationRegisterForm, userController.register)
 
 module.exports = router

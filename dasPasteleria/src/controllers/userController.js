@@ -3,10 +3,10 @@ const path = require('path');
 const bcryptjs = require('bcryptjs');
 const { body,check,validationResult } = require('express-validator')
 
- const registerData =  path.join(__dirname, '../data/dasProductList.json');
+ let  registerData =  path.join(__dirname, '../data/dasUsersList.json');
  let usuarioRegister = JSON.parse(fs.readFileSync(registerData, 'utf-8'));
 
- const usuarioData = path.join(__dirname, '../data/dasUsersList.json');
+
  
 
 const userController = {
@@ -18,12 +18,13 @@ const userController = {
         let error = validationResult(req);
        
             if (error.isEmpty()){
-                    let userJson = fs.readFileSync('dasUsersList.json',{encoding:'utf-8'});
-                    let usuarios;
-                        if(userJson == ""){
+                    //let userJson = fs.readFileSync('dasUsersList.json',{encoding:'utf-8'});
+                        let usuarios;
+                        
+                        if(registerData == ""){
                             usuarios = [];
                         }else {
-                                usuarios = JSON.parse(userJson);
+                                usuarios = JSON.parse(registerData);
                         }
                             for (let i = 0; usuarios.length;i++){
                                     if( usuarios[i].email == req.body.email ){
@@ -47,25 +48,21 @@ const userController = {
     register :  function(req,res){
         res.render('register', {titulo: "Registrate!"})// muestra el formulario de registro 
         
-      // ver de agragar un metodo para enviar datos de registro  
-
-      let registroUserNew = {
-        id: (usuarioRegister.length +1),
-        email: req.body.email,
-        password: req.body.password,
-        repeatPassword:req.body.repeatPassword,
-        name:req.body.name
-        
-      } //guardo del body la info como esta = en el name del register.ejs
-      
-      usuarioRegister.push(registroUserNew)
-      fs.writeFileSync(registerData, JSON.stringify(usuarioRegister), 'utf-8')
-
-       res.redirect('/login') // a donde enviamos una vez que se registro ?
-
     },
     sessionRegister: function(req,res){
-        res.render('register', {titulo: "Registrate!"})
+        let registroUserNew = {
+            id: (usuarioRegister.length +1),
+            email: req.body.email,
+            password: req.body.password,
+            repeatPassword:req.body.repeatPassword,
+            name:req.body.name
+            
+          } //guardo del body la info como esta = en el name del register.ejs
+          
+          usuarioRegister.push(registroUserNew)
+          fs.writeFileSync(registerData, JSON.stringify(usuarioRegister), 'utf-8')
+    
+           res.redirect('/Usuarios/login')
     }
 }
 
