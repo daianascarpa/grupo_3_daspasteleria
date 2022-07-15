@@ -12,7 +12,11 @@ app.use(express.urlencoded({extended:false}));
 app.use(express.json());
 app.use(methodOverride("_method"))
 app.use(express.static('public'));
-app.use(session({secret:"frase secreta"}))
+app.use(session({
+    secret:"frase secreta",
+    resave: false,
+    saveUninitialized: false,
+}))
 app.use(cookieParser());
 
 const indexRouter = require('./src/routes/indexRouter')
