@@ -40,13 +40,14 @@ const userController = {
     res.render("register", { titulo: "Registrate!" }); // muestra el formulario de registro
   },
   sessionRegister: function (req, res) {
-    let registroUserNew = {
+      let registroUserNew = {
       id: usuarioRegister.length + 1,
       email: req.body.email,
       password: req.body.password,
       repeatPassword: req.body.repeatPassword,
       name: req.body.name,
-    }; //guardo del body la info como esta = en el name del register.ejs
+      avatar: req.file.filename
+ }; //guardo del body la info como esta = en el name del register.ejs
 
     usuarioRegister.push(registroUserNew);
     fs.writeFileSync(registerData, JSON.stringify(usuarioRegister), "utf-8");
@@ -56,3 +57,5 @@ const userController = {
 };
 
 module.exports = userController;
+
+
