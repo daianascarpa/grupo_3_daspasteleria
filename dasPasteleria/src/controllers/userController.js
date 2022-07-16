@@ -41,7 +41,7 @@ const userController = {
     res.render("register", { titulo: "Registrate!" }); // muestra el formulario de registro
   },
   sessionRegister: function (req, res) {
-    // console.log("FILE DEL REQ ", req.file);  
+   
    
 
       let registroUserNew = {
@@ -50,17 +50,14 @@ const userController = {
       password: req.body.password,
       repeatPassword: req.body.repeatPassword,
       name: req.body.name,
-      
- }; 
+   }; 
  
  if(typeof(req.file) == "undefined"){
   registroUserNew.avatar = 'perfil_dafault.JPG';
 }
 console.log(req.file)
-
  //guardo del body la info como esta = en el name del register.ejs
-    console.log(registroUserNew);
-    usuarioRegister.push(registroUserNew);
+     usuarioRegister.push(registroUserNew);
     fs.writeFileSync(registerData, JSON.stringify(usuarioRegister), "utf-8");
 
     res.redirect("/Usuarios/login");
