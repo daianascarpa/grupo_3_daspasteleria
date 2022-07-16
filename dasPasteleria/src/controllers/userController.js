@@ -27,6 +27,7 @@ const userController = {
           }
         }
       }
+
       req.session.usuarioLoguearse = usuarioLoguearse;
       res.redirect("/home"); // en caso que el usuario ingrese con exito redirecciona al home
     } else {
@@ -40,15 +41,25 @@ const userController = {
     res.render("register", { titulo: "Registrate!" }); // muestra el formulario de registro
   },
   sessionRegister: function (req, res) {
+    // console.log("FILE DEL REQ ", req.file);  
+   
+
       let registroUserNew = {
       id: usuarioRegister.length + 1,
       email: req.body.email,
       password: req.body.password,
       repeatPassword: req.body.repeatPassword,
       name: req.body.name,
-      avatar: req.file.filename
- }; //guardo del body la info como esta = en el name del register.ejs
+      
+ }; 
+ 
+ if(typeof(req.file) == "undefined"){
+  registroUserNew.avatar = 'perfil_dafault.JPG';
+}
+console.log(req.file)
 
+ //guardo del body la info como esta = en el name del register.ejs
+    console.log(registroUserNew);
     usuarioRegister.push(registroUserNew);
     fs.writeFileSync(registerData, JSON.stringify(usuarioRegister), "utf-8");
 
