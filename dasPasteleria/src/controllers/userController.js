@@ -40,6 +40,7 @@ const userController = {
   register: function (req, res) {
     res.render("register", { titulo: "Registrate!" }); // muestra el formulario de registro
   },
+  
   sessionRegister: function (req, res) {
    
    
@@ -47,9 +48,10 @@ const userController = {
       let registroUserNew = {
       id: usuarioRegister.length + 1,
       email: req.body.email,
-      password: req.body.password,
+      password: bcryptjs.hashSync(req.body.password,10), // se encripta la contraseña cargada
       repeatPassword: req.body.repeatPassword,
       name: req.body.name,
+      image: req.file.filename, // guarda la imagen en la BD, pero si no se carga nada tira error y toma la imagen default
    }; 
  
  if(typeof(req.file) == "undefined"){
@@ -58,7 +60,7 @@ const userController = {
 console.log(req.file)
  //guardo del body la info como esta = en el name del register.ejs
      usuarioRegister.push(registroUserNew);
-    fs.writeFileSync(registerData, JSON.stringify(usuarioRegister), "utf-8");
+    fs.writeFileSync(registerData, JSON.stringify(usuarioRegister));
 
     res.redirect("/Usuarios/login");
   },

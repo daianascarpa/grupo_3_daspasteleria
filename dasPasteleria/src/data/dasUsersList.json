@@ -1,1 +1,175 @@
-[{"id":1,"full_name":"Isidro Chislett","email":"ichislett0@123-reg.co.uk","password":"oP2SXMSa9V","user_type":"Cliente"},{"id":2,"full_name":"Binnie Copozio","email":"bcopozio1@rambler.ru","password":"pwtcHNsbI5JZ","user_type":"Administrador"},{"id":3,"full_name":"Cirilo Theuss","email":"ctheuss2@microsoft.com","password":"TMElTpWeZd","user_type":"Administrador"},{"id":4,"full_name":"Hewett Wainscot","email":"hwainscot3@altervista.org","password":"KWUP8SlCt28","user_type":"Administrador"},{"id":5,"email":"thomascruz699@gmail.com","password":"12345678","name":"thomas"},{"id":6,"email":"thomascruz699@gmail.com","password":"12345678","name":"thomas"},{"id":7,"email":"lucasthomascruz2018@gmail.com","password":"12345678","name":"thomas"},{"id":8,"email":"carinanovello@hotmail.com","password":"12345678","name":"carina","avatar":"avatar-1657935638134.jpg"},{"id":9,"email":"carinanovello@hotmail.com","password":"12345678","name":"carina","avatar":"avatar-1657935877571.jpg"},{"id":10,"email":"carinanovello@hotmail.com","password":"12345678","name":"carina","avatar":"avatar-1657939617772.JPG"},{"id":11,"email":"carinanovello@hotmail.com","password":"12345678","name":"carina"},{"id":12,"email":"carinanovello@hotmail.com","password":"req.file.filename","name":"carina","avatar":"avatar-1657980891629.jpg"},{"id":13,"email":"carinanovello@hotmail.com","password":"12345678","name":"carina","avatar":"perfil_dafault.JPG"},{"id":14,"email":"carinanovello@hotmail.com","password":"12345678","name":"carina","avatar":"perfil_dafault.JPG"},{"id":15,"email":"carinanovello@hotmail.com","password":"12345678","name":"carina"}]
+[
+    {
+        "id": 1,
+        "full_name": "Isidro Chislett",
+        "email": "ichislett0@123-reg.co.uk",
+        "password": "oP2SXMSa9V",
+        "user_type": "Cliente"
+    },
+    {
+        "id": 2,
+        "full_name": "Binnie Copozio",
+        "email": "bcopozio1@rambler.ru",
+        "password": "pwtcHNsbI5JZ",
+        "user_type": "Administrador"
+    },
+    {
+        "id": 3,
+        "full_name": "Cirilo Theuss",
+        "email": "ctheuss2@microsoft.com",
+        "password": "TMElTpWeZd",
+        "user_type": "Administrador"
+    },
+    {
+        "id": 4,
+        "full_name": "Hewett Wainscot",
+        "email": "hwainscot3@altervista.org",
+        "password": "KWUP8SlCt28",
+        "user_type": "Administrador"
+    },
+    {
+        "id": 5,
+        "email": "thomascruz699@gmail.com",
+        "password": "12345678",
+        "name": "thomas"
+    },
+    {
+        "id": 6,
+        "email": "thomascruz699@gmail.com",
+        "password": "12345678",
+        "name": "thomas"
+    },
+    {
+        "id": 7,
+        "email": "lucasthomascruz2018@gmail.com",
+        "password": "12345678",
+        "name": "thomas"
+    },
+    {
+        "id": 8,
+        "email": "carinanovello@hotmail.com",
+        "password": "12345678",
+        "name": "carina",
+        "avatar": "avatar-1657935638134.jpg"
+    },
+    {
+        "id": 9,
+        "email": "carinanovello@hotmail.com",
+        "password": "12345678",
+        "name": "carina",
+        "avatar": "avatar-1657935877571.jpg"
+    },
+    {
+        "id": 10,
+        "email": "carinanovello@hotmail.com",
+        "password": "12345678",
+        "name": "carina",
+        "avatar": "avatar-1657939617772.JPG"
+    },
+    {
+        "id": 11,
+        "email": "carinanovello@hotmail.com",
+        "password": "12345678",
+        "name": "carina"
+    },
+    {
+        "id": 12,
+        "email": "carinanovello@hotmail.com",
+        "password": "req.file.filename",
+        "name": "carina",
+        "avatar": "avatar-1657980891629.jpg"
+    },
+    {
+        "id": 13,
+        "email": "carinanovello@hotmail.com",
+        "password": "12345678",
+        "name": "carina",
+        "avatar": "perfil_dafault.JPG"
+    },
+    {
+        "id": 14,
+        "email": "carinanovello@hotmail.com",
+        "password": "12345678",
+        "name": "carina",
+        "avatar": "perfil_dafault.JPG"
+    },
+    {
+        "id": 15,
+        "email": "carinanovello@hotmail.com",
+        "password": "12345678",
+        "name": "carina"
+    },
+    {
+        "id": 16,
+        "email": "daianascarpa@gmail.com",
+        "password": "1234",
+        "name": "Daiana"
+    },
+    {
+        "id": 17,
+        "email": "daianascarpa@gmail.com",
+        "password": "1234",
+        "name": "Daiana"
+    },
+    {
+        "id": 18,
+        "email": "daianascarpa@gmail.com",
+        "password": "1234",
+        "name": "Daiana"
+    },
+    {
+        "id": 19,
+        "email": "dai@gmail.com",
+        "password": "$2a$10$d7vM8726nlIIm47Kf5U1neW//xcHhupxQSWhh8RlSACJ/ydT5PvZK",
+        "name": "Dai"
+    },
+    {
+        "id": 20,
+        "email": "silvana@gmail.com",
+        "password": "$2a$10$HTH3NBJTtG.nVs7swakjBeEuCIMIBdAwY1ASFVsn.cRGqxxi0Pg.W",
+        "name": "Silvana",
+        "avatar": "perfil_dafault.JPG"
+    },
+    {
+        "id": 21,
+        "email": "dai@gmail.com",
+        "password": "$2a$10$WVcsDZXIMX73hreFQqvmkufra.SyQsuEqVv.8/OinJ1DBboR20W/W",
+        "name": "Dai",
+        "image": "avatar-1658016124583.jpg"
+    },
+    {
+        "id": 22,
+        "email": "dai@gmail.com",
+        "password": "$2a$10$ULqgTfofWliFKR5i2LRuLOfR2mTt/EJ9wt9WI96dbA8IXcmW81OpW",
+        "name": "Dai",
+        "image": "avatar-1658016467276.jpg"
+    },
+    {
+        "id": 23,
+        "email": "daianascarpa@gmail.com",
+        "password": "$2a$10$oyK4DuEbzQHV2jqr9tZjB.zwXMSxkrN4klT6IaddkXXCS/c8lAgDW",
+        "name": "Daiana",
+        "image": "avatar-1658018665968.jpg"
+    },
+    {
+        "id": 24,
+        "email": "joel@soundcity.com.ar",
+        "password": "$2a$10$n8ZkVNPZQ94zjgW/nkHKLu7QlMb2IS95DrIbRWNPNx0i8uVzNZtgq",
+        "name": "Daiana",
+        "image": "avatar-1658019559870.jpg"
+    },
+    {
+        "id": 25,
+        "email": "silvana@gmail.com",
+        "password": "$2a$10$WhywDCM6plkjiCaeBCTYE.DzxJrkqNKkTu0kxZKrXD8R0Rc0eJRAG",
+        "name": "Dai",
+        "image": "avatar-1658019610308.jpg"
+    },
+    {
+        "id": 26,
+        "email": "dai@gmail.com",
+        "password": "$2a$10$n5KfOu9gxLGcZN9xLD0p.u68mINeDQqozGCF5arfp1qwzJwgDs7Oq",
+        "name": "Daiana",
+        "image": "avatar-1658019982423.jpg"
+    }
+]
