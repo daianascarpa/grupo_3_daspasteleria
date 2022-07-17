@@ -17,6 +17,9 @@
                 <div class="row clearfix">
                     <div class="">
                         <form action="/Usuarios/register" method="post" enctype="multipart/form-data">
+                            <div class="input_field"> <span><i aria-hidden="true" class="fa fa-user"></i></span>
+                                <input type="text" name="name" placeholder="Nombre y Apellido" required>
+                            </div>
                             <div class="input_field"> <span><i aria-hidden="true" class="fa fa-envelope"></i></span>
                                 <input type="email" name="email" placeholder="Email" required>
                             </div>
@@ -28,9 +31,7 @@
                             </div>
                             <div class="row clearfix">
                                 <div>
-                                    <div class="input_field"> <span><i aria-hidden="true" class="fa fa-user"></i></span>
-                                        <input type="text" name="name" placeholder="Nombre" required>
-                                    </div>
+                                    
                                     <div class="input_field"> 
                                         <label for="avatar"class="input_field">Imagen de Perfil</label>
                                         <input type="file" name="avatar" placeholder="foto de perfil" >
