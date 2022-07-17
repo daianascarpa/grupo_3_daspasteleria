@@ -52,12 +52,14 @@ const userController = {
                 email: req.body.email,
                 password:bcryptjs.hashSync(req.body.password,10),
                 repeatPassword: bcryptjs.hashSync(req.body.password,10),
-                name:req.body.name
-              }; 
+                name:req.body.name,
+               }; 
               
               if(typeof(req.file) == "undefined"){
               registroUserNew.avatar = 'perfil_dafault.JPG';
-            }
+             }else{
+              registroUserNew.avatar = req.file.filename
+             }
          //guardo del body la info como esta = en el name del register.ejs
              usuarioRegister.push(registroUserNew);
              fs.writeFileSync(registerData, JSON.stringify(usuarioRegister), "utf-8");
