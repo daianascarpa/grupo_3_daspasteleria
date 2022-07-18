@@ -4,4 +4,4 @@ function guestMiddleware (req, res, next) {
     }
     next();
     }
-    module.export = guestMiddleware;
+    module.exports = guestMiddleware;

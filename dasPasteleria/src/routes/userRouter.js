@@ -4,6 +4,7 @@ const { body,check } = require('express-validator')
 const path = require('path')
 const multer = require('multer')
 const userController = require('../controllers/userController')
+const guestMiddleware = require('../middleware/guestMiddleware')
 
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
@@ -33,11 +34,11 @@ const validationRegisterForm = [
 
 
 
-router.get('/login',userController.login) // mostrar formulario de login
+router.get('/login',guestMiddleware, userController.login) // mostrar formulario de login
 
 router.post('/login',validacionFormularioLogin,userController.sessionLogin) //ruta de envio de formulario 
 
-router.get('/register', userController.register) // mostrar formulario de registro
+router.get('/register', guestMiddleware, userController.register) // mostrar formulario de registro
 //router.post() la ruta del registro del usuario
 router.post('/register',validationRegisterForm, upload.single('avatar'), userController.sessionRegister)
 //router.post('/register',validationRegisterForm, userController.register)
