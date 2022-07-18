@@ -53,7 +53,7 @@ const userController = {
                 password:bcryptjs.hashSync(req.body.password,10),
                 repeatPassword: bcryptjs.hashSync(req.body.password,10),
                 name:req.body.name,
-               }; 
+              }; 
               
               if(typeof(req.file) == "undefined"){
               registroUserNew.avatar = 'perfil_dafault.JPG';
