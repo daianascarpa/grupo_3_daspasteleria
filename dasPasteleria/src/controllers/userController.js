@@ -21,12 +21,13 @@ const userController = {
       }
       for (let i = 0; i < usuarios.length; i++) {
         if (usuarios[i].email == req.body.email) {
-            if (usuarios[i].password==req.body.password) {   //if (bcryptjs.compareSync(req.body.password, usuarios[i].password)) se hace la compracion con contraseña encriptada y aun no se encripto
+            if (bcryptjs.compareSync(req.body.password, usuarios[i].password)) {  
               usuarioLoguearse = usuarios[i];                                   
             break;
           }
         }
       }
+
       req.session.usuarioLoguearse = usuarioLoguearse;
       res.redirect("/home"); // en caso que el usuario ingrese con exito redirecciona al home
     } else {
@@ -39,20 +40,37 @@ const userController = {
   register: function (req, res) {
     res.render("register", { titulo: "Registrate!" }); // muestra el formulario de registro
   },
+
   sessionRegister: function (req, res) {
+    let findUser = usuarioRegister.find(usuario => usuario.email == req.body.email)
+    
+    if(findUser){
+     return res.send('este email ya esta registrado')
+    }
     let registroUserNew = {
-      id: usuarioRegister.length + 1,
-      email: req.body.email,
-      password: req.body.password,
-      repeatPassword: req.body.repeatPassword,
-      name: req.body.name,
-    }; //guardo del body la info como esta = en el name del register.ejs
-
-    usuarioRegister.push(registroUserNew);
-    fs.writeFileSync(registerData, JSON.stringify(usuarioRegister), "utf-8");
-
-    res.redirect("/Usuarios/login");
-  },
-};
+                id: usuarioRegister.length + 1,
+                email: req.body.email,
+                password:bcryptjs.hashSync(req.body.password,10),
+                repeatPassword: bcryptjs.hashSync(req.body.password,10),
+                name:req.body.name,
+              }; 
+              
+              if(typeof(req.file) == "undefined"){
+              registroUserNew.avatar = 'perfil_dafault.JPG';
+             }else{
+              registroUserNew.avatar = req.file.filename
+             }
+         //guardo del body la info como esta = en el name del register.ejs
+             usuarioRegister.push(registroUserNew);
+             fs.writeFileSync(registerData, JSON.stringify(usuarioRegister), "utf-8");
+          
+          
+          res.redirect("/Usuarios/login");
+        }
+    }
+        
+    
 
 module.exports = userController;
+
+
