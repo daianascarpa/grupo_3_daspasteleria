@@ -21,10 +21,10 @@
                                 <input type="email" name="email" placeholder="Email" required>
                             </div>
                             <div class="input_field"> <span><i aria-hidden="true" class="fa fa-lock"></i></span>
-                                <input type="password" name="password" placeholder="Contraseña" required>
+                                <input type="password" name="password" minlength="8" placeholder="Contraseña" required>
                             </div>
                             <div class="input_field"> <span><i aria-hidden="true" class="fa fa-lock"></i></span>
-                                <input type="password" name="passwordRepeat" placeholder="Confirmar contraseña" required>
+                                <input type="password" name="passwordRepeat" minlength="8" placeholder="Confirmar contraseña" required>
                             </div>
                             <div class="row clearfix">
                                 <div>
@@ -32,7 +32,7 @@
                                         <input type="text" name="name" placeholder="Nombre" required>
                                     </div>
                                     <label class="r-c-box">
-                                        <input type="checkbox" > Acepto los términos y condiciones
+                                        <input type="checkbox" name="aceptoTerminosCondiciones"> Acepto los términos y condiciones
                                     </label required>
                                 </div>
                             </div>
