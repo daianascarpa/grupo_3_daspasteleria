@@ -30,7 +30,7 @@ const validationRegisterForm = [
     check('password').notEmpty().withMessage('campo obligatorio'),
     check('passwordRepeat').notEmpty().withMessage('campo obligatorio'),
     check('name').notEmpty().withMessage('campo obligatorio'),
-    check('aceptoTerminosCondiciones').withMessage('campo obligatorio') // crear un campo obligatorio para que si o si se tenga que clickear el checkbox
+    check('aceptoTerminosCondiciones').notEmpty().withMessage('campo obligatorio') // crear un campo obligatorio para que si o si se tenga que clickear el checkbox
 ];
 
 
