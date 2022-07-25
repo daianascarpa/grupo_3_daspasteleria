@@ -21,6 +21,10 @@
                             <div class="input_field"> <span><i aria-hidden="true" class="fa fa-lock"></i></span>
                                 <input type="password" name="password" minlength="8" placeholder="Contraseña" required>
                             </div>
+                            <% if (locals.errors && errors.email) { %>
+                            <div class="text-danger">
+                                  <%= errors.email.msg %>
+                            </div> <% }  %> <br>
                             <label class="l-c-box">
                                 <input type="checkbox" name="recordame"> Recuérdame
                             </label>

@@ -43,5 +43,6 @@ router.get('/register', guestMiddleware, userController.register) // mostrar for
 //router.post() la ruta del registro del usuario
 router.post('/register',validationRegisterForm, upload.single('avatar'), userController.sessionRegister)
 //router.post('/register',validationRegisterForm, userController.register)
+router.get('/logout', userController.logout) // para desloguearse
 
 module.exports = router

@@ -111,6 +111,11 @@ form{
     background: rgb(11, 119, 131);
 }
 
+.text-danger {
+    color: red;
+    font-size: 16px;
+    text-align: center;
+}
 
 @media (min-width: 400px) {
     .form_wrapper{

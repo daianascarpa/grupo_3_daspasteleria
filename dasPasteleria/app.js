@@ -4,6 +4,7 @@ const methodOverride = require('method-override')
 const cookieParser = require('cookie-parser');
 const app = express();
 const session = require('express-session');
+const userLoggedMiddleware = require ('./src/middleware/userLoggedMiddleware');
 
 
 
@@ -17,6 +18,7 @@ app.use(session({
     resave: false,
     saveUninitialized: false,
 }))
+app.use(userLoggedMiddleware);
 app.use(cookieParser());
 
 const indexRouter = require('./src/routes/indexRouter')

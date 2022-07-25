@@ -1,4 +1,3 @@
-
 [
     {
         "id": 1,
@@ -69,6 +68,13 @@
         "repeatPassword": "$2a$10$dX6mmzJbWpAgD3CcWpd/qOWxIbo6.xpUJFdzw9W.t2DW.BQ.XG3wm",
         "name": "Daiana",
         "avatar": "perfil_dafault.JPG"
+    },
+    {
+        "id": 11,
+        "email": "daiana@gmail.com",
+        "password": "$2a$10$IPY/qtBwid2/2SEnbz7btO7g6DVL8w6t5yK0vqSjUloDQeKH6IcvW",
+        "repeatPassword": "$2a$10$f9hjPQ4QfgbpmwHz10p3f..i6V7nOnooE8ZMgtL7KK3YkdAsww57i",
+        "name": "Daiana",
+        "avatar": "avatar-1658679053575.jpg"
     }
 ]
-

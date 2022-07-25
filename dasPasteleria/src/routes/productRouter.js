@@ -3,6 +3,7 @@ const router = express.Router()
 const path = require('path')
 const multer = require('multer')
 const productController = require('../controllers/productController')
+const authMiddleware = require("../middleware/authMiddleware")
 
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
@@ -29,7 +30,7 @@ router.get('/editar-producto/:id',productController.edit)  // para mostrar formu
 router.put('/editar-producto/:id', productController.update) 
 
 // GOT TO //
-router.get('/carrito-de-compras', productController.productCart) 
+router.get('/carrito-de-compras', authMiddleware, productController.productCart) 
 
 /*** DELETE ONE PRODUCT***/
 router.delete('/:id', productController.delete) 

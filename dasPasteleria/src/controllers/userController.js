@@ -19,23 +19,32 @@ const userController = {
       } else {
         usuarios = usuarioRegister;
       }
-      for (let i = 0; i < usuarios.length; i++) {
-        if (usuarios[i].email == req.body.email) {
-            if (bcryptjs.compareSync(req.body.password, usuarios[i].password)) {  
-              usuarioLoguearse = usuarios[i];                                   
-            break;
-          }
+    
+      let usuarioLoguearse = usuarioRegister.find(usuario => usuario.email == req.body.email)
+      if (usuarioLoguearse) {
+        let ifOkPassword = bcryptjs.compareSync(req.body.password, usuarioLoguearse.password);
+        if (ifOkPassword) {
+          delete usuarioLoguearse.password;
+          req.session.usuarioLoguearse = usuarioLoguearse;
+          return res.redirect("/home"); // en caso que el usuario ingrese con exito redirecciona al home
         }
-      }
-
-      req.session.usuarioLoguearse = usuarioLoguearse;
-      res.redirect("/home"); // en caso que el usuario ingrese con exito redirecciona al home
-    } else {
-      res.redirect("/Usuarios/login");
+      }     
     }
+      return res.render("login", {
+        titulo: "Iniciá Sesión" ,
+        errors: {
+          email: {
+            msg: "Las credenciales son inválidas"
+          },
+        }
+      });
+    },
+  
+  logout: function(req, res) {
+    req.session.destroy();
+    return res.redirect("/home");
   },
-
-  // ver de agragar un metodo para enviar datos logeo
+  
 
   register: function (req, res) {
     res.render("register", { titulo: "Registrate!" }); // muestra el formulario de registro
