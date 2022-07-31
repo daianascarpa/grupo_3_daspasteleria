@@ -65,7 +65,7 @@ const userController = {
               }; 
               
               if(typeof(req.file) == "undefined"){
-              registroUserNew.avatar = 'perfil_dafault.JPG';
+              registroUserNew.avatar = 'perfil_default.JPG';
              }else{
               registroUserNew.avatar = req.file.filename
              }
@@ -75,7 +75,12 @@ const userController = {
           
           
           res.redirect("/Usuarios/login");
-        }
+        },
+
+  profile:function (req, res){
+    res.render('profile', {titulo: "Perfil de Usuario", usuarioLoguearse: req.session.usuarioLoguearse })
+  }       
+
     }
         
     

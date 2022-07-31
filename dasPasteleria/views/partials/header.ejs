@@ -17,7 +17,16 @@
             <!-- Aca hay que agregarle el dinamismo para que muestre el usuario sie sta logeado-->
             <% if (locals.isLogged) { %>
             
-            <div class="h-login-on">
+                <div class="h-dropdown">
+                    <a class="h-dropbtn"> <img src="/img/users-img/<%= locals.usuarioLoguearse.avatar %>" width = '40' height="40" style="border-radius: 100%"> <p>Hola <%= locals.usuarioLoguearse.name %></p></a>
+                    <div class="h-dropdown-content">
+                    <a href="/Usuarios/profile">Mi perfil</a>
+                    <hr>
+                    <a href = "/Usuarios/logout">Cerrar Sesión</a>
+                    </div>
+                  </div>
+             
+            <!-- <div class="h-login-on">
                 <ul class="h-dropdown">
                   <a role="h-button">
                       <img src="/img/users-img/<%= locals.usuarioLoguearse.avatar %>" width = '40' height="40" style="border-radius: 100%">
@@ -29,7 +38,7 @@
                   <a class= "h-dropdown-content" href = "/Usuarios/logout"> Cerrar Sesión</a>
                   </ul>
                 </ul>
-            </div>  
+            </div>   -->
             <% } else { %>
             <!-- y aca el else en caso que no este, para que pueda logearse-->          
             <div class="h-account">

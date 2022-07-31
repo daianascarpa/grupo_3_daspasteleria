@@ -5,6 +5,7 @@ const path = require('path')
 const multer = require('multer')
 const userController = require('../controllers/userController')
 const guestMiddleware = require('../middleware/guestMiddleware')
+const authMiddleware = require('../middleware/authMiddleware')
 
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
@@ -44,5 +45,7 @@ router.get('/register', guestMiddleware, userController.register) // mostrar for
 router.post('/register',validationRegisterForm, upload.single('avatar'), userController.sessionRegister)
 //router.post('/register',validationRegisterForm, userController.register)
 router.get('/logout', userController.logout) // para desloguearse
+
+router.get('/profile', authMiddleware, userController.profile) // vita de perfil del usuario
 
 module.exports = router

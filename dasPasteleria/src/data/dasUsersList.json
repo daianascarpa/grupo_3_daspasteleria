@@ -51,7 +51,7 @@
         "password": "12345678",
         "repeatPassword": "12345678",
         "name": "carina novello",
-        "avatar": "perfil_dafault.JPG"
+        "avatar": "perfil_default.JPG"
     },
     {
         "id": 9,
@@ -59,7 +59,7 @@
         "password": "$2a$10$XuVGsx7WSGjvpb/EArNEROG0HVvRiutTyOxhIxjGSV5uClbAFl7Qe",
         "repeatPassword": "$2a$10$VGCQ7o5BkVb3pEKjusoNNO5RK2rOi0PQPxf8eXbdGwSJR7zrl/rE.",
         "name": "carina novello",
-        "avatar": "perfil_dafault.JPG"
+        "avatar": "perfil_default.JPG"
     },
     {
         "id": 10,
@@ -67,7 +67,7 @@
         "password": "$2a$10$K7dOMIl7t1Krlaxw3AG8t.2viZXy7y5LjzoHtGQmVbBlSKt0ykjpW",
         "repeatPassword": "$2a$10$dX6mmzJbWpAgD3CcWpd/qOWxIbo6.xpUJFdzw9W.t2DW.BQ.XG3wm",
         "name": "Daiana",
-        "avatar": "perfil_dafault.JPG"
+        "avatar": "perfil_default.JPG"
     },
     {
         "id": 11,
