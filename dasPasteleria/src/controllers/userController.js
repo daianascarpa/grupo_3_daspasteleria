@@ -14,6 +14,8 @@ const userController = {
     let error = validationResult(req);
     if (error.isEmpty()) {
       let usuarios
+      let usuarioRegister = JSON.parse(fs.readFileSync(registerData, "utf-8"));
+      
       if (!usuarioRegister) {
          usuarios = [];
       } else {
