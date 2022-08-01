@@ -7,8 +7,6 @@ const session = require('express-session');
 const userLoggedMiddleware = require ('./src/middleware/userLoggedMiddleware');
 
 
-
-
 app.use(express.urlencoded({extended:false}));
 app.use(express.json());
 app.use(methodOverride("_method"))
@@ -18,6 +16,7 @@ app.use(session({
     resave: false,
     saveUninitialized: false,
 }))
+
 app.use(userLoggedMiddleware);
 app.use(cookieParser());
 

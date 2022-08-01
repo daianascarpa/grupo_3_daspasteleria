@@ -44,7 +44,7 @@ const userController = {
     req.session.destroy();
     return res.redirect("/home");
   },
-  
+  /*Falta agregar cookies, actualmente cuando uno de deslogeua y vuelve a loquearse, sin levantar el servivodr, salta error*/
 
   register: function (req, res) {
     res.render("register", { titulo: "Registrate!" }); // muestra el formulario de registro
