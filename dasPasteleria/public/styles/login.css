@@ -7,7 +7,7 @@
 body{
     font-family: Roboto, sans-serif;
     color: rgb(58, 57, 57);
-    background-color: #f2f2f2;
+    background-color: white;
     font-size: 14px;
 }
 
@@ -107,6 +107,12 @@ form{
     width: 100%;
 }
 
+.l-container-main {
+    background-color: #f2f2f2;
+    padding-top: 10px;
+    padding-bottom: 40px;
+}
+
 .form_wrapper input[type="submit"]:hover{
     background: rgb(11, 119, 131);
 }
@@ -119,7 +125,7 @@ form{
 
 @media (min-width: 400px) {
     .form_wrapper{
-        width: 400px;
+        width: 40vw;
         float: none;
     }
 }
