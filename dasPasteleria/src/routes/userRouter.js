@@ -17,7 +17,9 @@ const storage = multer.diskStorage({
   })
   
   const upload = multer({storage})
- 
+
+
+
 
 
 
@@ -27,22 +29,22 @@ const validacionFormularioLogin = [
 ];
 
 const validationRegisterForm = [
-    check('email').notEmpty().isEmail().withMessage('campo obligatorio'), 
-    check('password').notEmpty().withMessage('campo obligatorio'),
-    check('passwordRepeat').notEmpty().withMessage('campo obligatorio'),
-    check('name').notEmpty().withMessage('campo obligatorio'),
-    check('aceptoTerminosCondiciones').notEmpty().withMessage('campo obligatorio') // crear un campo obligatorio para que si o si se tenga que clickear el checkbox
+    body('name').notEmpty().withMessage('campo obligatorio'),
+    body('email').notEmpty().withMessage('campo obligatorio').bail().isEmail().withMessage('debe ser del tipo email'), 
+    body('password').notEmpty().withMessage('campo obligatorio'),
+    body('passwordRepeat').notEmpty().withMessage('campo obligatorio'),
+    body('aceptoTerminosCondiciones').notEmpty().withMessage('campo obligatorio') // crear un campo obligatorio para que si o si se tenga que clickear el checkbox
 ];
 
 
 
-router.get('/login',guestMiddleware, userController.login) // mostrar formulario de login
+router.get('/login', guestMiddleware, userController.login) // mostrar formulario de login
 
-router.post('/login',validacionFormularioLogin,userController.sessionLogin) //ruta de envio de formulario 
+router.post('/login', validacionFormularioLogin, userController.sessionLogin) //ruta de envio de formulario 
 
 router.get('/register', guestMiddleware, userController.register) // mostrar formulario de registro
 //router.post() la ruta del registro del usuario
-router.post('/register',validationRegisterForm, upload.single('avatar'), userController.sessionRegister)
+router.post('/register', upload.single('avatar'), validationRegisterForm, userController.sessionRegister)
 //router.post('/register',validationRegisterForm, userController.register)
 router.get('/logout', userController.logout) // para desloguearse
 

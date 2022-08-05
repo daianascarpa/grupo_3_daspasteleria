@@ -1,59 +1,59 @@
-    <header>
-    <div class="h-top-header-mobile">
-        <div class="h-menu" action="#" method="GET">
-            <div class="h-burger-menu">
-                <i class="fa fa-bars burger"></i>
-            </div>
-            <p>INICIO</p>
-        </div>
-        <div class="h-logo-space"> 
-            <img src="/img/logos-pagina/DAS_logo.png" alt="Logo DAS">
-        </div>
-        <div class="h-box">
-            <div class="h-container-1">
-                <span class="h-icon"><i class="fa fa-search"></i></span>
-                <input type="search" id="search" placeholder="Buscar">
-            </div>
-            <!-- Aca hay que agregarle el dinamismo para que muestre el usuario sie sta logeado-->
-            <% if (locals.isLogged) { %>
-            
-                <div class="h-dropdown">
-                    <a class="h-dropbtn"> <img src="/img/users-img/<%= locals.usuarioLoguearse.avatar %>" width = '40' height="40" style="border-radius: 100%"> <p>Hola <%= locals.usuarioLoguearse.name %></p></a>
-                    <div class="h-dropdown-content">
-                    <a href="/Usuarios/profile">Mi perfil</a>
-                    <hr>
-                    <a href = "/Usuarios/logout">Cerrar Sesión</a>
-                    </div>
-                  </div>
-             
-            <!-- <div class="h-login-on">
-                <ul class="h-dropdown">
-                  <a role="h-button">
-                      <img src="/img/users-img/<%= locals.usuarioLoguearse.avatar %>" width = '40' height="40" style="border-radius: 100%">
-                      Hola <%= locals.usuarioLoguearse.name %>
-                  </a>
-                  <ul>
-                  <a class="h-dropdown-content" href = #> Mi perfil</a>
-                  <li><hr></li>
-                  <a class= "h-dropdown-content" href = "/Usuarios/logout"> Cerrar Sesión</a>
-                  </ul>
-                </ul>
-            </div>   -->
-            <% } else { %>
-            <!-- y aca el else en caso que no este, para que pueda logearse-->          
-            <div class="h-account">
-                <a href="/Usuarios/register" class="h-register"> <i class="fa-solid fa-file-pen"></i><p>CREAR CUENTA</p></a>
-                <a href="/Usuarios/login" class="h-login"> <i class="fa-solid fa-user"></i><p>INICIAR SESIÓN</p></a>
-            </div>
-            <% } %>
-        </div>
-        
-    </div>   
-    <div class="h-nav-menu">
-        <nav class="h-lista-menu">
-        <a href="/home">INICIO</a>
-        <a href="/Productos">PRODUCTOS</a>
-        <a href="/Productos/carrito-de-compras">CARRITO</a>
-        </nav>
+<header>
+  <div class="h-top-header-mobile">
+    <div class="h-menu" action="#" method="GET">
+      <div class="h-burger-menu">
+        <i class="fa fa-bars burger"></i>
+      </div>
+      <p>INICIO</p>
     </div>
-    </header>
+    <div class="h-logo-space">
+      <img src="/img/logos-pagina/DAS_logo.png" alt="Logo DAS" />
+    </div>
+    <div class="h-box">
+      <div class="h-container-1">
+        <span class="h-icon"><i class="fa fa-search"></i></span>
+        <input type="search" id="search" placeholder="Buscar" />
+      </div>
+      <!-- Aca hay que agregarle el dinamismo para que muestre el usuario sie sta logeado-->
+      <% if (locals.isLogged) { %>
+
+      <div class="h-dropdown">
+        <a class="h-dropbtn">
+          <img
+            src="/img/users-img/<%= locals.userLogged.avatar %>"
+            width="40"
+            height="40"
+            style="border-radius: 100%"
+          />
+          <p>Hola <%= locals.userLogged.name %></p></a
+        >
+        <div class="h-dropdown-content">
+          <a href="/Usuarios/profile">Mi perfil</a>
+          <hr />
+          <a href="/Usuarios/logout">Cerrar Sesión</a>
+        </div>
+      </div>
+
+      <% } else { %>
+      <!-- y aca el else en caso que no este, para que pueda logearse-->
+      <div class="h-account">
+        <a href="/Usuarios/register" class="h-register">
+          <i class="fa-solid fa-file-pen"></i>
+          <p>CREAR CUENTA</p></a
+        >
+        <a href="/Usuarios/login" class="h-login">
+          <i class="fa-solid fa-user"></i>
+          <p>INICIAR SESIÓN</p></a
+        >
+      </div>
+      <% } %>
+    </div>
+  </div>
+  <div class="h-nav-menu">
+    <nav class="h-lista-menu">
+      <a href="/home">INICIO</a>
+      <a href="/Productos">PRODUCTOS</a>
+      <a href="/Productos/carrito-de-compras">CARRITO</a>
+    </nav>
+  </div>
+</header>

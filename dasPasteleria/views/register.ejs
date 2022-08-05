@@ -19,16 +19,32 @@
                     <div class="">
                         <form action="/Usuarios/register" method="post" enctype="multipart/form-data">
                             <div class="input_field"> <span><i aria-hidden="true" class="fa fa-user"></i></span>
-                                <input type="text" name="name" placeholder="Nombre y Apellido" required>
+                                <input type="text" name="name" placeholder="Nombre y Apellido">
+                                <% if (locals.errors && errors.name) { %>
+                                    <div class="text-danger">
+                                          <%= errors.name.msg %>
+                                    </div> <% }  %> <br>
                             </div>
                             <div class="input_field"> <span><i aria-hidden="true" class="fa fa-envelope"></i></span>
-                                <input type="email" name="email" placeholder="Email" required>
+                                <input type="email" name="email" placeholder="Email">
+                                <% if (locals.errors && errors.email) { %>
+                                    <div class="text-danger">
+                                          <%= errors.email.msg %>
+                                    </div> <% }  %> <br>
                             </div>
                             <div class="input_field"> <span><i aria-hidden="true" class="fa fa-lock"></i></span>
-                                <input type="password" name="password" minlength="8" placeholder="Contraseña" required>
+                                <input type="password" name="password" minlength="8" placeholder="Contraseña">
                             </div>
+                            <% if (locals.errors && errors.password) { %>
+                                <div class="text-danger">
+                                      <%= errors.password.msg %>
+                                </div> <% }  %> <br>
                             <div class="input_field"> <span><i aria-hidden="true" class="fa fa-lock"></i></span>
-                                <input type="password" name="passwordRepeat" minlength="8" placeholder="Confirmar contraseña" required>
+                                <input type="password" name="passwordRepeat" minlength="8" placeholder="Confirmar contraseña" >
+                                <% if (locals.errors && errors.passwordRepeat) { %>
+                                    <div class="text-danger">
+                                          <%= errors.passwordRepeat.msg %>
+                                    </div> <% }  %> <br>
                             </div>
                             <div class="row clearfix">
                                 <div>
@@ -39,7 +55,7 @@
                                     </div>
                                     <label class="r-c-box">
                                         <input type="checkbox" name="aceptoTerminosCondiciones"> Acepto los términos y condiciones
-                                    </label required>
+                                    </label>
                                 </div>
                             </div>
                             <input class="button" type="submit" value="Registrarte">

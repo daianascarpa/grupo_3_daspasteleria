@@ -1,80 +1,88 @@
 [
-    {
-        "id": 1,
-        "full_name": "Isidro Chislett",
-        "email": "ichislett0@123-reg.co.uk",
-        "password": "oP2SXMSa9V",
-        "user_type": "Cliente"
-    },
-    {
-        "id": 2,
-        "full_name": "Binnie Copozio",
-        "email": "bcopozio1@rambler.ru",
-        "password": "pwtcHNsbI5JZ",
-        "user_type": "Administrador"
-    },
-    {
-        "id": 3,
-        "full_name": "Cirilo Theuss",
-        "email": "ctheuss2@microsoft.com",
-        "password": "TMElTpWeZd",
-        "user_type": "Administrador"
-    },
-    {
-        "id": 4,
-        "full_name": "Hewett Wainscot",
-        "email": "hwainscot3@altervista.org",
-        "password": "KWUP8SlCt28",
-        "user_type": "Administrador"
-    },
-    {
-        "id": 5,
-        "email": "thomascruz699@gmail.com",
-        "password": "12345678",
-        "name": "thomas"
-    },
-    {
-        "id": 6,
-        "email": "thomascruz699@gmail.com",
-        "password": "12345678",
-        "name": "thomas"
-    },
-    {
-        "id": 7,
-        "email": "lucasthomascruz2018@gmail.com",
-        "password": "12345678",
-        "name": "thomas"
-    },
-    {
-        "id": 8,
-        "email": "carinnovello@gmail.com",
-        "password": "12345678",
-        "repeatPassword": "12345678",
-        "name": "carina novello",
-        "avatar": "perfil_default.JPG"
-    },
-    {
-        "id": 9,
-        "email": "carinanovello@hotmail.com",
-        "password": "$2a$10$XuVGsx7WSGjvpb/EArNEROG0HVvRiutTyOxhIxjGSV5uClbAFl7Qe",
-        "repeatPassword": "$2a$10$VGCQ7o5BkVb3pEKjusoNNO5RK2rOi0PQPxf8eXbdGwSJR7zrl/rE.",
-        "name": "carina novello",
-        "avatar": "perfil_default.JPG"
-    },
-    {
-        "id": 10,
-        "email": "daianascarpa@gmail.com",
-        "password": "$2a$10$K7dOMIl7t1Krlaxw3AG8t.2viZXy7y5LjzoHtGQmVbBlSKt0ykjpW",
-        "repeatPassword": "$2a$10$dX6mmzJbWpAgD3CcWpd/qOWxIbo6.xpUJFdzw9W.t2DW.BQ.XG3wm",
-        "name": "Daiana",
-        "avatar": "perfil_default.JPG"
-    },
-    {
-        "id": 11,
-        "email": "daiana@gmail.com",
-        "password": "$2a$10$IPY/qtBwid2/2SEnbz7btO7g6DVL8w6t5yK0vqSjUloDQeKH6IcvW",
-        "repeatPassword": "$2a$10$f9hjPQ4QfgbpmwHz10p3f..i6V7nOnooE8ZMgtL7KK3YkdAsww57i",
-        "name": "Daiana",
-        "avatar": "avatar-1658679053575.jpg"
-    }
+ {
+  "id": 1,
+  "full_name": "Isidro Chislett",
+  "email": "ichislett0@123-reg.co.uk",
+  "password": "oP2SXMSa9V",
+  "user_type": "Cliente"
+ },
+ {
+  "id": 2,
+  "full_name": "Binnie Copozio",
+  "email": "bcopozio1@rambler.ru",
+  "password": "pwtcHNsbI5JZ",
+  "user_type": "Administrador"
+ },
+ {
+  "id": 3,
+  "full_name": "Cirilo Theuss",
+  "email": "ctheuss2@microsoft.com",
+  "password": "TMElTpWeZd",
+  "user_type": "Administrador"
+ },
+ {
+  "id": 4,
+  "full_name": "Hewett Wainscot",
+  "email": "hwainscot3@altervista.org",
+  "password": "KWUP8SlCt28",
+  "user_type": "Administrador"
+ },
+ {
+  "id": 5,
+  "email": "thomascruz699@gmail.com",
+  "password": "12345678",
+  "name": "thomas"
+ },
+ {
+  "id": 6,
+  "email": "thomascruz699@gmail.com",
+  "password": "12345678",
+  "name": "thomas"
+ },
+ {
+  "id": 7,
+  "email": "lucasthomascruz2018@gmail.com",
+  "password": "12345678",
+  "name": "thomas"
+ },
+ {
+  "id": 8,
+  "email": "carinnovello@gmail.com",
+  "password": "12345678",
+  "repeatPassword": "12345678",
+  "name": "carina novello",
+  "avatar": "perfil_default.JPG"
+ },
+ {
+  "id": 9,
+  "email": "carinanovello@hotmail.com",
+  "password": "$2a$10$XuVGsx7WSGjvpb/EArNEROG0HVvRiutTyOxhIxjGSV5uClbAFl7Qe",
+  "repeatPassword": "$2a$10$VGCQ7o5BkVb3pEKjusoNNO5RK2rOi0PQPxf8eXbdGwSJR7zrl/rE.",
+  "name": "carina novello",
+  "avatar": "perfil_default.JPG"
+ },
+ {
+  "id": 10,
+  "email": "daianascarpa@gmail.com",
+  "password": "$2a$10$K7dOMIl7t1Krlaxw3AG8t.2viZXy7y5LjzoHtGQmVbBlSKt0ykjpW",
+  "repeatPassword": "$2a$10$dX6mmzJbWpAgD3CcWpd/qOWxIbo6.xpUJFdzw9W.t2DW.BQ.XG3wm",
+  "name": "Daiana",
+  "avatar": "perfil_default.JPG"
+ },
+ {
+  "id": 11,
+  "email": "daiana@gmail.com",
+  "password": "$2a$10$IPY/qtBwid2/2SEnbz7btO7g6DVL8w6t5yK0vqSjUloDQeKH6IcvW",
+  "repeatPassword": "$2a$10$f9hjPQ4QfgbpmwHz10p3f..i6V7nOnooE8ZMgtL7KK3YkdAsww57i",
+  "name": "Daiana",
+  "avatar": "avatar-1658679053575.jpg"
+ },
+ {
+  "id": 12,
+  "email": "123456@gmail.com",
+  "password": "$2a$10$1woaAhROk/iiYa1EweqD1.AtpEvPE/oQm0/XoVsJEf92kaLo8dSoO",
+  "repeatPassword": "$2a$10$xIrtK9n/hcel9Olz1g0FmO/8NzqnyzMaYT1LzJt0fCmGuv8RXPMFW",
+  "name": "carina novello",
+  "avatar": "perfil_default.JPG"
+ }
 ]
