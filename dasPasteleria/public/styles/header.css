@@ -1,7 +1,7 @@
-*​{ 
-    margin: ​0​px​; 
-    padding: ​0​px​; 
-    box-sizing: ​border-box​; 
+*{ 
+    margin:0 px; 
+    padding:0 px; 
+    box-sizing: border-box;
 }
 
 .h-top-header-mobile {
@@ -197,10 +197,30 @@ ul a, li {
     border-radius: 5px;
   }
 
+  .fa-search:before {
+    position: absolute;
+    content: "\f002";
+    bottom: 12px;
+    left: -5px;
+}
+
   .h-container-1 .h-icon{
     position: absolute;
     margin: 3px 8px 3px 8px;
     color: rgba(167, 164, 164, 0.87);
+  }
+
+  .h-container-1 form{
+    width: 80%;
+  }
+  .h-container-1 buttom{
+    height: 18px;
+    width: 15%;
+    border: none;
+    position: relative;
+    right: 30px;
+    background: none;
+    border-left: solid 1px lightgrey;
   }
 
 .h-nav-menu {

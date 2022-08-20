@@ -6,10 +6,11 @@ const { validationResult } = require("express-validator");
 // const registerData = path.join(__dirname, "../data/dasUsersList.json");
 // let usuarioRegister = JSON.parse(fs.readFileSync(registerData, "utf-8"));
 
-const Users = require("../modelo/Users");
+const db = require("../database/models");
+
+const Users = db.User
 
 const userController = {
-
   register: function (req, res) {
     res.render("register", { titulo: "Registrate!" }); // muestra el formulario de registro
   },
@@ -17,30 +18,44 @@ const userController = {
   sessionRegister: function (req, res) {
     const errors = validationResult(req);
     if(errors.isEmpty()) {
-     let findUser = Users.findByField('email', req.body.email);
-      if (findUser) {
-      res.send("este email ya esta registrado");
-    }else{
-      let registroUserNew = {
-        email: req.body.email,
-        password: bcryptjs.hashSync(req.body.password, 10),
-        repeatPassword: bcryptjs.hashSync(req.body.password, 10),
-        name: req.body.name,
-      };
-      if (typeof req.file == "undefined") {
-        registroUserNew.avatar = "perfil_default.JPG";
-      } else {
-        registroUserNew.avatar = req.file.filename;
-      }
-      //guardo del body la info como esta = en el name del register.ejs
-     Users.createUser(registroUserNew);
+      Users.findOne({
+        where:{email : req.body.email}
+      }).then(user=>{
        
-    res.redirect("/Usuarios/login")
-    }
-   
+          if(user){
+          res.render("register", {
+            titulo: "Registrate!" ,
+            errors: {
+              user_name:{
+                msg: "Las credenciales son inválidas",
+              },
+              email: {
+                msg: "Las credenciales son inválidas",
+              },
+            },
+          })
+        }else{
+          let registroUserNew = {
+            email: req.body.email,
+            user_password: bcryptjs.hashSync(req.body.user_password, 10),
+            repeat_password: bcryptjs.hashSync(req.body.repeat_password, 10),
+            user_name: req.body.user_name,
+          };
+          if (typeof req.file == "undefined") {
+            registroUserNew.avatar = "perfil_default.JPG";
+          } else {
+            registroUserNew.avatar = req.file.filename;
+          }
+          //guardo del body la info como esta = en el name del register.ejs
+         Users.create(registroUserNew); // ver si es necesario el then
+        
+        res.redirect("/Usuarios/login")
+        }
+      })
+  
   }else{
-   
-     res.render("register", {titulo: "Registro", errors: errors.mapped()})
+  
+  res.render("register", {titulo: "Registro", errors: errors.mapped()})
   }
 }, 
 

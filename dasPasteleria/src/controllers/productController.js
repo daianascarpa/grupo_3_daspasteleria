@@ -1,20 +1,23 @@
-const fs = require('fs');
-const path = require('path');
+const db = require("../database/models");
+const sequelize = db.sequelize;
+const { Op } = require("sequelize");
 
-const productsFilePath =  path.join(__dirname, '../data/dasProductList.json');
-let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-
+const Products = db.Product;
 
 const productController = {
 
   product: function(req,res){
-        res.render('product', {titulo: 'Catálogo Productos', products})
+        Products.findAll().then(products=>
+          res.render('product', {titulo: 'Catálogo Productos', products, msg:'' }))
+       
   },
 
   detail: function(req,res){
-    let idProductView = req.params.id
-    let productView = products.find( product => product.id == idProductView )
-    res.render('productView', {titulo: "Detalle del Producto ", productView})
+    Products.findByPk(req.params.id).then(productView=>
+       res.render('productView', {titulo: "Detalle del Producto ", productView}))
+    // let idProductView = req.params.id
+    // let productView = products.find( product => product.id == idProductView )
+   
   },
 
   create: function(req,res){
@@ -23,83 +26,77 @@ const productController = {
 
   store: function (req, res){
         let productNew = {
-        id: (products.length +1),
         product_name: req.body.product_name,
-        descripcion: req.body.descripcion,
-        category: req.body.category,
-        price_1: req.body.price,
-        price_2: req.body.price, 
-        size: req.body.size,
+        product_description: req.body.product_descripcion,
+        category_id: req.body.category,
         image:req.file.filename,
+        small_price: req.body.small_price,
+        big_price: req.body.big_price
       }
-      // A ver a posterior con base de datos //
-      // productNew.size = size
-      // let size = false
-      // let category = req.body.category
-      // if (category == "Tarta" || category == "Torta") {
-      //   size = true;
-      // }
 
-      products.push(productNew)
-      fs.writeFileSync(productsFilePath, JSON.stringify(products), 'utf-8')
-       res.redirect('/Productos') // logica para crear producto
-    },
+      Products.create(productNew)//then, es necesario en este metodo?
+        res.redirect('/Productos')
+      
+},
+    
 
-    edit: function(req,res){
-      let idproductEdit = req.params.id
-      globalThis.productToEdit;
-      let productToEdit = products.find( product => product.id == idproductEdit )
-      res.render('editProduct', {titulo: "Edicion del Producto " +  productToEdit.product_name , productToEdit})
-
-    },
+edit: function(req,res){
+  Products.findByPk(req.params.id).then(productToEdit=>{
+    res.render('editProduct', {titulo: "Edicion del Producto " +  productToEdit.product_name , productToEdit})
+  })
+},
 
     // Update - Method to update
-    update: (req, res) => {
-      /*let idproductEdit = req.params.id
-      let productToEdit = products.find( product => product.id == idproductEdit )
-        productToEdit = {
-        product_name: req.body.product_name,
-        descripcion: req.body.descripcion,
-        category: req.body.category,
-        price_1: req.body.price,
-        price_2: req.body.price, 
-        size: size,
-      },*/
-
-      let id = req.params.id;
-      console.log(id)
-      for (let i=0; i<products.length; i++) {
-       if (products[i].id == id) {
-          products[i].product_name = req.body.product_name;
-          products[i].description = req.body.description;
-          products[i].category = req.body.category;
-          products[i].price_1 = req.body.price;
-          products[i].price_2 = req.body.price;
-          products[i].size = req.body.porcion;
-          products[i].quantity = req.body.quantity;      
-                    
-        }
+    update:function(req,res){
+     req.body.image = req.file ? req.file.filename : req.body.oldimage
+     let productToEdit = {
+        ...req.body,
+        image: req.body.image
       }
-      fs.writeFileSync(productsFilePath, JSON.stringify(products), 'utf-8')
-      res.redirect(`/Productos`)
+     
+      Products.update(productToEdit,{
+        where:{id: req.params.id}
+      }).then(productToEdit=>{// es necesario el then?
+        res.redirect('/Productos')
+      })
     },
-
-
+    
   productCart: function(req,res){
       res.render('productCart', {titulo: "Carrito de compras"})
       
     },
 
-    delete: (req, res) => {
-      let id = req.params.id;
-      console.log(id);
-      products = products.filter(function(product){
-        return product.id != id;
+    delete:function(req,res){
+     Products.destroy({
+      where:{
+          id: req.params.id
+      }
+  })
+  .then(resolve=>{
+    res.redirect('/Productos')
       })
-      fs.writeFileSync(productsFilePath, JSON.stringify(products), 'utf-8')
-      res.redirect('/Productos')
-    },
-  
+  },
+
+  buscar: (req, res) => {
+    let productSearch= req.body.search;
+    console.log(req.body)
+    Products.findAll({where: {product_name: {[db.Sequelize.Op.like] : '%' + productSearch + '%'}}})
+    .then(products=>{
+      console.log(products)
+        if (products.length == 0) {
+            return res.render('product', {titulo: 'Catálogo Productos', msg:"Los resultados no coinciden con la búsqueda realizada"})
+        }else{
+            return res.render('product', {titulo: 'Catálogo Productos', products, msg:''}) 
+        }
+    
+    })
+},
+
+
+
+
+
+
 }
 
 

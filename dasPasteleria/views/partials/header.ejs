@@ -11,8 +11,16 @@
     </div>
     <div class="h-box">
       <div class="h-container-1">
+
+       
+          <form action="/Productos/buscar" method="POST">
+              <input type="search" name= "search"  id="search" placeholder="Buscar">
+              <button class="boton-buscar" type="submit"> <div class="h-icon"><i class="fa fa-search"></i></div></button>
+                
+          </form>
+     <!--         
         <span class="h-icon"><i class="fa fa-search"></i></span>
-        <input type="search" id="search" placeholder="Buscar" />
+        <input type="search" id="search" placeholder="Buscar" /> -->
       </div>
       <!-- Aca hay que agregarle el dinamismo para que muestre el usuario sie sta logeado-->
       <% if (locals.isLogged) { %>

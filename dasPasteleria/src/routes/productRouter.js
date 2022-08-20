@@ -20,20 +20,24 @@ const storage = multer.diskStorage({
 /*** GET ALL PRODUCTS ***/ 
 router.get('/', productController.product)
 
+
 /*** CREATE ONE PRODUCT ***/ 
 router.get('/crear-producto', productController.create)  
 router.post('/crear-producto', upload.single('image'),  productController.store); 
 
-/*** EDIT ONE PRODUCT ***/ 
+// /*** EDIT ONE PRODUCT ***/ 
 router.get('/editar-producto/:id',productController.edit)  // para mostrar formulario de Edicion//
-// TO UPDATE PRODUCT //
-router.put('/editar-producto/:id', productController.update) 
+// // TO UPDATE PRODUCT //
+router.put('/editar-producto/:id', upload.single('image'), productController.update) 
 
-// GOT TO //
+// // GOT TO //
 router.get('/carrito-de-compras', authMiddleware, productController.productCart) 
 
-/*** DELETE ONE PRODUCT***/
+// /*** DELETE ONE PRODUCT***/
 router.delete('/:id', productController.delete) 
+
+
+router.post('/buscar',productController.buscar)
 
 // SHOW THE DETAIL OF ONE PRODUCT//
 router.get('/:id', productController.detail) 

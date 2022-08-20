@@ -15,33 +15,35 @@
                 </div>
                 <div class="row clearfix">
                     <div class="">
-                        <form action="/Productos/editar-producto/<%=productToEdit.id%>?_method=PUT" method="POST">
+                        <form action="/Productos/editar-producto/<%=productToEdit.id%>?_method=PUT" method="POST" enctype="multipart/form-data">
                             <div class="input_field"> 
                                 <label> Producto a Editar:</label>
                                 <input type='text' name="product_name" placeholder="Nombre del Producto" required value="<%=productToEdit.product_name%>">
                             </div>
                             <div class="input_field"> 
                                 <label> Descripción a Editar:</label> <br>
-                                <textarea name="descripcion" id= "descripcion" placeholder="Editar descripción detallada del producto"> <%=productToEdit.description%></textarea>
+                                <textarea name="product_descripcion" id= "descripcion" placeholder="Editar descripción detallada del producto"> <%=productToEdit.product_description%></textarea>
                             </div>
                             <div class="input_field"> 
                                 <label> Foto a Editar:</label>
                                 <input type="file"  id="foto producto" name="image" accept="image/png, image/jpeg">
+                                <input type="hidden"  id="foto producto" name="oldimage" value='<%=productToEdit.image%>' accept="image/png, image/jpeg">
                             </div>
+                            <div> <img src="/img/products-img/<%=productToEdit.image%>" alt="torta1"> </div>
                             <div class="row clearfix">
                                 <div>
                                     <div class="input_field"> 
 
                                        <label>Categoría a Editar:</label>
-                                            <select name="category">
-                                             <option value="tortas"<%=productToEdit.category=="Tortas"? "selected" : null%>>Tortas</option>
-                                             <option value="tartas"<%=productToEdit.category=="Tartas"? "selected" : null%>>Tartas</option>
-                                             <option value="muffins"<%=productToEdit.category=="Muffins"? "selected" : null%>>Muffins</option>
-                                             <option value="cookies&masas"<%=productToEdit.category=="cookies&masas"? "selected" : null%>>Cookies y Masas</option>
+                                            <select name="category_id">
+                                             <option value="1"<%=productToEdit.category_id=="1"? "selected" : null%>>Tortas</option>
+                                             <option value="2"<%=productToEdit.category_id=="2"? "selected" : null%>>Tartas</option>
+                                             <option value="3"<%=productToEdit.category_id=="3"? "selected" : null%>>Muffins</option>
+                                             <option value="4"<%=productToEdit.category_id=="4"? "selected" : null%>>Cookies y Masas</option>
                                             </select>
                                     </div>
                                     
-                                    <div class="input_field"> 
+                                    <!-- <div class="input_field"> 
 
                                         <label>Tamaño/Unidades a Editar:</label>
                                              <select name="Tamaño">
@@ -50,10 +52,12 @@
                                               <option value="docena">Docena</option>
                                               <option value="mediadocena">Media Docena</option>
                                              </select>
-                                     </div>
+                                     </div> -->
                                      <div class="input_field"> 
+                                        <!-- Se agregaron dos precios small y big -->
                                         <label> Precio a Editar:</label>
-                                        <input type='text' name="price" placeholder="Editar Precio del Producto" required value="<%=productToEdit.price_1%>">
+                                        <input type='text' name="small_price" placeholder="Editar Precio del Producto" required value="<%=productToEdit.small_price%>"><br>
+                                        <input type='text' name="big_price" placeholder="Editar Precio del Producto" required value="<%=productToEdit.big_price%>">
                                     </div>
 
                                 </div>

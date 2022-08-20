@@ -25,8 +25,9 @@ module.exports = (sequelize, dataTypes) => {
         },
         category_id: {
             type: dataTypes.INTEGER(10).UNSIGNED,
-            allowNull: false
-        },
+            allowNull: false,
+            defaultValue: 2
+           },
         avatar: dataTypes.TEXT,
         
     };

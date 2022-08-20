@@ -19,7 +19,7 @@
                                 <input type='texto' name="product_name" placeholder="Nombre del Producto" required>
                             </div>
                             <div class="input_field"> 
-                                <textarea name="descripcion" id= "descripcion"placeholder="Descripción detallada del producto"></textarea>
+                                <textarea name="product_descripcion" id= "descripcion"placeholder="Descripción detallada del producto"></textarea>
                             </div>
                             <div class="input_field"> 
                                 <input type="file"  id="foto producto" name="image" accept="image/png, image/jpeg">
@@ -30,15 +30,15 @@
 
                                        <label>Seleccione categoria:</label>
                                             <select name="category">
-                                             <option value="tortas">Tortas</option>
-                                             <option value="tartas">Tartas</option>
-                                             <option value="muffins">Muffins</option>
-                                             <option value="cookies&masas">Cookies y Masas</option>
+                                             <option value="1">Tortas</option>
+                                             <option value="2">Tartas</option>
+                                             <option value="3">Muffins</option>
+                                             <option value="4">Cookies y Masas</option>
                                             </select>
                                     </div>
                                     
-                                    <div class="input_field"> 
-
+                                    <!-- <div class="input_field"> 
+ver tamaños no estan en la base, es algo que lo indica el cliente cuando lo compra agragar opciones de precio
                                         <label>Tamaño/Unidades:</label>
                                              <select name="porcion">
                                               <option value="chica">Chica</option>
@@ -46,9 +46,10 @@
                                               <option value="docena">Docena</option>
                                               <option value="mediadocena">Media Docena</option>
                                              </select>
-                                     </div>
+                                     </div> -->
                                      <div class="input_field"> 
-                                        <input type='text' name="price" placeholder="Precio del Producto" required>
+                                        <input type='text' name="small_price" placeholder="Precio del Producto Unidad Menor" required>
+                                        <input type='text' name="big_price" placeholder="Precio del Producto Unidad Mayor" required>
                                     </div>
 
                                 </div>

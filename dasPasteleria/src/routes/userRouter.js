@@ -25,14 +25,14 @@ const storage = multer.diskStorage({
 
 const validacionFormularioLogin = [
     body('email').notEmpty().isEmail().withMessage('campo obligatorio'), // campo obligatorio de completar, de tipo email y con mensaje al usuario en caso de error
-    body('password').notEmpty().withMessage('campo obligatorio') // campo obligatorio de completar y con mensaje .
+    body('user_password').notEmpty().withMessage('campo obligatorio') // campo obligatorio de completar y con mensaje .
 ];
 
 const validationRegisterForm = [
-    body('name').notEmpty().withMessage('campo obligatorio'),
+    body('user_name').notEmpty().withMessage('campo obligatorio'),
     body('email').notEmpty().withMessage('campo obligatorio').bail().isEmail().withMessage('debe ser del tipo email'), 
-    body('password').notEmpty().withMessage('campo obligatorio'),
-    body('passwordRepeat').notEmpty().withMessage('campo obligatorio'),
+    body('user_password').notEmpty().withMessage('campo obligatorio'),
+    body('repeat_password').notEmpty().withMessage('campo obligatorio'),
     body('aceptoTerminosCondiciones').notEmpty().withMessage('campo obligatorio') // crear un campo obligatorio para que si o si se tenga que clickear el checkbox
 ];
 
@@ -43,9 +43,9 @@ router.get('/login', guestMiddleware, userController.login) // mostrar formulari
 router.post('/login', validacionFormularioLogin, userController.sessionLogin) //ruta de envio de formulario 
 
 router.get('/register', guestMiddleware, userController.register) // mostrar formulario de registro
-//router.post() la ruta del registro del usuario
+
 router.post('/register', upload.single('avatar'), validationRegisterForm, userController.sessionRegister)
-//router.post('/register',validationRegisterForm, userController.register)
+
 router.get('/logout', userController.logout) // para desloguearse
 
 router.get('/profile', authMiddleware, userController.profile) // vita de perfil del usuario

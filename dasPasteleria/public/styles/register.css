@@ -116,6 +116,9 @@ form{
     background: rgb(11, 119, 131);
 }
 
+.text-danger{
+    color: red;
+}
 
 @media (min-width: 400px) {
     .form_wrapper{
