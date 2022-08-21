@@ -9,6 +9,7 @@
     background-color: white;
     display: flex;
     justify-content: space-between;
+    margin-bottom: 20px;
 }
 
 .h-menu {
@@ -53,7 +54,7 @@
 .h-account {
     font-size: 12px;
     text-align: center;
-    margin-top: 30px;
+    margin-top: 10px;
 }
 
 .h-account a {
@@ -201,7 +202,7 @@ ul a, li {
     position: absolute;
     content: "\f002";
     bottom: 12px;
-    left: -5px;
+    left: -7px;
 }
 
   .h-container-1 .h-icon{
@@ -211,9 +212,10 @@ ul a, li {
   }
 
   .h-container-1 form{
-    width: 80%;
+    width: 100%;
   }
-  .h-container-1 buttom{
+
+  .h-container-1 button{
     height: 18px;
     width: 15%;
     border: none;

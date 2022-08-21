@@ -56,6 +56,11 @@ h2 {
     justify-content: space-between;
 }
 
+.input_field input, [type="text"] , select {
+    font-style: italic;
+    color: gainsboro;
+}
+
 .input_field >span{
     position: absolute;
     left: 0%;
@@ -72,8 +77,14 @@ h2 {
 }
 
 .input_field textarea {
-    width: 55%;
-    height: 40px;
+    width: 60%;
+    height: 55px;
+    font-family: 'Roboto', sans-serif;
+    padding: 8px 10px 9px 10px;
+    font-style: italic;
+    color: gainsboro;
+    
+
 }
 
 .input_field input[type="text"] , select{
@@ -82,7 +93,7 @@ h2 {
 }
 
 .form_wrapper input[type="text"], .form_wrapper input[type="email"], .form_wrapper input[type="password"], textarea , select{
-    padding: 8px 10px 9px 35px;
+    padding: 8px 10px 9px 10px;
     border: 1px solid #ccc;
     outline: none;
 }
@@ -131,6 +142,10 @@ h2 {
 }
 
 form{
+    width: 100%;
+}
+
+div img {
     width: 100%;
 }
 

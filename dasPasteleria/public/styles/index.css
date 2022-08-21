@@ -70,7 +70,7 @@ ul.slider li:target {
 .h-menu-dots li a {
     display: block;
     text-decoration: none;
-    width: 8px;
+    width: 15px;
     height: 8px;
     padding: 5px;
     color: rgba(167, 164, 164, 0.87);
@@ -264,7 +264,7 @@ ul.icons li:target {
 .banner-dots li a {
     display: block;
     text-decoration: none;
-    width: 8px;
+    width: 15px;
     height: 8px;
     padding: 5px;
     color: rgba(167, 164, 164, 0.87);
