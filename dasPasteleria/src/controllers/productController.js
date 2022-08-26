@@ -77,13 +77,11 @@ edit: function(req,res){
       })
   },
 
-  buscar: (req, res) => {
-    let productSearch= req.body.search;
-    console.log(req.body)
-    Products.findAll({where: {product_name: {[db.Sequelize.Op.like] : '%' + productSearch + '%'}}})
+  search: (req, res) => {
+    let productSearch= req.query;
+    Products.findAll({where: {product_name: {[db.Sequelize.Op.like] : '%' + productSearch.search + '%'}}})
     .then(products=>{
-      console.log(products)
-        if (products.length == 0) {
+      if (products.length == 0) {
             return res.render('product', {titulo: 'Catálogo Productos', msg:"Los resultados no coinciden con la búsqueda realizada"})
         }else{
             return res.render('product', {titulo: 'Catálogo Productos', products, msg:''}) 

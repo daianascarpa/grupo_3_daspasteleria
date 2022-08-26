@@ -37,7 +37,7 @@ router.get('/carrito-de-compras', authMiddleware, productController.productCart)
 router.delete('/:id', productController.delete) 
 
 
-router.post('/buscar',productController.buscar)
+router.get('/buscar',productController.search)
 
 // SHOW THE DETAIL OF ONE PRODUCT//
 router.get('/:id', productController.detail) 

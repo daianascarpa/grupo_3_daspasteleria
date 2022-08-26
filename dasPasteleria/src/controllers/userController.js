@@ -8,7 +8,7 @@ const { validationResult } = require("express-validator");
 
 const db = require("../database/models");
 
-const Users = db.User
+const Users = db.User;
 
 const userController = {
   register: function (req, res) {
@@ -17,24 +17,20 @@ const userController = {
 
   sessionRegister: function (req, res) {
     const errors = validationResult(req);
-    if(errors.isEmpty()) {
+    if (errors.isEmpty()) {
       Users.findOne({
-        where:{email : req.body.email}
-      }).then(user=>{
-       
-          if(user){
+        where: { email: req.body.email },
+      }).then((user) => {
+        if (user) {
           res.render("register", {
-            titulo: "Registrate!" ,
+            titulo: "Registrate!",
             errors: {
-              user_name:{
-                msg: "Las credenciales son inválidas",
-              },
               email: {
                 msg: "Las credenciales son inválidas",
               },
             },
-          })
-        }else{
+          });
+        } else {
           let registroUserNew = {
             email: req.body.email,
             user_password: bcryptjs.hashSync(req.body.user_password, 10),
@@ -47,57 +43,52 @@ const userController = {
             registroUserNew.avatar = req.file.filename;
           }
           //guardo del body la info como esta = en el name del register.ejs
-         Users.create(registroUserNew); // ver si es necesario el then
-        
-        res.redirect("/Usuarios/login")
+          Users.create(registroUserNew); // ver si es necesario el then
+
+          res.redirect("/Usuarios/login");
         }
-      })
-  
-  }else{
-  
-  res.render("register", {titulo: "Registro", errors: errors.mapped()})
-  }
-}, 
+      });
+    } else {
+      res.render("register", { titulo: "Registro", errors: errors.mapped() });
+    }
+  },
 
   login: function (req, res) {
     res.render("login", { titulo: "Iniciá Sesión" }); // muestra el formulario de login
   },
+
   sessionLogin: function (req, res) {
     const errors = validationResult(req);
     if (errors.isEmpty()) {
-      // let usuarios;
-      // let usuarioRegister = JSON.parse(fs.readFileSync(registerData, "utf-8"));
-
-      // if (!usuarioRegister) {
-      //   usuarios = [];
-      // } else {
-      //   usuarios = usuarioRegister;
-      // }
-      let userToLogin = Users.findByField('email', req.body.email)
-      if (userToLogin) {
-        let ifOkPassword = bcryptjs.compareSync(req.body.password,userToLogin.password);
-        if (ifOkPassword) {
-          delete userToLogin.password;
-          req.session.userLogged = userToLogin;
-          return res.redirect("/home"); // en caso que el usuario ingrese con exito redirecciona al home
-        }else{
-          return res.render("login", {
-          titulo: "Iniciá Sesión",
-          errors: {
-            email: {
-              msg: "Las credenciales son inválidas",
-            },
-          },
-        })
-
+      Users.findOne({
+        where: { email: req.body.email },
+      }).then((userToLogin) => {
+        console.log(userToLogin);
+        if (userToLogin) {
+          let ifOkPassword = bcryptjs.compareSync(
+            req.body.user_password,
+            userToLogin.user_password
+          );
+          if (ifOkPassword) {
+            delete userToLogin.password;
+            req.session.userLogged = userToLogin;
+            res.redirect("/home"); // en caso que el usuario ingrese con exito redirecciona al home
+          } else {
+            res.render("login", {
+              titulo: "Iniciá Sesión",
+              errors: {
+                email: {
+                  msg: "Las credenciales son inválidas",
+                },
+              },
+            });
+          }
         }
-      }
+      });
+      // de las validaciones
     } else {
-
-      res.render("login", {titulo: "Iniciá Sesión", errors: errors.mapped()}) // los errores de las validaciones
-
+      res.render("login", { titulo: "Iniciá Sesión", errors: errors.mapped() }); // los errores de las validaciones
     }
-    ;
   },
 
   logout: function (req, res) {
@@ -106,13 +97,62 @@ const userController = {
   },
   /*Falta agregar cookies, actualmente cuando uno de deslogeua y vuelve a loquearse, sin levantar el servivodr, salta error*/
 
- 
-
   profile: function (req, res) {
     res.render("profile", {
       titulo: "Perfil de Usuario",
-      usuarioLoguearse: req.session.usuarioLoguearse,
+      //userLogged: req.session.userLogged,  //usuarioLoguearse: req.session.userLogged,
     });
+  },
+
+  showEditedProfile: function (req, res) {
+    res.render("Editprofile", {
+      titulo: "Edicion Perfil de Usuario",
+      userLogged: req.session.userLogged, //usuarioLoguearse: req.session.userLogged,
+    });
+  },
+
+  UpdateProfile: function (req, res) {
+    Users.findByPk(req.session.userLogged.id)
+      .then((user) => {
+        let ifOkPassword = bcryptjs.compareSync(
+          req.body.user_passwordOld,
+          user.user_password
+        );
+        if (ifOkPassword) {
+          req.body.avatar = req.file ? req.file.filename : req.body.oldAvatar;
+          let userEdit = {
+            ...req.body,
+            user_password: bcryptjs.hashSync(req.body.user_password, 10),
+            repeat_password: bcryptjs.hashSync(req.body.repeat_password, 10),
+          };
+          //req.session.userlogged=userEdit
+          Users.update(userEdit, {
+            where: { id: user.id },
+          })
+          .then(() => {
+            // return res.render("profile", { // probar realizando res.redirec con profile
+            //   titulo: "Perfil de Usuario",
+            //   userLogged: req.session.userlogged,  //usuarioLoguearse: req.session.userlogged,
+            // });
+            req.session.userlogged=userEdit
+            req.session.save()
+            
+            console.log(userEdit)
+            res.redirect('/Usuarios/profile');
+          });
+      } else {
+        return res.render("editprofile", {
+          titulo: "Edicion Perfil de Usuario",
+          userLogged: req.session.userLogged,  //usuarioLoguearse: req.session.userlogged,
+          errors: {
+            user_passwordOld: {
+              msg: "La contraseña no coincide",
+            },
+          }
+        });
+      }
+    })
+    ;//incluir un catch para el error
   },
 };
 

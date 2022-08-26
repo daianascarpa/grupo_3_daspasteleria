@@ -8,13 +8,13 @@
     <%- include ('./partials/header') %> 
     <main>
 <div class="u-container-main">
-<h2>Hola, <%= locals.userLogged.name %></h2>
+<h2>Hola, <%= locals.userLogged.user_name %></h2>
 <div class="u-container-image">
 <img class="u-image" src="/img/users-img/<%= locals.userLogged.avatar %>">
 </div>
 <section class="u-options">
 <a href="#"><i class="fa-solid fa-bag-shopping"></i> Mis últimas compras</a>
-<a href="#"><i class="fa-solid fa-user-pen"></i>Editar datos de registro</a>
+<a href="/Usuarios/profile/editar"><i class="fa-solid fa-user-pen"></i>Editar datos de registro</a>
 </section>
 
 </div>       

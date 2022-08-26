@@ -74,7 +74,7 @@ h2 {
     padding-top: 10px;
 }
 .form_wrapper input[type="text"], .form_wrapper input[type="email"], .form_wrapper input[type="password"]{
-    width: 88%;
+    width: 100%;
     padding: 8px 10px 9px 35px;
     border: 1px solid #ccc;
     outline: none;
