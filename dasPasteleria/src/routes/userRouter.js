@@ -54,6 +54,8 @@ router.get('/profile/editar', authMiddleware, userController.showEditedProfile)
 
 router.put('/profile/editar/', upload.single('avatar'),authMiddleware,userController.UpdateProfile)
 
+router.get('/List', userController.usersList)
+
 
 
 

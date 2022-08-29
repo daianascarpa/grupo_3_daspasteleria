@@ -114,7 +114,7 @@ CREATE TABLE `users` (
   PRIMARY KEY (`id`),
   KEY `category_id` (`category_id`),
   CONSTRAINT `users_ibfk_1` FOREIGN KEY (`category_id`) REFERENCES `user_categories` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -123,6 +123,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
+INSERT INTO `users` VALUES (6,'daiana@gmail.com','$2a$10$XlO4ZVhxmZS36BJ9l4rVhOmUhiv/rOX1al8LqRg4T.V89Z8l1Ifc2','$2a$10$L6vgS.mrbyVsrMluor05zuCvizMb7m9UVsC5KvBuPyoR5rROq7.aC','Daiana Lorena',2,'avatar-1661697359288.jpg'),(7,'lorena@gmail.com','$2a$10$0CBbbAfrcehTGmUvUU2oAe77SJB7Um0rMTK6KgSD9Kmz9Rn6eTHue','$2a$10$HSDHby5iYpU.CKxm5tIbteQFTEUem0f2DrI4bGViDGlrjshqx9lBa','Lorena',2,'avatar-1661732859892.jpeg'),(8,'dai@gmail.com','$2a$10$139jAr7yg74QQg.4EZHMnOb3nB3LdM5jvK1AqbsiCo.w8o2AyCJeO','$2a$10$tBG0PcAnm9/opCdp5eAVIewJOvzAhO9TxZKPFQeBvVq.QcC4LWDwi','Dai',2,'avatar-1661743364201.jpg');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -135,4 +136,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-08-26  0:07:16
+-- Dump completed on 2022-08-29  0:24:01

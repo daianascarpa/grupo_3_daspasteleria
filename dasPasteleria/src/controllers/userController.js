@@ -9,6 +9,7 @@ const { validationResult } = require("express-validator");
 const db = require("../database/models");
 
 const Users = db.User;
+const UsersCategory = db.UserCategory;
 
 const userController = {
   register: function (req, res) {
@@ -100,12 +101,12 @@ const userController = {
   profile: function (req, res) {
     res.render("profile", {
       titulo: "Perfil de Usuario",
-      //userLogged: req.session.userLogged,  //usuarioLoguearse: req.session.userLogged,
+      userLogged: req.session.userLogged, 
     });
   },
 
   showEditedProfile: function (req, res) {
-    res.render("Editprofile", {
+    res.render("EditProfile", {
       titulo: "Edicion Perfil de Usuario",
       userLogged: req.session.userLogged, //usuarioLoguearse: req.session.userLogged,
     });
@@ -141,7 +142,7 @@ const userController = {
             res.redirect('/Usuarios/profile');
           });
       } else {
-        return res.render("editprofile", {
+        return res.render("editProfile", {
           titulo: "Edicion Perfil de Usuario",
           userLogged: req.session.userLogged,  //usuarioLoguearse: req.session.userlogged,
           errors: {
@@ -154,6 +155,14 @@ const userController = {
     })
     ;//incluir un catch para el error
   },
+
+
+  usersList: function (req,res){
+    Users.findAll({
+      include: ["user_category"]}).then(users=>
+      res.render('usersList.ejs', {titulo: 'Listado de Usuarios', users }))   
+  },
+
 };
 
 module.exports = userController;

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include ('./partials/head', {titulo}) %>
+  <link rel="stylesheet" href="/styles/usersList.css">
+  
+
+  <body>
+    <!-- arranca el header  -->
+    <%- include ('./partials/header') %>
+      <div class="ul-selector-busqueda">
+        <p>Ordenar por:</p>
+        <article class="ul-seleccionar">
+          <select class="ul-form-select" aria-label="Default select example" style=" text-align: left;">
+            <option value="1">Nombre de A-Z</option>
+            <option value="2">Categoria A-Z</option>
+            <option value="3">Id Menor a Mayor</option>
+          </select>
+        </article>
+      </div>
+      <main>     
+        <section class="ul-destacados">
+          <article class="ul-usuarios-titulos">
+            <div class="ul-titulo">
+              <p> Foto de Perfil</p>
+            </div>
+            <div class="ul-titulo">
+              <p> Id</p>
+            </div>
+            <div class="ul-titulo">
+              <p>Nombre de Usuario</p>
+            </div>
+            <div class="ul-titulo">
+              <p>Mail</p>
+            </div>
+            <div class="ul-titulo">
+              <p>Categoria</p>
+            </div>
+            <div>
+              <p>Editar</p>
+            </div>
+            <div>
+              <p>Eliminar</p>
+            </div>
+          </article>
+            <% for ( user of users) { %>
+              <article class="ul-usuarios">
+                <div class="ul-avatar">
+                  <img src="/img/users-img/<%=user.avatar%> " alt="<%=user.user_name%>" class="ul-avatar-img">
+                </div>
+                <div class="ul-data">
+                  <p><%=user.id%></p>
+                </div>
+                <div class="ul-data">
+                  <p><%=user.user_name%></p>
+                </div>
+                <div class="ul-data">
+                  <p><%=user.email%></p>
+                </div>
+                <div class="ul-data">
+                  <p><%=user.user_category.category_name%></p>
+                </div>
+                <div class="ul-data">
+                  <input type="submit" value="Editar">
+                </div>
+                <div class="ul-data">
+                  <input type="submit" value="Eliminar">
+                </div>
+              </article>
+              <%}%>
+          
+        </section>
+          
+      </main>
+      <%- include ('./partials/footer') %>
+  </body>
+
+</html>

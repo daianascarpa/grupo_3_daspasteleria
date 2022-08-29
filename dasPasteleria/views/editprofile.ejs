@@ -2,60 +2,60 @@
 <html lang="en">
     
     <%- include ('./partials/head', {titulo}) %> 
-    <link rel="stylesheet" href="/styles/editProd.css">
+    <link rel="stylesheet" href="/styles/editProfile.css">
  
 <body>
     <%- include ('./partials/header') %> 
     <main>
-        <div class="r-container-main">
-            <div class="form_wrapper">
-                <div class="form_container">
-                    <div class="title_container">
+        <div class="ep-ep_container-main">
+            <div class="ep_form_wrapper">
+                <div class="ep_form_container">
+                    <div class="ep_title_container">
                         <h2>Datos de Registo</h2>
                     </div>
-                    <div class="row clearfix">
+                    <div class="ep_row clearfix">
                         <div class="">
                             <form action="/Usuarios/profile/editar?_method=PUT" method="POST" enctype="multipart/form-data">
-                                <div class="input_field"> <span><i aria-hidden="true" class="fa fa-user"></i></span>
+                                <div class="ep_input_field"> <span><i aria-hidden="true" class="fa fa-user"></i></span>
                                     <input type="text" name="user_name" placeholder="Nombre y Apellido" value='<%=userLogged.user_name%>' >
                                     <% if (locals.errors && errors.user_name) { %>
-                                        <div class="text-danger">
+                                        <div class="ep_text-danger">
                                             <%= errors.user_name.msg %>
                                         </div> <% }  %> <br>
                                 </div>
-                                <div class="input_field"> <span><i aria-hidden="true" class="fa fa-envelope"></i></span>
+                                <div class="ep_input_field"> <span><i aria-hidden="true" class="fa fa-envelope"></i></span>
                                     <input type="email" name="email" placeholder="Email" value='<%=userLogged.email%>' >
                                     <% if (locals.errors && errors.email) { %>
-                                        <div class="text-danger">
+                                        <div class="ep_text-danger">
                                             <%= errors.email.msg %>
                                         </div> <% }  %> <br>
                                 </div>
-                                <div class="input_field"> <span><i aria-hidden="true" class="fa fa-lock"></i></span>
+                                <div class="ep_input_field"> <span><i aria-hidden="true" class="fa fa-lock"></i></span>
                                     <input type="password" name="user_passwordOld" minlength="8" placeholder="Actual Contraseña" value='<%=userLogged.user_password%>' >
                                 </div>
                                 <% if (locals.errors && errors.user_passwordOld) { %>
-                                    <div class="text-danger">
+                                    <div class="ep_text-danger">
                                         <%= errors.user_passwordOld.msg %>
                                     </div> <% }  %> <br>
-                                    <div class="input_field"> <span><i aria-hidden="true" class="fa fa-lock"></i></span>
+                                    <div class="ep_input_field"> <span><i aria-hidden="true" class="fa fa-lock"></i></span>
                                         <input type="password" name="user_password" minlength="8" placeholder="Nueva Contraseña" ' >
                                         <% if (locals.errors && errors.repeat_password) { %>
-                                            <div class="text-danger">
+                                            <div class="ep_text-danger">
                                                 <%= errors.repeat_password.msg %>
                                             </div> <% }  %> <br>
                                     </div>    
-                                <div class="input_field"> <span><i aria-hidden="true" class="fa fa-lock"></i></span>
+                                <div class="ep_input_field"> <span><i aria-hidden="true" class="fa fa-lock"></i></span>
                                     <input type="password" name="repeat_password" minlength="8" placeholder="Confirmar contraseña" ' >
                                     <% if (locals.errors && errors.repeat_password) { %>
-                                        <div class="text-danger">
+                                        <div class="ep_text-danger">
                                             <%= errors.repeat_password.msg %>
                                         </div> <% }  %> <br>
                                 </div>
-                                <div class="row clearfix">
+                                <div class="ep_row clearfix">
                                     <div>
                                         
-                                        <div class="input_field"> 
-                                            <label for="avatar"class="input_field">Imagen de Perfil</label>
+                                        <div class="ep_input_field"> 
+                                            <label for="avatar"class="ep_input_field">Imagen de Perfil</label>
                                             <input type="file" name="avatar" placeholder="foto de perfil"><br>
                                             <input type="hidden" name="oldAvatar" placeholder="foto de perfil" value='<%=userLogged.avatar%>'><br>
                                            <br>
@@ -63,7 +63,7 @@
                                         <div> <img src="/img/users-img/<%=userLogged.avatar%>" alt="fotoPerfil"> </div>
                                     </div>
                                 </div>
-                                <input class="button" type="submit" value="Editar">
+                                <input class="ep_button" type="submit" value="Editar">
                             </form>
                         </div>
                     </div>

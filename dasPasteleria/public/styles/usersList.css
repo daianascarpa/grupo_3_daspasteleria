@@ -1,0 +1,215 @@
+*​{ 
+    margin: ​0​px​; 
+    padding: ​0​px​; 
+    box-sizing: ​border-box​; 
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+    color: rgb(58, 57, 57);
+    background-color: white;
+}
+
+.ul-destacados {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    
+}
+
+.ul-selector-busqueda p {
+    margin: 15px 0 5px 10px;
+}
+
+.ul-seleccionar{
+    display: flex;
+    text-align: left;
+    flex-direction: column;
+    margin-left: initial;
+    padding: inherit;
+    width: 60%;
+}
+
+
+.ul-form-select{
+    color: #878780;
+   
+    margin-left: 10px;
+    padding: 5px;
+    width: 150px;
+    background-position: right;
+    text-align: right;
+   
+}
+.main-body {
+    height: 150px;
+    width: auto;
+    background-color: white;
+}
+
+.container-img {
+    margin: 0;
+    height: auto;
+}
+
+ul, li {
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+}
+
+ul.slider {
+    position: relative;
+    width: 100%;
+}
+
+ul.slider li {
+    position: absolute;
+    left: 0;
+    top:0;
+    opacity: 0;
+    width: inherit;
+    transition: opacity .5s;
+}
+ul.slider li img {
+    width: inherit;
+    object-fit: cover; 
+}
+
+ul.slider li:first-child {
+    opacity: 1;
+}
+
+ul.slider li:target {
+    opacity: 1;
+}
+
+.h-menu-dots {
+    position: relative;
+    top: 130px;
+    text-align: center;
+    margin: 8px;
+}
+
+.h-menu-dots li {
+    display: inline-block;
+    text-align: center;
+}
+
+.h-menu-dots li a {
+    display: block;
+    text-decoration: none;
+    width: 8px;
+    height: 8px;
+    padding: 5px;
+    color: rgba(167, 164, 164, 0.87);
+}
+
+h4 {
+    text-align: center;
+    margin: 12px;
+    color:rgb(58, 57, 57);
+}
+
+h5 {
+    text-align: center;
+    margin: auto;
+    color:rgb(58, 57, 57);
+}
+
+section {
+    display: block;
+}
+
+main {
+    box-sizing: ​border-box​; 
+    margin: auto;
+    display: block;
+}
+
+section {
+    display: block;
+}
+
+
+
+.ul-usuarios-titulos {
+    background-color: #fff;
+    margin: 10px 0px;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;       
+    
+}
+
+.ul-usuarios-titulos p {
+    text-align: center;
+    font-weight: 600;
+    color: white;
+
+}
+
+.ul-data {
+    width: 150px;
+    text-align: center;
+}
+
+
+.ul-usuarios-titulos div {
+    background-color: rgb(101, 190, 199) ;
+    width: 150px;
+}
+
+.ul-usuarios {
+    background-color: #fff;
+    margin: 10px 0px;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%; 
+    
+}
+
+.ul-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 40px;
+    box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    transition: 400ms;
+}
+
+.ul-avatar-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+.ul-usuarios a {
+    text-decoration: none;
+}
+
+.ul-data input[type="submit"]{
+    background: white;
+    height: 35px;
+    line-height: 35px;
+    width: 100%;
+    border:rgb(101, 190, 199) solid 1px;
+    cursor: pointer;
+    color: rgb(101, 190, 199);
+    font-size: 1.1em;
+    border-radius: 30px;
+      
+}
+
+.ul-data input[type="submit"]:hover {
+    background-color: rgb(101, 190, 199);
+    color: white;
+}
+
