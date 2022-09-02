@@ -24,16 +24,16 @@ const storage = multer.diskStorage({
 
 
 const validacionFormularioLogin = [
-    body('email').notEmpty().isEmail().withMessage('campo obligatorio'), // campo obligatorio de completar, de tipo email y con mensaje al usuario en caso de error
-    body('user_password').notEmpty().withMessage('campo obligatorio') // campo obligatorio de completar y con mensaje .
+    body('email').notEmpty().withMessage('Campo Obligatorio').bail().isEmail().withMessage('Debe ser del tipo email'),  // campo obligatorio de completar, de tipo email y con mensaje al usuario en caso de error
+    body('user_password').notEmpty().withMessage('Campo Obligatorio') // campo obligatorio de completar y con mensaje .
 ];
 
 const validationRegisterForm = [
-    body('user_name').notEmpty().withMessage('campo obligatorio'),
-    body('email').notEmpty().withMessage('campo obligatorio').bail().isEmail().withMessage('debe ser del tipo email'), 
-    body('user_password').notEmpty().withMessage('campo obligatorio'),
-    body('repeat_password').notEmpty().withMessage('campo obligatorio'),
-    body('aceptoTerminosCondiciones').notEmpty().withMessage('campo obligatorio') // crear un campo obligatorio para que si o si se tenga que clickear el checkbox
+    body('user_name').notEmpty().withMessage('Campo Obligatorio').isLength ({min: 2}).withMessage ("Debe tener minimo 2 caracteres"),
+    body('email').notEmpty().withMessage('Campo Obligatorio').bail().isEmail().withMessage('Debe ser del tipo email'), 
+    body('user_password').notEmpty().withMessage('Campo Obligatorio').isLength({min:8}),
+    body('repeat_password').notEmpty().withMessage('Campo Obligatorio'),
+    body('aceptoTerminosCondiciones').notEmpty().withMessage('Campo Obligatorio') // crear un campo obligatorio para que si o si se tenga que clickear el checkbox
 ];
 
 

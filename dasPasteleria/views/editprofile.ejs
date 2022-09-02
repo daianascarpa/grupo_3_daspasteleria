@@ -31,21 +31,21 @@
                                         </div> <% }  %> <br>
                                 </div>
                                 <div class="ep_input_field"> <span><i aria-hidden="true" class="fa fa-lock"></i></span>
-                                    <input type="password" name="user_passwordOld" minlength="8" placeholder="Actual Contraseña" value='<%=userLogged.user_password%>' >
+                                    <input type="password" name="user_passwordOld" minlength="8" placeholder="Actual Contraseña">
                                 </div>
                                 <% if (locals.errors && errors.user_passwordOld) { %>
                                     <div class="ep_text-danger">
                                         <%= errors.user_passwordOld.msg %>
                                     </div> <% }  %> <br>
                                     <div class="ep_input_field"> <span><i aria-hidden="true" class="fa fa-lock"></i></span>
-                                        <input type="password" name="user_password" minlength="8" placeholder="Nueva Contraseña" ' >
+                                        <input type="password" name="user_password" minlength="8" placeholder="Nueva Contraseña">
                                         <% if (locals.errors && errors.repeat_password) { %>
                                             <div class="ep_text-danger">
                                                 <%= errors.repeat_password.msg %>
                                             </div> <% }  %> <br>
                                     </div>    
                                 <div class="ep_input_field"> <span><i aria-hidden="true" class="fa fa-lock"></i></span>
-                                    <input type="password" name="repeat_password" minlength="8" placeholder="Confirmar contraseña" ' >
+                                    <input type="password" name="repeat_password" minlength="8" placeholder="Confirmar contraseña">
                                     <% if (locals.errors && errors.repeat_password) { %>
                                         <div class="ep_text-danger">
                                             <%= errors.repeat_password.msg %>

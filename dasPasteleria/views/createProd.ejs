@@ -17,9 +17,17 @@
                         <form action="/Productos/crear-producto" method="Post" enctype="multipart/form-data">
                             <div class="input_field"> 
                                 <input type='texto' name="product_name" placeholder="Nombre del Producto" required>
+                                <% if (locals.errors && errors.product_name) { %>
+                                    <div class="text-danger">
+                                    <%=errors.product_name.msg %>
+                                    </div> <% }  %>
                             </div>
                             <div class="input_field"> 
                                 <textarea name="product_descripcion" id= "descripcion"placeholder="Descripción detallada del producto"></textarea>
+                                <% if (locals.errors && errors.product_description) { %>
+                                    <div class="text-danger">
+                                    <%=errors.product_description.msg %>
+                                    </div> <% }  %>
                             </div>
                             <div class="input_field"> 
                                 <input type="file"  id="foto producto" name="image" accept="image/png, image/jpeg">

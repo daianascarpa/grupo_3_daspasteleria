@@ -8,8 +8,14 @@ function authMiddleware (req, res, next) {
 
     const {id} = req.session.userLogged;
     Users.findByPk (id, {raw:true}).then ((user) =>{
-        console.log ("desde el middleware =>", user);
-        req.session.userLogged = user;
+        req.session.userLogged = {
+            id: user.id, 
+            email: user.email,
+            user_name: user.user_name,
+            category_id: user.category_id,
+            avatar: user.avatar,
+        };
+        console.log ("desde el middleware =>", req.session.userLogged);
         next();
     })
   

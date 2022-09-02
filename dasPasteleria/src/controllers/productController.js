@@ -1,6 +1,7 @@
 const db = require("../database/models");
 const sequelize = db.sequelize;
 const { Op } = require("sequelize");
+const { validationResult } = require("express-validator");
 
 const Products = db.Product;
 
@@ -25,6 +26,8 @@ const productController = {
     }, 
 
   store: function (req, res){
+    const errors = validationResult(req);
+    if (errors.isEmpty()) {
         let productNew = {
         product_name: req.body.product_name,
         product_description: req.body.product_descripcion,
@@ -33,10 +36,13 @@ const productController = {
         small_price: req.body.small_price,
         big_price: req.body.big_price
       }
-
+    
       Products.create(productNew)//then, es necesario en este metodo?
         res.redirect('/Productos')
-      
+      } else {
+        res.render("createProd", { titulo: "Formulario de Creación", errors: errors.mapped() }); // los errores de las validaciones
+      }
+
 },
     
 

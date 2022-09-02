@@ -1,12 +1,6 @@
-// const fs = require("fs");
-// const path = require("path");
+const db = require("../database/models");
 const bcryptjs = require("bcryptjs");
 const { validationResult } = require("express-validator");
-
-// const registerData = path.join(__dirname, "../data/dasUsersList.json");
-// let usuarioRegister = JSON.parse(fs.readFileSync(registerData, "utf-8"));
-
-const db = require("../database/models");
 
 const Users = db.User;
 const UsersCategory = db.UserCategory;
@@ -64,7 +58,6 @@ const userController = {
       Users.findOne({
         where: { email: req.body.email },
       }).then((userToLogin) => {
-        console.log(userToLogin);
         if (userToLogin) {
           let ifOkPassword = bcryptjs.compareSync(
             req.body.user_password,
@@ -74,16 +67,16 @@ const userController = {
             delete userToLogin.password;
             req.session.userLogged = userToLogin;
             res.redirect("/home"); // en caso que el usuario ingrese con exito redirecciona al home
-          } else {
-            res.render("login", {
-              titulo: "Iniciá Sesión",
-              errors: {
-                email: {
-                  msg: "Las credenciales son inválidas",
-                },
+          } 
+        } else {
+          res.render("login", {
+            titulo: "Iniciá Sesión",
+            errors: {
+              email: {
+                msg: "Las credenciales son inválidas",
               },
-            });
-          }
+            },
+          });
         }
       });
       // de las validaciones
@@ -115,46 +108,27 @@ const userController = {
   UpdateProfile: function (req, res) {
     Users.findByPk(req.session.userLogged.id)
       .then((user) => {
-        let ifOkPassword = bcryptjs.compareSync(
-          req.body.user_passwordOld,
-          user.user_password
-        );
-        if (ifOkPassword) {
-          req.body.avatar = req.file ? req.file.filename : req.body.oldAvatar;
-          let userEdit = {
-            ...req.body,
-            user_password: bcryptjs.hashSync(req.body.user_password, 10),
-            repeat_password: bcryptjs.hashSync(req.body.repeat_password, 10),
-          };
-          //req.session.userlogged=userEdit
+        req.body.user_password  = req.body.user_password ? bcryptjs.hashSync(req.body.user_password, 10) : user.user_password
+        req.body.repeat_password = req.body.repeat_password ? bcryptjs.hashSync(req.body.repeat_password, 10): user.repeat_password
+        req.body.avatar = req.file ? req.file.filename : req.body.oldAvatar;
+        let userEdit = {
+           ...req.body,
+        };
+          console.log('req.body')
+          console.log(req.body)
           Users.update(userEdit, {
             where: { id: user.id },
           })
-          .then(() => {
-            // return res.render("profile", { // probar realizando res.redirec con profile
-            //   titulo: "Perfil de Usuario",
-            //   userLogged: req.session.userlogged,  //usuarioLoguearse: req.session.userlogged,
-            // });
-            req.session.userlogged=userEdit
-            req.session.save()
-            
+           .then(() => {
+            //req.session.userlogged=userEdit
+            //req.session.save()
+            console.log('userEdit')
             console.log(userEdit)
             res.redirect('/Usuarios/profile');
           });
-      } else {
-        return res.render("editProfile", {
-          titulo: "Edicion Perfil de Usuario",
-          userLogged: req.session.userLogged,  //usuarioLoguearse: req.session.userlogged,
-          errors: {
-            user_passwordOld: {
-              msg: "La contraseña no coincide",
-            },
-          }
-        });
-      }
-    })
+      });
     ;//incluir un catch para el error
-  },
+  },  
 
 
   usersList: function (req,res){
