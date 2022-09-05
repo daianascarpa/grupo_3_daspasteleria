@@ -51,7 +51,11 @@
                                     
                                     <div class="input_field"> 
                                         <label for="avatar"class="input_field">Imagen de Perfil</label>
-                                        <input type="file" name="avatar" placeholder="foto de perfil" >
+                                        <input type="file" name="avatar" placeholder="Foto de Perfil" >
+                                        <% if (locals.errors && errors.avatar) { %>
+                                            <div class="text-danger">
+                                            <%=errors.avatar.msg %>
+                                            </div> <% }  %>
                                     </div>
                                     <label class="r-c-box">
                                         <input type="checkbox" name="aceptoTerminosCondiciones"> Acepto los términos y condiciones

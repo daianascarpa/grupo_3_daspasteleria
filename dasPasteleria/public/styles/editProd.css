@@ -142,6 +142,11 @@ h2 {
     align-items: center;
 }
 
+.ep_text-danger{
+    color: red;
+    font-style: italic;
+}
+
 form{
     width: 100%;
 }

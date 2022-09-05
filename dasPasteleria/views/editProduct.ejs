@@ -18,16 +18,28 @@
                         <form action="/Productos/editar-producto/<%=productToEdit.id%>?_method=PUT" method="POST" enctype="multipart/form-data">
                             <div class="input_field"> 
                                 <label> Producto a Editar:</label>
-                                <input type='text' name="product_name" placeholder="Nombre del Producto" required value="<%=productToEdit.product_name%>">
+                                <input type='text' name="product_name" placeholder="Nombre del Producto" value="<%=productToEdit.product_name%>">
+                                <% if (locals.errors && errors.product_name) { %>
+                                    <div class="ep_text-danger">
+                                        <%= errors.product_name.msg %>
+                                    </div> <% }  %>
                             </div>
                             <div class="input_field"> 
                                 <label> Descripción a Editar:</label>
                                 <textarea name="product_descripcion" id= "descripcion" placeholder="Editar descripción detallada del producto"> <%=productToEdit.product_description%></textarea>
+                                <% if (locals.errors && errors.product_description) { %>
+                                    <div class="ep_text-danger">
+                                        <%= errors.product_description.msg %>
+                                    </div> <% }  %>
                             </div>
                             <div class="input_field"> 
                                 <label> Foto a Editar:</label>
                                 <input type="file"  id="foto producto" name="image" accept="image/png, image/jpeg">
-                                <input type="hidden"  id="foto producto" name="oldimage" value='<%=productToEdit.image%>' accept="image/png, image/jpeg">
+                                <input type="hidden"  id="foto producto" name="oldimage" value="<%=productToEdit.image%>"  accept="image/png, image/jpeg">
+                                <% if (locals.errors && errors.image) { %>
+                                    <div class="ep_text-danger">
+                                        <%= errors.image.msg %>
+                                    </div> <% }  %>
                             </div>
                             <div> <img src="/img/products-img/<%=productToEdit.image%>" alt="torta1"> </div>
                             <div class="row clearfix">
@@ -56,18 +68,25 @@
                                     <div class="input_field"> 
                                         <!-- Se agregaron dos precios small y big -->
                                         <label> Precio a Editar (Menor):</label>
-                                        <input type='text' name="small_price" placeholder="Editar Precio del Producto" required value="$<%=productToEdit.small_price%>">
+                                        <input type='text' name="small_price" placeholder="Editar Precio del Producto" $value="<%=productToEdit.small_price%>">
+                                        <% if (locals.errors && errors.small_price) { %>
+                                            <div class="ep_text-danger">
+                                                <%= errors.small_price.msg %>
+                                            </div> <% }  %>
                                     </div>
                                     <div class="input_field"> 
                                         <label> Precio a Editar (Mayor):</label>
-                                        <input type='text' name="big_price" placeholder="Editar Precio del Producto" required value="$<%=productToEdit.big_price%>">
+                                        <input type='text' name="big_price" placeholder="Editar Precio del Producto" $value="<%=productToEdit.big_price%>">
+                                        <% if (locals.errors && errors.big_price) { %>
+                                            <div class="ep_text-danger">
+                                                <%= errors.big_price.msg %>
+                                            </div> <% }  %>
                                     </div>
 
                                 </div>
                             </div>
                                 <div>
                                     <input class="button" type="submit" value="Cargar Nueva Edición">
-                                    
                                 </div>
                         </form>
                         <form action="/Productos/<%=productToEdit.id%>?_method=DELETE" method="POST" >

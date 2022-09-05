@@ -30,7 +30,7 @@ const productController = {
     if (errors.isEmpty()) {
         let productNew = {
         product_name: req.body.product_name,
-        product_description: req.body.product_descripcion,
+        product_description: req.body.product_description,
         category_id: req.body.category,
         image:req.file.filename,
         small_price: req.body.small_price,
@@ -47,7 +47,7 @@ const productController = {
     
 
 edit: function(req,res){
-  Products.findByPk(req.params.id).then(productToEdit=>{
+    Products.findByPk(req.params.id).then(productToEdit=>{
     res.render('editProduct', {titulo: "Edicion del Producto " +  productToEdit.product_name , productToEdit})
   })
 },
@@ -55,21 +55,25 @@ edit: function(req,res){
     // Update - Method to update
     update:function(req,res){
      req.body.image = req.file ? req.file.filename : req.body.oldimage
+     //const oldImage = req.body.oldimage
      let productToEdit = {
+        id: req.params.id,
         ...req.body,
         image: req.body.image
       }
-     
-      Products.update(productToEdit,{
+     const errors = validationResult (req)
+     if (errors.isEmpty()) {
+        Products.update(productToEdit,{
         where:{id: req.params.id}
       }).then(productToEdit=>{// es necesario el then?
         res.redirect('/Productos')
       })
+     } else {
+      res.render('editProduct',{titulo: "Edicion del Producto " + productToEdit.product_name, errors: errors.mapped(), productToEdit, oldImage})}
     },
     
   productCart: function(req,res){
       res.render('productCart', {titulo: "Carrito de compras"})
-      
     },
 
     delete:function(req,res){

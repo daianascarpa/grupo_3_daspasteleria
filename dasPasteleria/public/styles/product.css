@@ -25,19 +25,13 @@ body{
 
 
 .form-select{
-    color: #878780;
-   
+    color: #878780;   
     margin-left: 10px;
     padding: 5px;
     width: 150px;
     background-position: right;
     text-align: right;
    
-}
-.main-body {
-    height: 150px;
-    width: auto;
-    background-color: white;
 }
 
 .container-img {
@@ -114,11 +108,6 @@ section {
     display: block;
 }
 
-main {
-    box-sizing: ​border-box​; 
-    margin: auto;
-    display: block;
-}
 
 section {
     display: block;

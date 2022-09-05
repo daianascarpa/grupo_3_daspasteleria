@@ -105,7 +105,7 @@ const userController = {
     });
   },
 
-  UpdateProfile: function (req, res) {
+  UpdateProfile: function (req, res) {    
     Users.findByPk(req.session.userLogged.id)
       .then((user) => {
         req.body.user_password  = req.body.user_password ? bcryptjs.hashSync(req.body.user_password, 10) : user.user_password
@@ -114,20 +114,22 @@ const userController = {
         let userEdit = {
            ...req.body,
         };
-          console.log('req.body')
-          console.log(req.body)
-          Users.update(userEdit, {
-            where: { id: user.id },
-          })
-           .then(() => {
-            //req.session.userlogged=userEdit
-            //req.session.save()
-            console.log('userEdit')
-            console.log(userEdit)
-            res.redirect('/Usuarios/profile');
-          });
-      });
-    ;//incluir un catch para el error
+          const errors = validationResult (req);
+          if (errors.isEmpty()) {
+            Users.update(userEdit, {
+              where: { id: user.id },
+            })
+             .then(() => {
+              res.redirect('/Usuarios/profile');
+            });
+          } else {
+            res.render("EditProfile", {
+              titulo: "Edicion Perfil de Usuario",
+              userLogged: req.session.userLogged,
+              errors: errors.mapped(), 
+            });
+          }
+        });//incluir un catch para el error
   },  
 
 

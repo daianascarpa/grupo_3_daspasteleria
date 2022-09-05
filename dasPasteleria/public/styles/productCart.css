@@ -216,7 +216,18 @@ p:active {
         display:block; border: solid 2px;
         color: rgb(110, 107, 107);
         padding: 0.5% 1%;
-        border-radius: 15%;}
+        border-radius: 15%;
+        width: 20px;
+        height: 20px;
+      }
+
+.c-encabezado a {
+  text-decoration: none;
+}
+
+.c-encabezado a p {
+  text-align: center;
+}
 
     .c-flecha,
     .c-link{

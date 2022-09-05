@@ -7,7 +7,7 @@
 <body>
     <%- include ('./partials/header') %> 
     <main>
-        <div class="ep-ep_container-main">
+        <div class="ep-container-main">
             <div class="ep_form_wrapper">
                 <div class="ep_form_container">
                     <div class="ep_title_container">
@@ -61,6 +61,10 @@
                                            <br>
                                         </div>
                                         <div> <img src="/img/users-img/<%=userLogged.avatar%>" alt="fotoPerfil"> </div>
+                                        <% if (locals.errors && errors.avatar) { %>
+                                            <div class="ep_text-danger">
+                                                <%= errors.avatar.msg %>
+                                            </div> <% }  %>
                                     </div>
                                 </div>
                                 <input class="ep_button" type="submit" value="Editar">

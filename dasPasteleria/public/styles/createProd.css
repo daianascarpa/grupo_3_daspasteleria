@@ -143,6 +143,11 @@ form{
     background: rgb(11, 119, 131);
 }
 
+.text-danger{
+    color: red;
+    font-style: italic;
+}
+
 @media (min-width: 400px) {
     .form_wrapper{
         width: 400px;

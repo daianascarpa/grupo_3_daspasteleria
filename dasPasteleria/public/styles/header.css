@@ -201,7 +201,7 @@ ul a, li {
   .fa-search:before {
     position: absolute;
     content: "\f002";
-    bottom: 12px;
+    bottom: 14px;
     left: -7px;
 }
 
