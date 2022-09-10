@@ -18,29 +18,30 @@
                 <div class="row clearfix">
                     <div class="">
                         <form action="/Usuarios/register" method="post" enctype="multipart/form-data">
+                            <section class="errores"><ul></ul></section>
                             <div class="input_field"> <span><i aria-hidden="true" class="fa fa-user"></i></span>
-                                <input type="text" name="user_name" placeholder="Nombre y Apellido">
+                                <input type="text" class="user_name" name="user_name" placeholder="Nombre y Apellido">
                                 <% if (locals.errors && errors.user_name) { %>
                                     <div class="text-danger">
                                     <%=errors.user_name.msg %>
                                     </div> <% }  %>
                             </div>
                             <div class="input_field"> <span><i aria-hidden="true" class="fa fa-envelope"></i></span>
-                                <input type="email" name="email" placeholder="Email">
+                                <input type="email" class="email" name="email" placeholder="Email">
                                 <% if (locals.errors && errors.email) { %>
                                     <div class="text-danger">
                                     <%=errors.email.msg %>
                                     </div> <% }  %>
                             </div>
                             <div class="input_field"> <span><i aria-hidden="true" class="fa fa-lock"></i></span>
-                                <input type="password" name="user_password" minlength="8" placeholder="Contraseña">                            
+                                <input type="password" class="user_password" name="user_password"  placeholder="Contraseña">                            
                             <% if (locals.errors && errors.user_password) { %>
                                 <div class="text-danger">
                                 <%=errors.user_password.msg %>
                                 </div> <% }  %>
                             </div>
                             <div class="input_field"> <span><i aria-hidden="true" class="fa fa-lock"></i></span>
-                                <input type="password" name="repeat_password" minlength="8" placeholder="Confirmar contraseña" >
+                                <input type="password" class="repeat_password" name="repeat_password"  placeholder="Confirmar contraseña" >
                                 <% if (locals.errors && errors.repeat_password) { %>
                                     <div class="text-danger">
                                     <%=errors.repeat_password.msg %>
@@ -51,14 +52,14 @@
                                     
                                     <div class="input_field"> 
                                         <label for="avatar"class="input_field">Imagen de Perfil</label>
-                                        <input type="file" name="avatar" placeholder="Foto de Perfil" >
+                                        <input type="file" class="avatar" name="avatar" placeholder="Foto de Perfil" >
                                         <% if (locals.errors && errors.avatar) { %>
                                             <div class="text-danger">
                                             <%=errors.avatar.msg %>
                                             </div> <% }  %>
                                     </div>
                                     <label class="r-c-box">
-                                        <input type="checkbox" name="aceptoTerminosCondiciones"> Acepto los términos y condiciones
+                                        <input type="checkbox" class="aceptoTerminosCondiciones" name="aceptoTerminosCondiciones"> Acepto los términos y condiciones
                                         <% if (locals.errors && errors.aceptoTerminosCondiciones) { %>
                                             <div class="text-danger">
                                             <%=errors.aceptoTerminosCondiciones.msg %>
@@ -76,6 +77,6 @@
     </main>
 
     <%- include ('./partials/footer') %> 
-
+<script src="/js/validationRegister.js" > </script>
 </body>
 </html>
