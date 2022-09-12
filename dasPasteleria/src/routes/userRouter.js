@@ -28,10 +28,10 @@ const validationRegisterForm = [
     body('email').notEmpty().withMessage('Campo Obligatorio').bail().isEmail().withMessage('Debe ser del tipo email'), 
     body('user_password').notEmpty().withMessage('Campo Obligatorio').bail().isLength({min:8}).withMessage ("Debe tener minimo 8 caracteres"),
     body('repeat_password').notEmpty().withMessage('Campo Obligatorio').bail().custom(async (confirmPassword, {req}) => {
-      const password = req.body.password
-        if(password !== confirmPassword){
+      const password = req.body.user_password
+      if(password !== confirmPassword){
          throw new Error('La contraseña debe ser igual')
-      }
+      } console.log (confirmPassword)
     }),
     body('aceptoTerminosCondiciones').notEmpty().withMessage('Campo Obligatorio'), // crear un campo obligatorio para que si o si se tenga que clickear el checkbox
     body('avatar'). custom ((value, {req}) =>{
@@ -40,7 +40,7 @@ const validationRegisterForm = [
         let extentionFile = path.extname(file.originalname);
         let acceptedExtentions = [".jpg", ".png", ".jpeg", ".gif"];
         if (!acceptedExtentions.includes(extentionFile)) {
-          throw new Error (`La extension del archivo debe ser de tipo ${acceptedExtentions.join(",")}`);
+          throw new Error (`La extension del archivo debe ser de tipo ${acceptedExtentions.join(", ")}`);
         }
       }        
         return true;
@@ -52,7 +52,7 @@ const validationEditProfile = [
   body('email').isEmail().withMessage('Debe ser del tipo email'), 
   body('user_password').isLength({min:8}).withMessage ("Debe tener minimo 8 caracteres"),
   body('repeat_password').custom(async (confirmPassword, {req}) => {
-    const password = req.body.password
+    const password = req.body.user_password
       if(password !== confirmPassword){
        throw new Error('La contraseña debe ser igual')
     }

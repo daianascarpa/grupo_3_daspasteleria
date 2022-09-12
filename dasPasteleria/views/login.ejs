@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <%- include ('./partials/head', {titulo}) %> 
+    <link rel="stylesheet" href="/styles/validations.css">
     <link rel="stylesheet" href="/styles/login.css">
 </head>
 <body>
@@ -17,10 +18,12 @@
                     <form action="/Usuarios/login"  method="POST">
                         <div>
                             <div class="input_field"> <span><i aria-hidden="true" class="fa fa-user"></i></span>
-                                <input type="email" name="email" placeholder="Email">
+                                <input type="email" name="email" placeholder="Email">                                 
+                                <span></span>
                             </div>
                             <div class="input_field"> <span><i aria-hidden="true" class="fa fa-lock"></i></span>
                                 <input type="password" name="user_password" minlength="8" placeholder="Contraseña" required>
+                                <span></span>
                             </div>
                             <% if (locals.errors && errors.email) { %>
                             <div class="text-danger">
@@ -38,5 +41,6 @@
     </div> 
     </main>
     <%- include ('./partials/footer') %> 
+    <script src="/js/validationLogin.js" > </script>
 </body>
 </html>

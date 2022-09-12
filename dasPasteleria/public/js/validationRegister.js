@@ -1,62 +1,110 @@
 window.addEventListener('load', function(){
+    const campoNombre = document.querySelector("[name=user_name]");
+    const campoEmail = document.querySelector("[name=email]");
+    const campoPassword = document.querySelector("[name=user_password]");
+    const campoRepeatPassword = document.querySelector("[name=repeat_password]");
+    const avatar = document.querySelector("[name=avatar]");    
+
     
-    let formulario = document.querySelector('form.form')
-        formulario.addEventListener('submit', function(e){
-    
-     let errores =[]
-     let regex = new RegExp(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/)
-     let acceptedExtentions = [".jpg", ".png", ".jpeg", ".gif"] 
-    
-            let campoNombre = document.querySelector('.user_name')
-            let campoEmail = document.querySelector('.email')
-            let campoUserPassword = document.querySelector('.user_password')
-            let campoRepeatPassword = document.querySelector('.repeat_password')
-            let avatar = document.querySelector('.avatar')
-            let terminosCondiciones = document.querySelector('.aceptoTerminosCondiciones')
-            
-            
-            if(campoNombre.value == ""){
-                errores.push('El campo nombre no debe estar vacio')
-            }else if(campoNombre.value.length < 3){
-                errores.push('El campo nombre debe conteneder al menos 3 caracteres')
-            }
-    
-            if(campoEmail.value == ""){
-                errores.push('El campo email no debe estar vacio')
-            }else if(!regex.test(campoEmail.value)){
-                errores.push('el campo email no es un formato de email')
-            }
-            if(campoUserPassword.value == ""){
-                errores.push('El campo Password no debe estar vacio')
-            }else if(campoUserPassword.value.length < 8){
-                errores.push('la contraseña debe ser mayor a 8 caracteres')
-            }
-            if(campoRepeatPassword.value == ""){
-                errores.push('Debe repetir su contraseña')
-            }else if(campoUserPassword.value != campoRepeatPassword.value ){
-                errores.push('las contraseñas no coinciden')
-            }
-            
-            let extension = avatar.value.substring(avatar.value.lastIndexOf('.')).toLowerCase()
-    
-            if(avatar.value && !acceptedExtentions.includes(extension)){
-                errores.push(`La extension del archivo debe ser de tipo ${acceptedExtentions.join(",")}`)
-            }
-    
-          if(!terminosCondiciones.cheked){
-            errores.push('Debes aceptar los terminos y condiciones')
-          }
-    
-         
-       if(errores.length > 0){
-        e.preventDefault();
-        let ulErrores= document.querySelector('section.errores ul')
-        for (let i = 0; i< errores.length; i++) {
-            ulErrores.innerHTML += '<li>'+ errores[i]+ '</li>'
-           
-        }
-    
-    }
-    
-        })
-    })
+   const validateFieldName = (e) => {
+      const field = e.target;
+       const fieldValue = e.target.value;
+       if (fieldValue.trim().length == 0) {
+         field.classList.add("invalid");
+         field.nextElementSibling.classList.add ("text-danger");
+         field.nextElementSibling.innerText= `El campo ${field.placeholder} no debe estar vacio`;
+       } else if (fieldValue.trim().length < 2) {
+       field.classList.add("invalid");
+       field.nextElementSibling.classList.add ("text-danger");
+       field.nextElementSibling.innerText= `El campo ${field.placeholder} debe tener al menos 2 caracteres`;
+       } else {
+        field.classList.remove("invalid");
+        field.nextElementSibling.classList.remove ("text-danger");
+        field.nextElementSibling.innerText= "";
+       }
+   }
+
+   const validateFieldPassword = (e) => { 
+      const field = e.target;
+       const fieldValue = e.target.value;
+       if (fieldValue.trim().length == 0) {
+       field.classList.add("invalid");
+       field.nextElementSibling.classList.add ("text-danger");
+       field.nextElementSibling.innerText= `El campo ${field.placeholder} no debe estar vacio`;
+       } else if (fieldValue.trim().length < 8) {
+         field.classList.add("invalid");
+         field.nextElementSibling.classList.add ("text-danger");
+         field.nextElementSibling.innerText= `El campo ${field.placeholder} debe tener al menos 8 caracteres`;
+         } else {
+        field.classList.remove("invalid");
+        field.nextElementSibling.classList.remove ("text-danger");
+        field.nextElementSibling.innerText= "";
+       }
+   }
+
+   const validateRepeatPassword = (e) => { 
+      const field = e.target;
+      const fieldValue = e.target.value;
+      if (fieldValue.trim().length == 0) {
+      field.classList.add("invalid");
+      field.nextElementSibling.classList.add ("text-danger");
+      field.nextElementSibling.innerText= `El campo ${field.placeholder} no debe estar vacio`;
+      } else if (fieldValue.trim().length < 8) {
+        field.classList.add("invalid");
+        field.nextElementSibling.classList.add ("text-danger");
+        field.nextElementSibling.innerText= `El campo ${field.placeholder} debe tener al menos 8 caracteres`;
+        } else if (fieldValue != campoPassword.value) {
+         field.classList.add("invalid");
+         field.nextElementSibling.classList.add ("text-danger");
+         field.nextElementSibling.innerText= `El campo ${field.placeholder} y Contraseña deben ser iguales`;
+         } else {
+           field.classList.remove("invalid");
+           field.nextElementSibling.classList.remove ("text-danger");
+           field.nextElementSibling.innerText= "";
+           }
+   }
+
+   const validateFieldEmail = (e) =>{
+        const field = e.target;
+        const fieldValue = e.target.value;
+        const regex = new RegExp(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/); 
+        if (fieldValue.trim().length == 0) {
+         field.classList.add("invalid");
+         field.nextElementSibling.classList.add ("text-danger");
+         field.nextElementSibling.innerText= `El campo ${field.placeholder} no debe estar vacio`;}
+         else if (fieldValue.trim().length > 0 && !regex.test(fieldValue)) {
+       field.classList.add("invalid");
+       field.nextElementSibling.classList.add ("text-danger");
+       field.nextElementSibling.innerText= "Debe ingresar un email válido";
+       } else {
+        field.classList.remove("invalid");
+        field.nextElementSibling.classList.remove ("text-danger");
+        field.nextElementSibling.innerText= "";
+       }
+   }
+
+   const validateFieldAvatar = (e) => {
+      const field = e.target;  
+      const fileExt = e.target.files[0].name.split(".").pop().toLowerCase();
+      const allowExt = ["jpg", "png", "jpeg", "gif"];
+      if (!allowExt.includes(fileExt)) {
+       field.classList.add("invalid");
+       field.nextElementSibling.classList.add ("text-danger");
+       field.nextElementSibling.innerText= `La extensión del archivo debe ser de tipo ${allowExt.join(", ")}`;
+      } else {
+        field.classList.remove("invalid");
+        field.nextElementSibling.classList.remove ("text-danger");
+        field.nextElementSibling.innerText= "";
+        }   
+   }
+
+
+campoNombre.addEventListener("blur", validateFieldName);
+campoEmail.addEventListener("blur", validateFieldEmail);
+campoPassword.addEventListener("blur", validateFieldPassword);
+campoRepeatPassword.addEventListener("blur", validateRepeatPassword);
+avatar.addEventListener("change", validateFieldAvatar);
+
+})
+
+  

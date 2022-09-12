@@ -59,7 +59,7 @@ h2 {
     margin-bottom: 20px;
 }
 
-.input_field span{
+.input_field span i{
     position: absolute;
     left: 0%;
     top: 0%;
@@ -117,7 +117,7 @@ form{
 }
 
 .text-danger{
-    color: red;
+    color: crimson;
     font-style: italic;
 }
 
