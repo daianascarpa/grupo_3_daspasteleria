@@ -31,7 +31,7 @@ const validationRegisterForm = [
       const password = req.body.user_password
       if(password !== confirmPassword){
          throw new Error('La contraseña debe ser igual')
-      } console.log (confirmPassword)
+      } 
     }),
     body('aceptoTerminosCondiciones').notEmpty().withMessage('Campo Obligatorio'), // crear un campo obligatorio para que si o si se tenga que clickear el checkbox
     body('avatar'). custom ((value, {req}) =>{

@@ -48,7 +48,7 @@ const productController = {
 
 edit: function(req,res){
     Products.findByPk(req.params.id).then(productToEdit=>{
-    res.render('editProduct', {titulo: "Edicion del Producto " +  productToEdit.product_name , productToEdit})
+    res.render('editProduct', {titulo: "Edicion del Producto " + productToEdit.product_name , productToEdit})
   })
 },
 
@@ -69,7 +69,7 @@ edit: function(req,res){
         res.redirect('/Productos')
       })
      } else {
-      res.render('editProduct',{titulo: "Edicion del Producto " + productToEdit.product_name, errors: errors.mapped(), productToEdit, oldImage})}
+      res.render('editProduct',{titulo: "Edicion del Producto " + productToEdit.product_name, errors: errors.mapped(), productToEdit})}
     },
     
   productCart: function(req,res){

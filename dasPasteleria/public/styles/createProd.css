@@ -66,7 +66,7 @@ h2 {
 .input_field input {
     margin-top: 10px;
 }
-
+/* 
 .input_field >span{
     position: absolute;
     left: 0%;
@@ -76,26 +76,38 @@ h2 {
     border-right: 1px solid #ccc;
     text-align: center;
     width: 30px;
-}
+} */
 
-.input_field > span > i{
+/* .input_field > span > i{
     padding-top: 10px;
-}
-.form_wrapper input[type="text"], .form_wrapper input[type="email"], .form_wrapper input[type="password"]{
+} */
+.form_wrapper input[type="text"], .form_wrapper textarea[name="product_description"]{
     width: 100%;
     padding: 8px 10px 9px 35px;
     border: 1px solid #ccc;
     outline: none;
 }
 
-.form_wrapper input[type="text"]:hover, .form_wrapper input[type="email"]:hover, .form_wrapper input[type="password"]:hover{
+.form_wrapper input[type="text"]:hover, .form_wrapper textarea[name="product_description"]:hover{
     background: #fafafa;
 }
 
-.form_wrapper input[type="text"]:focus, .form_wrapper input[type="email"]:focus, .form_wrapper input[type="password"]:focus {
+.form_wrapper input[type="text"]:focus, .form_wrapper textarea[name="product_description"]:focus{
     box-shadow: 0 0 2px 1px rgba(101, 190, 199, 0.5);
     border: 1px solid rgb(101, 190, 199);
     background: #fafafa;
+}
+
+.form_wrapper input[type="file"]:focus,.form_wrapper select[name="category"]:focus {
+    box-shadow: 0 0 2px 1px rgba(101, 190, 199, 0.5);
+    border: 1px solid rgb(101, 190, 199);
+    background: #fafafa;
+}
+
+.form_wrapper input[type="file"]{
+    width: 100%;
+    padding: 8px 10px 9px 35px;
+    outline: none;
 }
 
 .form_wrapper input[type="submit"]{

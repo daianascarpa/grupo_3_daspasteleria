@@ -19,14 +19,14 @@
                                 <div class="ep_input_field"> <span><i aria-hidden="true" class="fa fa-user"></i></span>
                                     <input type="text" name="user_name" placeholder="Nombre y Apellido" value='<%=userLogged.user_name%>' >
                                     <% if (locals.errors && errors.user_name) { %>
-                                        <div class="ep_text-danger">
+                                        <div class="text-danger">
                                             <%= errors.user_name.msg %>
                                         </div> <% }  %> <br>
                                 </div>
                                 <div class="ep_input_field"> <span><i aria-hidden="true" class="fa fa-envelope"></i></span>
                                     <input type="email" name="email" placeholder="Email" value='<%=userLogged.email%>' >
                                     <% if (locals.errors && errors.email) { %>
-                                        <div class="ep_text-danger">
+                                        <div class="text-danger">
                                             <%= errors.email.msg %>
                                         </div> <% }  %> <br>
                                 </div>
@@ -34,20 +34,20 @@
                                     <input type="password" name="user_passwordOld" minlength="8" placeholder="Actual Contraseña">
                                 </div>
                                 <% if (locals.errors && errors.user_passwordOld) { %>
-                                    <div class="ep_text-danger">
+                                    <div class="text-danger">
                                         <%= errors.user_passwordOld.msg %>
                                     </div> <% }  %> <br>
                                     <div class="ep_input_field"> <span><i aria-hidden="true" class="fa fa-lock"></i></span>
                                         <input type="password" name="user_password" minlength="8" placeholder="Nueva Contraseña">
                                         <% if (locals.errors && errors.repeat_password) { %>
-                                            <div class="ep_text-danger">
+                                            <div class="text-danger">
                                                 <%= errors.repeat_password.msg %>
                                             </div> <% }  %> <br>
                                     </div>    
                                 <div class="ep_input_field"> <span><i aria-hidden="true" class="fa fa-lock"></i></span>
                                     <input type="password" name="repeat_password" minlength="8" placeholder="Confirmar contraseña">
                                     <% if (locals.errors && errors.repeat_password) { %>
-                                        <div class="ep_text-danger">
+                                        <div class="text-danger">
                                             <%= errors.repeat_password.msg %>
                                         </div> <% }  %> <br>
                                 </div>
@@ -62,7 +62,7 @@
                                         </div>
                                         <div> <img src="/img/users-img/<%=userLogged.avatar%>" alt="fotoPerfil"> </div>
                                         <% if (locals.errors && errors.avatar) { %>
-                                            <div class="ep_text-danger">
+                                            <div class="text-danger">
                                                 <%= errors.avatar.msg %>
                                             </div> <% }  %>
                                     </div>

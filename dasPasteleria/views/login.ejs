@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
     <%- include ('./partials/head', {titulo}) %> 
-    <link rel="stylesheet" href="/styles/validations.css">
     <link rel="stylesheet" href="/styles/login.css">
+    <link rel="stylesheet" href="/styles/validations.css">
 </head>
 <body>
     <%- include ('./partials/header') %> 
@@ -22,7 +22,7 @@
                                 <span></span>
                             </div>
                             <div class="input_field"> <span><i aria-hidden="true" class="fa fa-lock"></i></span>
-                                <input type="password" name="user_password" minlength="8" placeholder="Contraseña" required>
+                                <input type="password" name="user_password" minlength="8" placeholder="Contraseña" <%/*required*/%>>
                                 <span></span>
                             </div>
                             <% if (locals.errors && errors.email) { %>
