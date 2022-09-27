@@ -3,21 +3,56 @@ const db = require("../../database/models");
 const Users = db.User;
 
 const userController = {
+        list: (req, res) => {
+            Users.findAll({
+                attributes: ['id', 'user_name','email'],
+               // raw: true
+            })
+            
+            .then((users) => {
+             let newUsers = users.map(user=>{
+              user.setDataValue ('detail', 'https://localhost:3030/api/users/'+user.id) 
+              console.log(user)
+               return user
+              })
+    
+         let respuesta ={
+                count: newUsers.length, 
+                users:newUsers
+            }
+    
+            res.status(200).json({
+                status: 200,
+                total: users.length,
+                respuesta,
+        });
+            });
+        },
+    
+    detail:  (req, res) => {
+        Users.findByPk(req.params.id, {
+            attributes: ['id', 'user_name','email', 'avatar'],
+           // raw: true
+        })
+        .then((user) => {
+                 
+            let respuesta ={
+               user: user
+                }
+            
+        res.status(200).json({
+        status: 200,
+        respuesta,
+    });
+    });
+    },
+    
     register: (req, res) => {
         Users.create(req.body).then((user) => {
         res.status(200).json({
         status: 200,
         data: user,
     });
-    });
-},
-list: (req, res) => {
-    Users.findAll().then((users) => {
-    res.status(200).json({
-        status: 200,
-        total: users.length,
-        data: users,
-});
     });
 },
 update: (req, res) => {

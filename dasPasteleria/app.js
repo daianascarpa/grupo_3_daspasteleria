@@ -24,8 +24,8 @@ const indexRouter = require('./src/routes/indexRouter')
 const userRouter = require('./src/routes/userRouter')
 const productRouter = require('./src/routes/productRouter')
 
-// const apiUserRouter = require('./src/routes/api/userRouter')
-// const apiProductRouter = require('./src/routes/api/productRouter')
+ const apiUserRouter = require('./src/routes/api/userRouter')
+ const apiProductRouter = require('./src/routes/api/productRouter')
 
 //const productCartRouter = require('./src/routes/productCartRouter')
 
@@ -36,8 +36,8 @@ app.use('/', indexRouter)
 app.use('/Usuarios', userRouter)
 app.use('/Productos', productRouter)
 
-// app.use('/Usuarios/api', apiUserRouter)
-// app.use('/Productos/api', apiProductRouter)
+app.use('/api', apiUserRouter)
+app.use('/api', apiProductRouter)
 
 app.set('view engine', 'ejs')
 

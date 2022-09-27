@@ -1,17 +1,74 @@
 const db = require("../../database/models");
 
-const Products = db.Product;
-
 const productController = {
     product: (req, res) => {
-        Products.findAll().then((products) => {
+       let groupCategory= Products.count({
+            include: ['product_category'],
+            group: ['product_category.category_name']
+        })
+       
+       let products= Products.findAll({
+        attributes: ['id', 'product_name','product_description'],
+        include: [{model: db.ProductCategory, as: 'product_category',attributes: ['category_name']}],
+       // raw: true,
+       })
+        Promise
+        .all([groupCategory,products])
+        .then(([groupCategory,products]) => {
+            console.log(groupCategory)
+            let countByGroup = {}
+            for( let i=0 ; i< groupCategory.length; i++){
+                
+                countByGroup[groupCategory[i].category_name] = groupCategory[i].count 
+            }
+
+        let newProducts = products.map(product=>{
+        //  Object.defineProperty = (product, 'product_category', {value : ['product_category.category_name']})
+           // product.category =[product['product_category.category_name']]
+            product.setDataValue ('category', [product.dataValues.product_category.category_name])
+            product.setDataValue ('detail', 'https://localhost:3030/api/products/'+ product.id) 
+           delete product.dataValues.product_category
+            console.log(product)
+            
+          return product
+        })  
+
+          console.log(newProducts)
+
+let respuesta ={
+    count:products.length,
+    countByGroup: countByGroup,
+    Products:newProducts,
+    }
+
         res.status(200).json({
         status: 200,
-        total: products.length,
-        data: products,
+        respuesta,
     });
     });
 },
+
+detail: (req, res) => {
+    Products.findByPk(req.params.id, {
+        include: [{model: db.ProductCategory, as: 'product_category',attributes: ['category_name']}],
+        // raw: true
+    })
+    .then((product) => {
+        product.setDataValue ('category', [product.dataValues.product_category.category_name])
+       // product.category = [product[ 'product_category.category_name']] 
+       delete product.dataValues.product_category
+        
+        let respuesta ={
+            product: product
+            }
+        
+    res.status(200).json({
+    status: 200,
+    respuesta,
+});
+});
+},
+
 
     store: (req, res) => {
         Products.create(req.body).then((product) => {
