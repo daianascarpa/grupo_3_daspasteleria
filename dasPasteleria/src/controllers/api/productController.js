@@ -1,5 +1,6 @@
 const db = require("../../database/models");
 
+const Products = db.Product;
 const productController = {
     product: (req, res) => {
        let groupCategory= Products.count({
@@ -10,7 +11,7 @@ const productController = {
        let products= Products.findAll({
         attributes: ['id', 'product_name','product_description'],
         include: [{model: db.ProductCategory, as: 'product_category',attributes: ['category_name']}],
-       // raw: true,
+        raw: true,
        })
         Promise
         .all([groupCategory,products])
@@ -23,11 +24,9 @@ const productController = {
             }
 
         let newProducts = products.map(product=>{
-        //  Object.defineProperty = (product, 'product_category', {value : ['product_category.category_name']})
-           // product.category =[product['product_category.category_name']]
-            product.setDataValue ('category', [product.dataValues.product_category.category_name])
-            product.setDataValue ('detail', 'https://localhost:3030/api/products/'+ product.id) 
-           delete product.dataValues.product_category
+            product.category =[product['product_category.category_name']]
+            product.detail = 'https://localhost:3030/api/products/'+ product.id
+            delete product['product_category.category_name']
             console.log(product)
             
           return product
@@ -51,12 +50,13 @@ let respuesta ={
 detail: (req, res) => {
     Products.findByPk(req.params.id, {
         include: [{model: db.ProductCategory, as: 'product_category',attributes: ['category_name']}],
-        // raw: true
+        raw: true
     })
     .then((product) => {
-        product.setDataValue ('category', [product.dataValues.product_category.category_name])
-       // product.category = [product[ 'product_category.category_name']] 
-       delete product.dataValues.product_category
+        console.log(product)
+       product.image = '/img/products-img/'+product.image
+       product.category = [product[ 'product_category.category_name']] 
+       delete product['product_category.category_name']
         
         let respuesta ={
             product: product
@@ -78,14 +78,7 @@ detail: (req, res) => {
     });
     });
 },
-    detail: (req, res) => {
-        Products.findByPk(req.params.id).then((product) => {
-        res.status(200).json({
-        status: 200,
-        data: product,
-    });
-    });
-},
+   
 update: (req, res) => {
     Products.update(req.body,{
         where:{

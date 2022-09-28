@@ -5,7 +5,7 @@ const cookieParser = require('cookie-parser');
 const app = express();
 const session = require('express-session');
 const userLoggedMiddleware = require ('./src/middleware/userLoggedMiddleware');
-
+const cors = require ('cors');
 
 app.use(express.urlencoded({extended:false}));
 app.use(express.json());
@@ -19,6 +19,7 @@ app.use(session({
 
 app.use(userLoggedMiddleware);
 app.use(cookieParser());
+app.use(cors());
 
 const indexRouter = require('./src/routes/indexRouter')
 const userRouter = require('./src/routes/userRouter')

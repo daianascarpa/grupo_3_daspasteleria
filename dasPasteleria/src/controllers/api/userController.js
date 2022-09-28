@@ -32,10 +32,10 @@ const userController = {
     detail:  (req, res) => {
         Users.findByPk(req.params.id, {
             attributes: ['id', 'user_name','email', 'avatar'],
-           // raw: true
+            raw: true
         })
         .then((user) => {
-                 
+            user.avatar = '/img/users-img/'+user.avatar
             let respuesta ={
                user: user
                 }
