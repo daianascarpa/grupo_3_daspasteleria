@@ -11,7 +11,7 @@ const userController = {
             
             .then((users) => {
              let newUsers = users.map(user=>{
-              user.setDataValue ('detail', 'https://localhost:3030/api/users/'+user.id) 
+              user.setDataValue ('detail', 'http://localhost:3030/api/users/'+user.id) 
               console.log(user)
                return user
               })

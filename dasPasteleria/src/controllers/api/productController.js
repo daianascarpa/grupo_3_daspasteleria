@@ -25,7 +25,7 @@ const productController = {
 
         let newProducts = products.map(product=>{
             product.category =[product['product_category.category_name']]
-            product.detail = 'https://localhost:3030/api/products/'+ product.id
+            product.detail = 'http://localhost:3030/api/products/'+ product.id
             delete product['product_category.category_name']
             console.log(product)
             
