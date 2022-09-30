@@ -1,0 +1,30 @@
+*{ 
+    box-sizing: border-box;
+    font-family: 'roboto';
+  }
+
+  .main-content {
+    background-color: #f2f2f2;
+    padding-top: 20px;
+  }
+
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 1rem;
+}
+
+.s-row{
+    margin-bottom: 1.5rem;
+    position: relative;
+    width: 30%;
+    padding-right: 0.75rem;
+    padding-left: 0.75rem;
+    border-radius: 0.60rem;
+    border-top: 2px solid rgb(101, 190, 199);
+    border-right: 2px solid rgb(101, 190, 199);
+    box-shadow: 0 0 3px rgb(0 0 0 / 10%);
+    background-color: white;
+}
