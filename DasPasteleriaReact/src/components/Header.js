@@ -26,11 +26,9 @@ function Header () {
            
           </div>
         </div>
-        <div class="h-nav-menu">
-          <nav class="h-lista-menu">
-            <a href="/home">INICIO</a>
-            <a href="/Productos">PRODUCTOS</a>
-            <a href="/Productos/carrito-de-compras">CARRITO</a>
+        <div className="h-nav-menu">
+          <nav className="h-lista-menu">
+            <h3>DASHBOARD</h3>
           </nav>
         </div>
       </header>

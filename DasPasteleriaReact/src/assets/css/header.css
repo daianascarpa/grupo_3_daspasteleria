@@ -236,19 +236,26 @@
   }
   
   .h-lista-menu {
-    display: flex;
     border: 100px;
     background-color: rgb(101, 190, 199);
     padding: 12px 0;
-    justify-content: space-around;
-  
   }
   
   .h-lista-menu a {
     text-decoration: none;
     font-weight: bold;
     color: white;
+
   }
+  
+ nav h3{
+  font-size: 40px;
+  color: white;
+  margin-block-start: 0.2em;
+  margin-block-end: 0.2em;
+ }
+
+
   
   
   @media (min-width: 769px) {

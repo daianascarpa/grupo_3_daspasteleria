@@ -1,6 +1,6 @@
 import ContentRowTop from './ContentRowTop';
 import ContentRowCenter from './ContentRowCenter'
-
+import ContentTable from './ContentTable'
 function MainContent() {
        return(
         <div className ='main-content'>
@@ -33,6 +33,7 @@ function MainContent() {
 
 <ContentRowTop/>
 <ContentRowCenter/>
+<ContentTable/>
 
         </div>
 

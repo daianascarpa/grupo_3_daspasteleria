@@ -6,10 +6,10 @@ function SmallCard(props){
         <div className="s-row shadow">
              <div> 
                 <div className="card-body">
-                    <div className="row no-gutters align-items-center">
-                        <div className="col mr-2">
-                            <div className= 's'> {props.title}</div>
-                            <div className="h">{props.quantity}</div>
+                    <div className="row align ">
+                        <div className="col">
+                            <div className= 's-title'> {props.title}</div>
+                            <div className="s-quantity">{props.quantity}</div>
                         </div>
                         <div className="col-auto">
                             <i className={`fas ${props.icon} fa-2x text-gray-300`}></i>
