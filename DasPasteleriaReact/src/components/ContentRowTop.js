@@ -31,7 +31,7 @@ let totalCategorias = {
 // let cartProps = [totalUsuarios, totalProductos, totalCategorias];
 
 function ContentRowTop(){
-    const [ countUsers , setCountUsers] = useState([])
+    const [countUsers , setCountUsers] = useState([])
     const [countProducts, setCountProducts]= useState([])
     const [categories, setCategories]= useState([])
 
@@ -70,36 +70,21 @@ function ContentRowTop(){
         icon: 'fa-solid fa-cake-candles',
     }
     let totalCategorias= {
-        title: 'Categorias',
+        title: 'Categorías',
         quantity: categories,
         icon: 'fa-solid fa-star',
     }
-
-    
 
     let cartProps = [totalUsuarios, totalProductos, totalCategorias]
 
     return (
 
         <div className="row">
-
-
-
-
-
-{ 
-            
-            
-            
+            { 
                 cartProps.map( (item, i) => {
-
                 return <SmallCard {...item} key={i}/>
-            
-            })} 
-            
-            
-             
-
+            })
+            } 
         </div>
     );
 }

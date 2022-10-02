@@ -3,8 +3,8 @@ import React from 'react';
 
 function SmallCard(props){
     return(
-        <div className="s-row">
-            <div /*className={`card border-left-${props.color} shadow h-100 py-2`}*/>
+        <div className="s-row shadow">
+             <div> 
                 <div className="card-body">
                     <div className="row no-gutters align-items-center">
                         <div className="col mr-2">
