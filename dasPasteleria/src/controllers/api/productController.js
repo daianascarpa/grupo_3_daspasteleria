@@ -27,12 +27,12 @@ const productController = {
             product.category =[product['product_category.category_name']]
             product.detail = 'http://localhost:3030/api/products/'+ product.id
             delete product['product_category.category_name']
-            console.log(product)
+           // console.log(product)
             
           return product
         })  
 
-          console.log(newProducts)
+         // console.log(newProducts)
 
 let respuesta ={
     count:products.length,
@@ -53,7 +53,7 @@ detail: (req, res) => {
         raw: true
     })
     .then((product) => {
-        console.log(product)
+       // console.log(product)
        product.image = '/img/products-img/'+product.image
        product.category = [product[ 'product_category.category_name']] 
        delete product['product_category.category_name']

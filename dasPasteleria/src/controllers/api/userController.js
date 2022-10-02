@@ -6,13 +6,13 @@ const userController = {
         list: (req, res) => {
             Users.findAll({
                 attributes: ['id', 'user_name','email'],
-               // raw: true
+                raw: true
             })
             
             .then((users) => {
              let newUsers = users.map(user=>{
-              user.setDataValue ('detail', 'http://localhost:3030/api/users/'+user.id) 
-              console.log(user)
+              user.detail = '/api/users/'+user.id
+             // console.log(user)
                return user
               })
     
@@ -31,11 +31,13 @@ const userController = {
     
     detail:  (req, res) => {
         Users.findByPk(req.params.id, {
-            attributes: ['id', 'user_name','email', 'avatar'],
+            attributes: ['id', 'user_name','email','avatar'],
             raw: true
         })
         .then((user) => {
-            user.avatar = '/img/users-img/'+user.avatar
+            console.log(user)
+            
+            user.avatar ='/dasPasteleria/public/img/users-img/'+user.avatar
             let respuesta ={
                user: user
                 }
