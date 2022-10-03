@@ -11,7 +11,7 @@ const userController = {
             
             .then((users) => {
              let newUsers = users.map(user=>{
-              user.detail = '/api/users/'+user.id
+              user.detail = 'http://localhost:3030/api/users/'+user.id
              // console.log(user)
                return user
               })
@@ -37,7 +37,7 @@ const userController = {
         .then((user) => {
             console.log(user)
             
-            user.avatar ='/dasPasteleria/public/img/users-img/'+user.avatar
+            user.avatar ='http://localhost:3030/img/users-img/'+user.avatar
             let respuesta ={
                user: user
                 }

@@ -54,7 +54,7 @@ detail: (req, res) => {
     })
     .then((product) => {
        // console.log(product)
-       product.image = '/img/products-img/'+product.image
+       product.image = 'http://localhost:3030/img/products-img/'+product.image
        product.category = [product[ 'product_category.category_name']] 
        delete product['product_category.category_name']
         
