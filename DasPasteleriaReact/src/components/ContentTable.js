@@ -45,16 +45,16 @@ function ContentTable(){
      return (
         <div className='table-container'>
         <div className="product-titulos">
-        <div className="ul-titulo">
+        <div className="ul-titulo id">
           <p>ID</p>
         </div>
-        <div className="ul-titulo">
+        <div className="ul-titulo product-name">
           <p>PRODUCTO</p>
         </div>
-        <div className="ul-titulo">
+        <div className="ul-titulo product-description">
           <p>DESCRIPCION</p>
         </div>
-        <div className="ul-titulo">
+        <div className="ul-titulo product-category">
           <p>CATEGORIA</p>
         </div>
         </div>

@@ -59,7 +59,7 @@ div .f-flecha-arriba {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    
+    margin-top: 1.5rem;
 }
 
 .f-pie-pagina-flex h4{
@@ -74,7 +74,7 @@ div .f-flecha-arriba {
 }
 
 .f-pie-textos {
-    width: 50%;
+    /* width: 50%; */
     height: 60%;
 }
 
