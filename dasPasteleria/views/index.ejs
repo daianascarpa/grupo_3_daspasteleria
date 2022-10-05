@@ -36,15 +36,15 @@
         <section class="prod-destacados">
         <h4>PRODUCTOS DESTACADOS</h4>
         <div class="productos">
-          <% for ( product of products) { %> 
+          <% for  (let product = 0; product < 4; product ++ ) { %> 
           <article>
               <div class="cont-img-card">
-              <img src="/img/products-img/<%=product.image%> " alt="<%=product.product_name%>" class="prod-img">
+              <img src="/img/products-img/<%=products[product].image%> " alt="<%=products[product].product_name%>" class="prod-img">
               </div>
               <div class="pie-articulo"> 
                 <i class="fa-regular fa-heart"></i>
-                <h4 class="descripcion"><a href= "Productos/<%=product.id%>"><%=product.product_name%> </a></h4>
-                <p class="precio">$<%=product.small_price%></p>
+                <h4 class="descripcion"><a href= "Productos/<%=products[product].id%>"><%=products[product].product_name%> </a></h4>
+                <p class="precio">$<%=products[product].small_price%></p>
                 <div class="agregar-carrito">
                     <h5>Agregar al Carrito</h5>
                 </div>

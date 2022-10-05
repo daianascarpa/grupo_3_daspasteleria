@@ -114,24 +114,14 @@ const userController = {
         let userEdit = {
            ...req.body,
         };
-          const errors = validationResult (req);
-          if (errors.isEmpty()) {
-            Users.update(userEdit, {
+         Users.update(userEdit, {
               where: { id: user.id },
             })
              .then(() => {
               res.redirect('/Usuarios/profile');
             });
-          } else {
-            res.render("EditProfile", {
-              titulo: "Edicion Perfil de Usuario",
-              userLogged: req.session.userLogged,
-              errors: errors.mapped(), 
-            });
-          }
-        });//incluir un catch para el error
+           });//incluir un catch para el error
   },  
-
 
   usersList: function (req,res){
     Users.findAll({
