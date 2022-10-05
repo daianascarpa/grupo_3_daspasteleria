@@ -105,8 +105,8 @@ div .c-wrapper:hover {
 }
 
 .lu-container-avatar {
-  width: 50%;
-  height: 50%;
+  width: 150px;
+  height: 150px;
   border-radius: 50%;
   overflow: hidden;
   margin: 0px 20px 0 20px;
@@ -228,4 +228,29 @@ div .c-wrapper:hover {
 
 .product-category {
   width: 25%;
+}
+
+@media (min-width: 700px) {
+  .lu-container-avatar {
+    width: 300px;
+    height: 300px;
+}}
+
+
+.f-copyright {
+  display: flex;
+  justify-content: center;
+  border-top:rgba(167, 164, 164, 0.589) solid 4px
+}
+.f-copyright i {
+  font-size: 10px;
+  padding: 5px;
+  margin: 5px 0 5px 0;
+  
+}
+
+.f-copyright p {
+  font-size: 10px;
+  padding: 5px;
+  margin: 5px 0 5px 0;
 }
